@@ -1,0 +1,160 @@
+.activityTheme{
+    position: relative;
+    overflow: hidden;
+}
+.activityTheme .fireworks{
+    position: absolute;
+}
+.activityTheme .fireworks img{
+    position: absolute;
+
+}
+/*云朵动画引用*/
+.activityTheme .fireworks img.cloud{
+    -webkit-animation:cloudDong 4s infinite linear alternate;
+    -o-animation:cloudDong 4s infinite linear alternate;
+    animation:cloudDong 4s infinite linear alternate;
+}
+/*蝴蝶动画引用*/
+.activityTheme .fireworks img:nth-of-type(5){
+    -webkit-animation:butterflyDong 8s infinite linear;
+    -o-animation:butterflyDong 8s infinite linear;
+    animation:butterflyDong 8s infinite linear ;
+}
+.activityTheme .fireworks img:nth-of-type(6){
+    -webkit-animation:butterflyDong 10s infinite linear ;
+    -o-animation:butterflyDong 10s infinite linear ;
+    animation:butterflyDong 10s infinite linear ;
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    -o-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+.activityTheme .fireworks img:nth-of-type(7){
+    -webkit-animation:butterflyDong 18s infinite linear ;
+    -o-animation:butterflyDong 18s infinite linear ;
+    animation:butterflyDong 18s infinite linear ;
+
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    -o-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+/*云*/
+.activityTheme .fireworks img:nth-of-type(1){
+    left:132px;
+    top:31px;
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    -o-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+.activityTheme .fireworks img:nth-of-type(2){
+    left:7px;
+    top:32px;
+    -webkit-animation-delay: 0.3s;
+    -moz-animation-delay: 0.3s;
+    -o-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+.activityTheme .fireworks img:nth-of-type(3){
+    left:30px;
+    top:6px;
+    -webkit-animation-delay: 0.1s;
+    -moz-animation-delay: 0.1s;
+    -o-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+.activityTheme .fireworks img:nth-of-type(4){
+    left:113px;
+    top:0;
+}
+/*云动画*/
+@keyframes cloudDong {
+    0%{
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100%{
+        -webkit-transform: translateX(20px);
+        -moz-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        -o-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+}
+@-webkit-keyframes cloudDong {
+    0%{
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100%{
+        -webkit-transform: translateX(20px);
+        -moz-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        -o-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+}
+/*蝴蝶动画*/
+@keyframes butterflyDong {
+    0%{
+        -webkit-transform: translate(0,0);
+        -moz-transform: translate(0,0);
+        -ms-transform: translate(0,0);
+        -o-transform: translate(0,0);
+        transform: translate(0,0);
+    }
+    25%{
+        -webkit-transform: translate(20px,0);
+        -moz-transform: translate(20px,0);
+        -ms-transform: translate(20px,0);
+        -o-transform: translate(20px,0);
+        transform: translate(20px,0);
+    }
+    50%{
+        -webkit-transform: translate(20px,-10px);
+        -moz-transform: translate(20px,-10px);
+        -ms-transform: translate(20px,-10px);
+        -o-transform: translate(20px,-10px);
+        transform: translate(20px,-10px);
+    }
+    75%{
+        -webkit-transform: translate(10px,-10px);
+        -moz-transform: translate(10px,-10px);
+        -ms-transform: translate(10px,-10px);
+        -o-transform: translate(10px,-10px);
+        transform: translate(10px,-10px);
+    }
+    100%{
+        -webkit-transform: translate(0,0);
+        -moz-transform: translate(0,0);
+        -ms-transform: translate(0,0);
+        -o-transform: translate(0,0);
+        transform: translate(0,0);
+    }
+
+}
+
+
+/*蝴蝶*/
+.activityTheme .fireworks img:nth-of-type(5){
+    left:88px;
+    top:26px;
+}
+.activityTheme .fireworks img:nth-of-type(6){
+    left:75px;
+    top:10px;
+}
+.activityTheme .fireworks img:nth-of-type(7){
+    left:53px;
+    top:33px;
+}

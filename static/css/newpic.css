@@ -1,0 +1,221 @@
+/********************* 厂房 **********************/
+.yzcf_pic li img{
+    width: 155px;
+    height: 110px;
+}
+.l_pta img{
+    width: 150px;
+    height: 106px;
+}
+.l_ptxt{
+    width: 400px;
+}
+
+/********************* 全国首页 **********************/
+.qyxz .top a img,.landxz .top a img,.xzlcss .top a img{
+    width: 160px;
+    height: 113px;
+}
+.zxlg ul li img{
+    width: 100%;
+    height: 160px;
+    float:initial;
+}
+.zxlg ul li{
+    margin-right: 9px;
+    width: 226px;
+    height: 184px;
+}
+.zxlg{
+    height: 184px;
+}
+.xzlcss .top a img{
+    height: 113px;
+}
+.xzlcss-img-wrapper {
+    position: relative;
+    display: block;
+}
+.xzlcss-img-tag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    padding: 6px;
+    background: rgba(0,0,0,0.5);
+    color: #FFFFFF;
+    font-size: 14px;
+}
+.zxli{
+    height: 147px;
+    overflow: hidden;
+}
+.zxli_1 li{
+    width: 100%;
+}
+.imgfocus{
+    width: 255px;
+}
+
+.yqtj_pic>div:first-of-type{
+    height: 255px !important;
+}
+.yqtj_pic>ul:first-of-type{
+    height: 273px !important;
+}
+.yqtj_pic li{
+    width: 160px;
+    height: 113px;
+}
+.yqtj_pic li:nth-of-type(4),.yqtj_pic li:nth-of-type(5),.yqtj_pic li:nth-of-type(6){
+    margin-top: 29px;
+}
+.yqtj_pic img{
+    width: 160px;
+    height: 113px;
+}
+.decoimg_b2 img{
+    width: 360px;
+    height: 255px;
+}
+.sxzscss .top a img{
+    height: 113px;
+}
+.ne ul{
+    margin-top: 0;
+}
+.ne a img{
+    width: 130px;
+    height: 92px;
+}
+
+/********************* 市县招商 **********************/
+/*首页*/
+.bigBanner{
+    height: 495px;
+}
+.bigBanner > ul{
+    height: 495px;
+}
+.bigBanner > ul > li{
+    height: 495px;
+}
+.bigBanner > ul > li > a img{
+    height: 495px;
+}
+.parkBox .parkPicCon li .pic img{
+    width: 165px;
+    height: 117px;
+}
+.investNewsTxtOne .pic img,.investNewsTxtOne .pic{
+    width: 100px;
+    height: 71px;
+}
+.proRecomConPic ul li a .pic img{
+    width: 200px;
+    height: 141px;
+}
+.newlyAddBox .newAddCon li .pic img{
+    width: 100px;
+    height: 71px;
+}
+.newlyAddBox .newAddCon li .pic h2{
+    width: 188px;
+}
+/*招商项目*/
+.xmListBox li .xmListCon .pic, .xmListBox li .xmListCon .pic img{
+    width: 200px;
+    height: 141px;
+}
+/*招商项目详情*/
+.rtNewsRankCon li .img img{
+    width: 100px;
+    height: 71px;
+}
+
+/********************* 城市招商网首页 **********************/
+.LocalBannerBox{
+    width: 360px;
+    height: 255px;
+}
+.LocalBannerBox>ul li a img{
+    width: 360px;
+    height: 255px;
+}
+.proRecomBox .proRecomCon li a .pic, .proRecomBox .proRecomCon li a .pic img{
+    width: 200px;
+    height: 141px;
+}
+/*.RegIntBox .RegIntCon .RegIntTxt .pic, .RegIntBox .RegIntCon .RegIntTxt .pic img{*/
+    /*width: 200px;*/
+    /*height: 141px;*/
+    /*float: left;*/
+/*}*/
+/*.RegIntBox .RegIntCon .RegIntTxt p{*/
+    /*margin-left: 212px;*/
+    /*text-align: justify;*/
+    /*text-indent: initial;*/
+    /*line-clmap: 8;*/
+    /*-webkit-line-clamp: 8;*/
+/*}*/
+
+/*.facilSerCon{*/
+    /*width: 500px;*/
+/*}*/
+/*.facilSerCon>ul li{*/
+    /*width: 114px;*/
+    /*height: 114px;*/
+/*}*/
+/*.facilSerCon>ul li:nth-of-type(5n){*/
+    /*margin-right: 14px;*/
+/*}*/
+/*.facilSerCon>ul li:nth-of-type(4n){*/
+    /*margin-right: 0;*/
+/*}*/
+/*.facilSerCon>ul li .inner::after,.facilSerCon>ul li:nth-child(2n) .inner::after{*/
+    /*top: 111px;*/
+/*}*/
+/*.facilSerCon>ul li::after,.facilSerCon>ul li:nth-child(2n)::after{*/
+    /*left: 111px;*/
+/*}*/
+
+.contact_box .fleft img{
+    width: 500px;
+    height: 354px;
+}
+.main-nr-new li img{
+    width: 240px;
+    height: 170px;
+}
+
+.newlyAddBox .newAddCon li .pic img{
+    width:100px !important;
+    height: 71px !important;
+}
+.newlyAddBox .newAddCon li .pic h2{
+    width: 182px;
+}
+.newlyAddBox .newAddCon li a .pic{
+    width: auto;
+    height: auto;
+}
+.proListBox li a .pic, .proListBox li a .pic img{
+    width: 200px;
+    height: 141px;
+}
+.hotRecomBox .hotRecomCon li .pic, .hotRecomBox .hotRecomCon li .pic img{
+    width: 100px;
+    height: 71px;
+}
+.hotRecomBox .hotRecomCon li .txt{
+    width: 148px;
+    height: 71px;
+}
+.rtNewsRankCon li .img img{
+    width: 100px;
+    height: 71px;
+}
+.yqInforBox .yqInforCon li .pic, .yqInforBox .yqInforCon li .pic img,.cityWideBox .cityWideCon li .pic, .cityWideBox .cityWideCon li .pic img{
+    width: 280px;
+    height: 198px;
+}

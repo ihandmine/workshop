@@ -1,0 +1,27 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.W1000 {
+    width: 1000px;
+    margin: 0 auto;
+}
+.foot {
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    padding: 17px 0;
+    color: #6c6c6c;
+    font-size: 12px;
+    line-height: 22px;
+}
+.foot a {
+    color: #333;
+    margin: 0 7px;
+}
+.foot ins, a {
+    text-decoration: none;
+}
+
+
+

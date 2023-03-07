@@ -1,0 +1,151 @@
+.zs_dbright {
+	position: relative;
+}
+.phone {
+	font-size: 18px;
+	line-height: 18px;
+	color: #e03b36;
+}
+.zs_dbright ul {
+	list-style: none;
+}
+.zs_dbright ul li {
+	float: left;
+	font: 12px/25px "宋体";
+	color: #CCCCCC;
+	line-height: 38px
+}
+.zs_dbright .erweima {
+	width: 176px;
+	height: 176px;
+	position: absolute;
+	top: 38px;
+	z-index: 100;
+	display: none;
+}
+.zs_dbright .erweima img{
+	width: 176px;
+	height: 176px;
+}
+.zs_dbright ul li.zs_club a {
+	display: block;
+	width: 90px;
+}
+.zs_dbright ul li.zs_club a:hover {
+}
+.zs_dbright .jtxl {
+	width: 95px;
+	height: auto;
+	padding-left: 1px;
+	padding-top: 3px;
+	background: url(../img/zs_xialabg.jpg) no-repeat center;
+	position: absolute;
+	top: 38px;
+	z-index: 99;
+	display: none;
+}
+.zs_dbright .jtxl a {
+	text-align: left;
+	line-height: 18px;
+	color: #777777;
+	width: 80px;
+	height: 18px;
+	padding-left: 8px;
+	background: url();
+}
+.zs_dbright .jtxl a:hover {
+	color: #C00;
+	background: url();
+}
+#ywhz {
+	background: url("../img/zs_topnavlibg1.jpg") no-repeat center;
+	width: 60px;
+}
+.qhcity_box {
+	border: 1px solid #dbb876;
+	padding: 10px 15px 0px 15px;
+	width: 320px;
+	font-size: 12px;
+	background-color: #FFFFFF;
+}
+.qhcity_hot {
+	color: #f24400;
+	border-bottom: 1px dashed #ccc;
+	line-height: 34px;
+	padding-left: 3px;
+}
+.qhcity_hot a {
+	color: #f24400;
+	text-decoration: none;
+	padding-right: 10px;
+}
+.qhcity_hot a:link {
+	color: #f24400;
+	text-decoration: none;
+}
+.qhcity_hot a:visited {
+	color: #f24400;
+	text-decoration: none;
+}
+.qhcity_hot a:hover {
+	color: #f24400;
+	text-decoration: underline;
+}
+.qhcity_hot a:active {
+	color: #f24400;
+	text-decoration: underline;
+}
+.qhcity_area {
+	color: #888888;
+	border-bottom: 1px dashed #ccc;
+	line-height: 34px;
+	padding-left: 3px;
+}
+.qhcity_area a {
+	color: #444444;
+	text-decoration: none;
+	padding-right: 10px;
+}
+.qhcity_area a:link {
+	color: #444444;
+	text-decoration: none;
+}
+.qhcity_area a:visited {
+	color: #444444;
+	text-decoration: none;
+}
+.qhcity_area a:hover {
+	color: #f24400;
+	text-decoration: underline;
+}
+.qhcity_area a:active {
+	color: #f24400;
+	text-decoration: underline;
+}
+.qhcity_more {
+	color: #f24400;
+	text-align: right;
+	line-height: 34px;
+}
+.qhcity_more a {
+	color: #f24400;
+}
+.qhcity_more a:link {
+	color: #f24400;
+	text-decoration: none;
+}
+.qhcity_more a:visited {
+	color: #f24400;
+	text-decoration: none;
+}
+.qhcity_more a:hover {
+	color: #f24400;
+	text-decoration: underline;
+}
+.qhcity_more a:active {
+	color: #f24400;
+	text-decoration: underline;
+}
+.qhcity_close {
+	float: right;
+}

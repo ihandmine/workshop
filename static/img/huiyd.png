@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>404错误 - 中工招商网</title>
+    <style type="text/css">
+        body{margin:0;padding:0;font:14px/1.6 Arial,Sans-serif;background:#fff url(http://www.zhaoshang800.com/404/404img/body.png) repeat-x;}
+        a:link,a:visited{color:#f00;text-decoration:none;}
+        h1{position:relative;z-index:2;width:540px;height:0;margin:110px auto 15px;padding:230px 0 0;overflow:hidden;background:url(http://www.zhaoshang800.com/404/404img/g1.jpg) no-repeat;xxxxborder:1px solid;}
+        h2{position:absolute;top:0;left:0;margin:0;font-size:0;text-indent:-999px;-moz-user-select:none;-webkit-user-select:none;user-select:none;cursor:default;}
+        h2 em{display:block;font:italic bold 200px/120px "Times New Roman",Times,Serif;text-indent:0;letter-spacing:-5px;color:rgba(216,226,244,0.3);}
+        .link a{margin-right:1em;}
+        .link,.texts{width:540px;margin:0 auto 15px;color:#505050;}
+        .texts{line-height:2;}
+        .texts dd{margin:0;padding:0 0 0 15px;}
+        .texts ul{margin:0;padding:0;}
+        .portal{color:#505050;text-align:center;white-space:nowrap;word-spacing:0.45em;}
+        .portal a:link,.portal a:visited{color:#505050;word-spacing:0;}
+        .portal a:hover,.portal a:active{color:#007ab7;}
+        .portal span{display:inline-block;height:38px;line-height:35px;background:url(http://www.zhaoshang800.com/404/404img/portal.png) repeat-x;}
+        .portal span span{padding:0 0 0 20px;background:url(http://www.zhaoshang800.com/404/404img/portal.png) no-repeat 0 -40px;}
+        .portal span span span{padding:0 20px 0 0;background-position:100% -80px;}
+    </style>
+    <!--[if lte IE 8]>
+    <style type="text/css">
+        h2 em{color:#e4ebf8;}
+    </style>
+    <![endif]-->
+
+</head><body>
+<h1>www.zhaoshang800.com - 中工招商网</h1>
+<h2><em>404 Error</em>: 抱歉, 您所查找的页面不存在, 可能已被删除或您输错了网址!</h2>
+
+<dl class="texts">
+
+    <dd>
+        <ul>
+            <li>1. 请检查您输入的网址是否正确。</li>
+            <li>2. 如果您不能确认您输入的网址，请浏览<a href="http://www.zhaoshang800.com">中工招商网</a>首页，来查看您所访问的网址。</li>
+            <li>3. <span style="color:#f00">直接点击下面导航链接进入相关页面。</span></li>
+        </ul>
+    </dd>
+</dl>
+
+
+
+<p class="portal" style="padding-top:15px;"><span><span><span>
+        <a target="_blank" title="中工招商网" href="http://www.zhaoshang800.com/">网站首页</a> |
+        <a target="_blank" title="厂房出租" href="http://sz.zhaoshang800.com/cf_list-0.html">厂房出租</a> |
+		<a target="_blank" title="厂房出售" href="http://sz.zhaoshang800.com/cf_list-1.html">厂房出售</a> |
+		<a target="_blank" title="园区招商" href="http://y.zhaoshang800.com/">园区招商</a> |
+		<a target="_blank" title="土 地" href="http://td.zhaoshang800.com/">土 地</a> |
+		<a target="_blank" title="写字楼" href="https://xzl.zhaoshang800.com/">写字楼</a> |
+		<a target="_blank" title="仓 库" href="http://sz.zhaoshang800.com/warehouse.html">仓 库</a> |
+		<a target="_blank" title="市县招商" href="http://sxzs.zhaoshang800.com/">市县招商</a> |
+		<a target="_blank" title="业务合作" href="http://www.zhaoshang800.com/help/work.html">业务合作</a> |
+		<a target="_blank" title="求租求购" href="http://www.zhaoshang800.com/demand/">求租求购</a> |
+		<a target="_blank" title="经纪人" href="http://s.zhaoshang800.com/">经纪人</a> |
+		<a target="_blank" title="资讯中心" href="http://www.zhaoshang800.com/news/">资讯中心</a>
+
+
+    </span></span></span></p>
+<div id="livemargins_control" style="position: absolute; display: none; z-index: 9999;"><img width="77" height="5" style="position: absolute; left: -77px; top: -5px;" src="chrome://livemargins/skin/monitor-background-horizontal.png">	<img style="position: absolute; left: 0pt; top: -5px;" src="chrome://livemargins/skin/monitor-background-vertical.png">	<img style="position: absolute; left: 1px; top: 0pt; opacity: 0.5; cursor: pointer;" onmouseout="this.style.opacity=0.5" onmouseover="this.style.opacity=1" src="chrome://livemargins/skin/monitor-play-button.png" id="monitor-play-button"></div></body></html>

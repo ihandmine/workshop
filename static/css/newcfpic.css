@@ -1,0 +1,232 @@
+/*首页*/
+.hdp #sz_lunbo{
+    height: 177px !important;
+}
+#sz_lunbo #sz_zhezhao a{
+    width: 250px;
+    height: 177px;
+}
+.hdp #sz_lunbo .sz_tupian a img{
+    width: 250px;
+    height: 177px;
+}
+.yzcf_pic li img{
+    width: 155px;
+    height: 110px;
+}
+.xzl_rp .rp_pic img{
+    width: 135px;
+    height: 95px;
+}
+.xzl_rp .rp_xq{
+    width: 175px;
+}
+.yzcf_pic li img{
+    width: 155px;
+    height: 110px;
+}
+.spdt_pic li{
+    width: 100px;
+}
+.spdt_pic li:nth-of-type(2){
+    margin-left: 11px;
+}
+.spdt_pic .zxdt_tit{
+    width: 100px;
+}
+.spdt_pic li img{
+    width: 100px;
+    height: 71px;
+}
+.cr_pt16 .jxlx_pb8 a img{
+    width: 100px;
+    height: 71px;
+}
+
+.cr_pt16 .jxlx_pb8 .zx_txt{
+    height: 71px !important;
+}
+.cr_pt16 .jxlx_pb8 .zx_txt .zxtj_tit{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 128px;
+    display: block;
+}
+.tddt_tj .tdjt_txt a img{
+    width: 100px;
+    height: 71px;
+}
+.tddt_tj .tdjt_txt .w132{
+    width: 118px;
+}
+.zxtj_tuw .zx_pic img{
+    width: 144px;
+    height: 102px;
+}
+.zx_txt{
+    height: 102px;
+}
+.yzcf_pic li img{
+    width: 155px;
+    height: 110px;
+}
+.zxtj_tuw .zx_txt p{
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+.l_pta img{
+    width: 150px;
+    height: 106px;
+}
+.l_ptxt{
+    width: 402px;
+}
+.con_right .w250 a img{
+    width: 250px;
+    height: 177px;
+}
+
+#p_cfzs .p_datu img{
+    width: 350px;
+    height: 248px;
+}
+#p_cfzs .p_datu{
+    width: 350px;
+    height: 248px;
+}
+#p_cfzs .p_xiaotu .p_tu ul li img{
+    width: 63px;
+    height: 45px;
+}
+.tj_c1 img{
+    width: 150px;
+    height: 106px;
+}
+.xq_szcf li img{
+    width: 135px;
+    height: 95px;
+}
+.xq_cfgk li img{
+    width: 648px !important;
+    height: 458px !important;
+}
+
+.W1000>.FR>img,.W1000>.FR>a img{
+    width: 250px;
+    height: 177px;
+}
+.phb .top img{
+    width: 100px;
+    height: 71px;
+}
+.W1000 .FL ul li img{
+    width: 150px;
+    height: 106px;
+}
+#city_lbpic #gbox_href a{
+    width: 334px;
+    height: 236px;
+}
+
+.zb_lpic img{
+    width: 100px;
+    height: 71px;
+}
+.zb_tit{
+    width: 270px;
+}
+.tbox_right div a>img{
+    width: 250px;
+    height: 177px;
+}
+.fzgh_pic img{
+    width: 125px;
+    height: 88px;
+}
+.zcfg_pic img{
+    width: 160px;
+    height: 113px;
+}
+.cf_pic img{
+    width: 100px;
+    height: 71px;
+}
+.cf_txt{
+    width: 134px;
+}
+.qy_pic img{
+    width: 150px;
+    height: 106px;
+}
+.xzlsp_fbox li img{
+    width: 100px;
+    height: 71px;
+}
+.l_cyyqp li img{
+    width: 226px;
+    height: 160px;
+}
+.xgwz .top img{
+    width: 150px;
+    height: 106px;
+}
+.W1000>.FR>div>a>img{
+    width: 250px;
+    height: 177px;
+}
+.mt13 {
+    margin-top: 13px;
+}
+.W1000 .FL .cr_jpic img{
+    width: 64px;
+    height: 66px
+}
+.W1000 .FL .yzcf_pic li img{
+    width: 155px;
+    height: 110px;
+}
+.W1000 .FL .xzl_rp .rp_pic img{
+    width: 135px;
+    height: 95px;
+}
+#p_cfzs .p_xiaotu .p_tu ul li{
+    height: 45px;
+}
+#city_lbpic{
+    height: 236px;
+}
+#city_lbpic #ct_pic ul li a img{
+    width: 334px;
+    height: 236px;
+}
+.tbox_con{
+    width: 648px;
+}
+.zx_news li{
+    float: initial;
+}
+
+/*产业园区*/
+#sz_lunbo #sz_zhezhao{
+    height: 177px !important;
+}
+.yzcf_pic1 li img{
+    width: 155px;
+    height: 110px;
+}
+.yqtj_pic img{
+    width: 160px;
+    height: 113px;
+}
+.xpb_pic li img{
+    width: 150px;
+    height: 106px;
+}
