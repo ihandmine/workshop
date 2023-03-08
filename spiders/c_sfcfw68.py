@@ -10,6 +10,8 @@ def data_format_save(data):
     init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
     cols, values = zip(*data.items())
     table = "sz_changfang_index"
+    table = "hz_changfang_index"
+    table = "dg_changfang_index"
     sql = "INSERT INTO `{}` ({}) VALUES ({})".format(
         table,
         ','.join(cols),
@@ -19,7 +21,7 @@ def data_format_save(data):
 
 
 def get_html() -> str:
-    base_url: str = "http://www.sfcfw68.com/sz/index_2.html"
+    base_url: str = "http://www.sfcfw68.com/dg/index_2.html"
     headers: dict = Header(browser='chrome', connection=True).base.to_unicode_dict()
     response = requests.get(base_url, headers=headers)
     # print(response.content.decode('utf-8'))

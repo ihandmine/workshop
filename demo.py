@@ -52,8 +52,13 @@ async def index(request: Request):
     """
     init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
     data_sz = execute_query(_sql_sz)
+    data_hz = execute_query(_sql_hz)
+    data_dg = execute_query(_sql_dg)
     data = {
-        "map": address_mapping
+        "map": address_mapping,
+        "data_sz": data_sz,
+        "data_hz": data_hz,
+        "data_dg": data_dg,
     }
     return templates.TemplateResponse("index.html", {"request": request, "data": data})
 
