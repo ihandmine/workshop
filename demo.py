@@ -50,15 +50,25 @@ async def index(request: Request):
     _sql_dg = """
         select * from dg_changfang_index order by auto_id desc limit 13
     """
+    _sql_sz_xiezi = """
+        select * from sz_xiezilou_index order by auto_id desc limit 13
+    """
+    _sql_sz_xiezi_title = """
+        select DISTINCT title from sz_xiezilou_index limit 12
+    """
     init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
     data_sz = execute_query(_sql_sz)
     data_hz = execute_query(_sql_hz)
     data_dg = execute_query(_sql_dg)
+    data_xiezi = execute_query(_sql_sz_xiezi)
+    data_xiezi_title = execute_query(_sql_sz_xiezi_title)
     data = {
         "map": address_mapping,
         "data_sz": data_sz,
         "data_hz": data_hz,
         "data_dg": data_dg,
+        "data_xiezi": data_xiezi,
+        "data_xiezi_title": data_xiezi_title,
     }
     return templates.TemplateResponse("index.html", {"request": request, "data": data})
 
@@ -127,14 +137,68 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
     return templates.TemplateResponse("chuzu.html", {"request": request, "data": data[:10], "other": other})
 
 
-@app.get("/chushou")
-async def index(request: Request):
-    return templates.TemplateResponse("chushou.html", {"request": request})
-
-
-@app.get("/cangku")
-async def index(request: Request):
-    return templates.TemplateResponse("cangku.html", {"request": request})
+@app.get("/xiezilou")
+async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query(""), price=Query(""), space=Query(""),
+                strc=Query(''), floor=Query("")):
+    if page is None or page == 1:
+        _sql = "select * from sz_xiezilou_index limit 0, 10"
+    else:
+        _sql = "select * from sz_xiezilou_index limit %s, 10" % (int(page) * 10)
+    count_sql = "select count(*) from sz_xiezilou_index"
+    if area_id or price or space or strc or floor:
+        price_start, price_end = 0, 100
+        space_start, space_end = 0, 99999
+        if price:
+            price_start, price_end = price.split(',')
+        if space:
+            space_start, space_end = space.split(',')
+        _sql = """
+            SELECT
+                * 
+            FROM
+                sz_xiezilou_index 
+            WHERE
+                locate( '%s', address ) > 0 
+                AND locate( '%s', structure ) > 0 
+                AND locate( '%s', floor ) > 0 
+                AND price_month >=% s 
+                AND price_month <= % s AND area >=% s 
+                AND area <= % s 
+                LIMIT 0,
+                10
+        """ % (
+            area_id, strc, floor, price_start, price_end, space_start, space_end)
+        count_sql = """
+            SELECT
+                count(*) 
+            FROM
+                sz_xiezilou_index 
+            WHERE
+                locate( '%s', address ) > 0 
+                AND locate( '%s', structure ) > 0 
+                AND locate( '%s', floor ) > 0 
+                AND price_month >=% s 
+                AND price_month <= % s AND area >=% s 
+                AND area <= %s
+        """ % (
+            area_id, strc, floor, price_start, price_end, space_start, space_end)
+    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    data = execute_query(_sql)
+    print(_sql)
+    total_count = execute_query(count_sql)[0]["count(*)"]
+    page_count = math.floor(total_count / 10) if total_count >= 10 else 1
+    other = {
+        "total": total_count,
+        "page": page_count,
+        "current_page": int(page) or 1,
+        "areas": address_mapping[area],
+        "area_id": area_id,
+        "price": price,
+        "space": space,
+        "strc": strc,
+        "floor": floor
+    }
+    return templates.TemplateResponse("xiezilou.html", {"request": request, "data": data[:10], "other": other})
 
 
 # @app.get('/', response_class=HTMLResponse)

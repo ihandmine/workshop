@@ -388,15 +388,15 @@
     <!--右侧导航-->
     <div class="rtAd">
         <div class="hx"><a href="http://www.cfldcn.com/" target="_self" rel="nofollow"><img
-                src="http://eju7.fangcms.cn/uploads/allimg/20200720/1-200H01S35YN.jpg"></a></div>
+                src="/static/img/hot_img.png"></a></div>
         <!--今日推荐-->
         <div class="todayNews">
             <h3><i class="icon_todayNews"></i>今日推荐</h3>
             <ul>
+                {% for zone in data.data_sz[:5] %}
                 <li><a target="_blank" href="http://eju7.fangcms.cn/article/xieziloubaike/110.html"
-                       title="雅居乐金沙湾坐享四周便利 路网通达">雅居乐金沙湾坐享四周便利 路网通达</a></li>
-                <li><a target="_blank" href="http://eju7.fangcms.cn/article/xieziloubaike/108.html"
-                       title="融创观澜湖公园壹号精装交付 引入品牌进行布置">融创观澜湖公园壹号精装交付 引入品牌进行...</a></li>
+                       title="{{ zone.title }}">{{ zone.title }}</a></li>
+                {% endfor %}
             </ul>
         </div>
     </div>
@@ -436,10 +436,14 @@
             <div class="qyxz infoList" id="qyxz0">
                 <div class="top">
                     {% for item in data.data_sz[:5] %}
-                    <a target="_blank" title="{{ item.title }}"
-                       href="http://guangzhou7.fangcms.cn/changfcz/changfangchuzu/330.html"><img
-                            src="{{ item.img_url }}"
-                            onerror="javascript:this.src='{{ item.img_url }}';"><span>{{ item.title[:10] }}...</span></a>
+                    <a target="_blank" title="{{ item.detail }}"
+                       href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/254.html">
+                        <div class="xzlcss-img-wrapper"><img
+                                onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
+                                src="{{ item.img_url }}">
+                            <div class="xzlcss-img-tag">{{ item.address }}</div>
+                        </div>
+                        <span>{{ item.detail[:10] }}...</span> </a>
                     {% endfor %}
                     <div class="clear"></div>
                 </div>
@@ -454,10 +458,14 @@
             <div class="qyxz infoList" id="qyxz1" style="display:none">
                 <div class="top">
                     {% for item in data.data_dg[:5] %}
-                    <a target="_blank" title="{{ item.title }}"
-                       href="http://guangzhou7.fangcms.cn/changfcz/changfangchuzu/330.html"><img
-                            src="{{ item.img_url }}"
-                            onerror="javascript:this.src='{{ item.img_url }}';"><span>{{ item.title[:10] }}...</span></a>
+                    <a target="_blank" title="{{ item.detail }}"
+                       href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/254.html">
+                        <div class="xzlcss-img-wrapper"><img
+                                onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
+                                src="{{ item.img_url }}">
+                            <div class="xzlcss-img-tag">{{ item.address }}</div>
+                        </div>
+                        <span>{{ item.detail[:10] }}...</span> </a>
                     {% endfor %}
                     <div class="clear"></div>
                 </div>
@@ -472,10 +480,14 @@
             <div class="qyxz infoList" id="qyxz2" style="display:none">
                 <div class="top">
                     {% for item in data.data_hz[:5] %}
-                    <a target="_blank" title="{{ item.title }}"
-                       href="http://guangzhou7.fangcms.cn/changfcz/changfangchuzu/330.html"><img
-                            src="{{ item.img_url }}"
-                            onerror="javascript:this.src='{{ item.img_url }}';"><span>{{ item.title[:10] }}...</span></a>
+                    <a target="_blank" title="{{ item.detail }}"
+                       href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/254.html">
+                        <div class="xzlcss-img-wrapper"><img
+                                onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
+                                src="{{ item.img_url }}">
+                            <div class="xzlcss-img-tag">{{ item.address }}</div>
+                        </div>
+                        <span>{{ item.detail[:10] }}...</span> </a>
                     {% endfor %}
                     <div class="clear"></div>
                 </div>
@@ -537,8 +549,8 @@
             <h3 class="FL"><a target="_blank" href="http://eju7.fangcms.cn/officecz/xiezilouchuzu.html">写字楼出租</a></h3>
             <ul class="FR F12 cGray">
                 <li class="FL ti">
-                    <a id="hover" num="0" class="thovxzl" href="//guangdong.fangcms.cn/">广东</a>
-                    <a num="1" class="thovxzl" href="//hainan.fangcms.cn/">海南</a>
+                    <a id="hover" num="0" class="thovxzl" href="//guangdong.fangcms.cn/">深圳</a>
+                    <!--                    <a num="1" class="thovxzl" href="//hainan.fangcms.cn/">海南</a>-->
                 </li>
             </ul>
             <div class="clear"></div>
@@ -546,69 +558,24 @@
         <div class="bd">
             <div class="xzlcss" id="xzlcss0" data-province="19">
                 <div class="top">
-                    <a target="_blank" title="沙井 精装修写字楼 出租，60-500平，大小分租"
-                       href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/164.html">
-                        <div class="xzlcss-img-wrapper"><img
-                                onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
-                                src="http://eju7.fangcms.cn/uploads/allimg/20200529/1-200529104101537.jpg">
-                            <div class="xzlcss-img-tag">宝安</div>
-                        </div>
-                        <span>沙井 精装修写字楼 出租，60-500平，大小分租</span> </a>
-                    <a target="_blank" title="西环路边豪华靓盘出租，价格28，无转让费！"
-                       href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/168.html">
-                        <div class="xzlcss-img-wrapper"><img
-                                onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
-                                src="http://eju7.fangcms.cn/uploads/allimg/20200529/1-200529103QH95.jpg">
-                            <div class="xzlcss-img-tag">宝安</div>
-                        </div>
-                        <span>西环路边豪华靓盘出租，价格28，无转让费！</span> </a>
-                    <a target="_blank" title="测试2" href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/255.html">
-                        <div class="xzlcss-img-wrapper"><img
-                                onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
-                                src="http://eju7.fangcms.cn/uploads/allimg/20200529/1-200529103QH95.jpg">
-                            <div class="xzlcss-img-tag">宝安</div>
-                        </div>
-                        <span>测试2</span> </a>
-                    <a target="_blank" title="西环路边豪华靓盘出租，价格208，无转让费！"
-                       href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/218.html">
-                        <div class="xzlcss-img-wrapper"><img
-                                onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
-                                src="http://eju7.fangcms.cn/uploads/allimg/20200529/1-200529103QH95.jpg">
-                            <div class="xzlcss-img-tag">宝安</div>
-                        </div>
-                        <span>西环路边豪华靓盘出租，价格208，无转让费！</span> </a>
-                    <a target="_blank" title="西环路边豪华靓盘出租，价格208，无转让费！"
+                    {% for item in data.data_xiezi[:5] %}
+                    <a target="_blank" title="{{ item.detail }}"
                        href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/254.html">
                         <div class="xzlcss-img-wrapper"><img
                                 onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
-                                src="http://eju7.fangcms.cn/uploads/allimg/20200529/1-200529103QH95.jpg">
-                            <div class="xzlcss-img-tag">宝安</div>
+                                src="{{ item.img_url }}">
+                            <div class="xzlcss-img-tag">{{ item.address }}</div>
                         </div>
-                        <span>西环路边豪华靓盘出租，价格208，无转让费！</span> </a>
+                        <span>{{ item.detail[:10] }}...</span> </a>
+                    {% endfor %}
                     <div class="clear"></div>
                 </div>
                 <ul>
-                    <li><a href="#" target="_blank">【宝安】</a> <a
+                    {% for item in data.data_xiezi[5:] %}
+                    <li><a href="#" target="_blank">【{{ item.address }}】</a> <a
                             href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/165.html" target="_blank"
-                            title="石岩料坑廉价写字办公楼出租">石岩料坑廉价写字办公楼出租</a></li>
-                    <li><a href="#" target="_blank">【宝安】</a> <a
-                            href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/202.html" target="_blank"
-                            title="石岩料坑廉价写字办公楼出租">石岩料坑廉价写字办公楼出租</a></li>
-                    <li><a href="#" target="_blank">【宝安】</a> <a
-                            href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/204.html" target="_blank"
-                            title="石岩料坑廉价写字办公楼出租">石岩料坑廉价写字办公楼出租</a></li>
-                    <li><a href="#" target="_blank">【宝安】</a> <a
-                            href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/213.html" target="_blank"
-                            title="石岩料坑廉价写字办公楼出租">石岩料坑廉价写字办公楼出租</a></li>
-                    <li><a href="#" target="_blank">【宝安】</a> <a
-                            href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/208.html" target="_blank"
-                            title="沙井 精装修写字楼 出租，60-500平，大小分租">沙井 精装修写字楼 出租，60-500平...</a></li>
-                    <li><a href="#" target="_blank">【宝安】</a> <a
-                            href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/163.html" target="_blank"
-                            title="光明高新园区甲级写字楼，形象高大上，2020年全年免租">光明高新园区甲级写字楼，形象高大上，20...</a></li>
-                    <li><a href="#" target="_blank">【南山】</a> <a
-                            href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/119.html" target="_blank"
-                            title="金外滩办公室 精装75平 带家具 支付租金立即使用">金外滩办公室 精装75平 带家具 支付租...</a></li>
+                            title="{{ item.detail }}">{{ item.detail[:20] }}...</a></li>
+                    {% endfor %}
 
                 </ul>
             </div>
@@ -625,30 +592,24 @@
     <div class="FR rcon topLoop">
         <div class="tit">
             <h4><a style="float:left;" target="_blank"
-                   href="http://eju7.fangcms.cn/officecs/xiezilouchushou.html">写字楼出售</a></h4>
+                   href="http://eju7.fangcms.cn/officecs/xiezilouchushou.html">写字楼出租位置</a></h4>
             <a target="_blank" href="http://eju7.fangcms.cn/officecs/xiezilouchushou.html">更多&gt;&gt;</a></div>
-        <div class="zxlg bd">
-            <ul>
-                <li><a target="_blank" title="好家园 整栋写字dadaa"
-                       href="http://shenzhen7.fangcms.cn/officecs/xiezilouchushou/199.html">
-                    <img onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
-                         src="http://eju7.fangcms.cn/uploads/allimg/20200528/1-20052Q5064T62.jpg" alt="好家园 整栋写字dadaa"
-                         title="好家园 整栋写字dadaa"><span style="font-size:14px;">好家园 整栋写字dadaa</span></a></li>
+        <!--        <div class="zxlg bd">-->
+        <!--            <ul>-->
+        <!--                <li><a target="_blank" title="{{ data.data_xiezi[0].detail }}"-->
+        <!--                       href="http://shenzhen7.fangcms.cn/officecs/xiezilouchushou/199.html">-->
+        <!--                    <img onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"-->
+        <!--                         src="{{ data.data_xiezi[0].img_url }}" alt="{{ data.data_xiezi[0].detail }}"-->
+        <!--                         title="{{ data.data_xiezi[0].detail }}"><span style="font-size:14px;">{{ data.data_xiezi[0].detail }}</span></a></li>-->
 
-            </ul>
-        </div>
+        <!--            </ul>-->
+        <!--        </div>-->
         <div class="clear"></div>
         <ul class="zxli zxli_1">
-            <li><a target="_blank" title="好家园 整栋写字楼出售开酒店 1"
-                   href="http://shenzhen7.fangcms.cn/officecs/xiezilouchushou/201.html">好家园 整栋写字楼出售开酒店 1</a></li>
-            <li><a target="_blank" title="好家园 整栋写字楼出售开酒店 "
-                   href="http://shenzhen7.fangcms.cn/officecs/xiezilouchushou/197.html">好家园 整栋写字楼出售开酒店</a></li>
-            <li><a target="_blank" title="好家园 整栋写字楼出售开酒店 "
-                   href="http://shenzhen7.fangcms.cn/officecs/xiezilouchushou/198.html">好家园 整栋写字楼出售开酒店</a></li>
-            <li><a target="_blank" title="好家园 整栋写字楼出售开酒店 "
-                   href="http://shenzhen7.fangcms.cn/officecs/xiezilouchushou/200.html">好家园 整栋写字楼出售开酒店</a></li>
-            <li><a target="_blank" title="好家园 整栋写字楼出售开酒店 1"
-                   href="http://shenzhen7.fangcms.cn/officecs/xiezilouchushou/155.html">好家园 整栋写字楼出售开酒店 1</a></li>
+            {% for item in data.data_xiezi_title %}
+            <li><a target="_blank" title="{{ item.title }}"
+                   href="http://shenzhen7.fangcms.cn/officecs/xiezilouchushou/201.html">{{ item.title }}</a></li>
+            {% endfor %}
 
         </ul>
     </div>
@@ -657,59 +618,58 @@
 <div class="w1190 mt20">
     <div class="FL lcon">
         <div class="tit">
-            <h3 class="FL"><a target="_blank" href="http://eju7.fangcms.cn/article/zixun.html">资讯</a></h3>
+            <h3 class="FL"><a target="_blank" href="">资讯</a></h3>
             <ul class="FR F12 cGray">
                 <li class="ti">
-                    <a target="_blank" href="http://eju7.fangcms.cn/article/changfangzhinan.html">厂房指南</a>
-                    <a target="_blank" href="http://eju7.fangcms.cn/article/cangkuzixun.html">办公指南</a>
-                    <a target="_blank" href="http://eju7.fangcms.cn/article/tudizhinan.html">仓库指南</a>
-                    <a target="_blank" href="http://eju7.fangcms.cn/article/chanjingxinwen.html">产经新闻</a>
-                    <a target="_blank" href="http://eju7.fangcms.cn/article/xieziloubaike.html">写字楼百科</a>
-                    <a target="_blank" href="http://eju7.fangcms.cn/article/xinpanliangxiang.html">新盘亮相</a>
-                    <a target="_blank" href="http://eju7.fangcms.cn/article/chanyedichan100jiang.html">产业地产100讲</a>
-                    <a target="_blank" href="http://eju7.fangcms.cn/article/qiyexuanzhixinxi.html">企业选址信息</a>
+                    <a target="_blank" href="">厂房指南</a>
+                    <a target="_blank" href="">办公指南</a>
+                    <a target="_blank" href="">仓库指南</a>
+                    <a target="_blank" href="">产经新闻</a>
+                    <a target="_blank" href="">写字楼百科</a>
+                    <a target="_blank" href="">新盘亮相</a>
+                    <a target="_blank" href="">产业地产100讲</a>
+                    <a target="_blank" href="">企业选址信息</a>
                 </li>
             </ul>
             <div class="clear"></div>
         </div>
         <div class="ne">
             <a target="_blank" title="雅居乐金沙湾主推四期6#产品 智能家电呵护安全"
-               href="http://eju7.fangcms.cn/article/xieziloubaike/112.html"><img title="雅居乐金沙湾主推四期6#产品 智能家电呵护安全"
+               href=""><img title="雅居乐金沙湾主推四期6#产品 智能家电呵护安全"
                                                                                  src="http://eju7.fangcms.cn/uploads/allimg/20191011/1-191011162243214.jpg"><strong>雅居乐金沙湾主推四期6#产品
                 智能家电呵护安全</strong><span>雅居乐金沙湾主推四期6#产品 智能家电呵...</span></a>
             <a target="_blank" title="融创观澜湖公园壹号PK观澜湖九里 果岭养生楼盘大解析"
-               href="http://eju7.fangcms.cn/article/changfangbaogao/41.html"><img title="融创观澜湖公园壹号PK观澜湖九里 果岭养生楼盘大解析"
+               href=""><img title="融创观澜湖公园壹号PK观澜湖九里 果岭养生楼盘大解析"
                                                                                   src="http://eju7.fangcms.cn/uploads/allimg/20191011/1-19101116051Tb.jpg"><strong>融创观澜湖公园壹号PK观澜湖九里
                 果岭养生楼盘大解析</strong><span>融创观澜湖公园壹号PK观澜湖九里 果岭养...</span></a>
 
             <div class="clear"></div>
             <ul>
-                <li><a target="_blank" href="http://eju7.fangcms.cn/article/zixun/269.html" title="测试">测试</a></li>
-                <li><a target="_blank" href="http://shenzhen7.fangcms.cn/article/shichangjingji/259.html"
+                <li><a target="_blank" href=""
                        title="深圳大鹏新区：三年释放土地面积141万平方米">深圳大鹏新区：三年释放土地面积141万平...</a></li>
-                <li><a target="_blank" href="http://shenzhen7.fangcms.cn/article/cangkuzixun/178.html"
+                <li><a target="_blank" href=""
                        title="“团购”工业用地 “共享”配套设施">“团购”工业用地 “共享”配套设施</a></li>
-                <li><a target="_blank" href="http://shenzhen7.fangcms.cn/article/cangkuzixun/176.html"
+                <li><a target="_blank" href=""
                        title="深圳大鹏新区：三年释放土地面积141万平方米">深圳大鹏新区：三年释放土地面积141万平...</a></li>
-                <li><a target="_blank" href="http://shenzhen7.fangcms.cn/article/cangkuzixun/174.html"
+                <li><a target="_blank" href=""
                        title="三四线城市地产正回暖：政策趋向友好 土地市场预热">三四线城市地产正回暖：政策趋向友好 土地...</a></li>
-                <li><a target="_blank" href="http://shenzhen7.fangcms.cn/article/cangkuzixun/177.html"
+                <li><a target="_blank" href=""
                        title="多城调整土拍规则 土地溢价率年内首次回调">多城调整土拍规则 土地溢价率年内首次回调</a></li>
-                <li><a target="_blank" href="http://shenzhen7.fangcms.cn/article/cangkuzixun/175.html"
+                <li><a target="_blank" href=""
                        title="集体土地入市：一场言之过早的产业狂欢">集体土地入市：一场言之过早的产业狂欢</a></li>
-                <li><a target="_blank" href="http://eju7.fangcms.cn/article/xieziloubaike/111.html"
+                <li><a target="_blank" href=""
                        title="雅居乐金沙湾城市园林营造舒心娱乐生活">雅居乐金沙湾城市园林营造舒心娱乐生活</a></li>
-                <li><a target="_blank" href="http://eju7.fangcms.cn/article/xieziloubaike/110.html"
+                <li><a target="_blank" href=""
                        title="雅居乐金沙湾坐享四周便利 路网通达">雅居乐金沙湾坐享四周便利 路网通达</a></li>
-                <li><a target="_blank" href="http://eju7.fangcms.cn/article/xieziloubaike/109.html"
+                <li><a target="_blank" href=""
                        title="海南海囗雅居乐金沙湾小区内配套已落实 售海景洋房">海南海囗雅居乐金沙湾小区内配套已落实 售...</a></li>
-                <li><a target="_blank" href="http://eju7.fangcms.cn/article/xieziloubaike/108.html"
+                <li><a target="_blank" href=""
                        title="融创观澜湖公园壹号精装交付 引入品牌进行布置">融创观澜湖公园壹号精装交付 引入品牌进行...</a></li>
-                <li><a target="_blank" href="http://eju7.fangcms.cn/article/xieziloubaike/106.html"
+                <li><a target="_blank" href=""
                        title="融创观澜湖公园壹号纯板式果岭美宅热销中 均价13300元/㎡">融创观澜湖公园壹号纯板式果岭美宅热销中 ...</a></li>
-                <li><a target="_blank" href="http://eju7.fangcms.cn/article/changfangbaogao/46.html"
+                <li><a target="_blank" href=""
                        title="融创美伦熙语为何如此火爆？">融创美伦熙语为何如此火爆？</a></li>
-                <li><a target="_blank" href="http://eju7.fangcms.cn/article/changfangbaogao/45.html"
+                <li><a target="_blank" href=""
                        title="富力悦海湾别墅样板间实景图赏">富力悦海湾别墅样板间实景图赏</a></li>
 
             </ul>
@@ -717,47 +677,44 @@
     </div>
     <div class="FR rcon">
         <div class="tit">
-            <h4><a style="float:left;" target="_blank" href="http://eju7.fangcms.cn/article/zixun.html">资讯排行榜</a></h4>
-            <a target="_blank" href="http://eju7.fangcms.cn/article/zixun.html">更多&gt;&gt;</a></div>
+            <h4><a style="float:left;" target="_blank" href="">资讯排行榜</a></h4>
+            <a target="_blank" href="">更多&gt;&gt;</a></div>
         <ul class="rnew">
             <li>
                 <ins class="">1</ins>
-                <a target="_blank" href="http://shenzhen7.fangcms.cn/article/cangkuzixun/174.html"
+                <a target="_blank" href=""
                    title="三四线城市地产正回暖：政策趋向友好 土地市场预热">三四线城市地产正回暖：政策趋向友好 土地...</a></li>
             <li>
                 <ins class="">2</ins>
-                <a target="_blank" href="http://shenzhen7.fangcms.cn/article/cangkuzixun/176.html"
+                <a target="_blank" href=""
                    title="深圳大鹏新区：三年释放土地面积141万平方米">深圳大鹏新区：三年释放土地面积141万平...</a></li>
             <li>
                 <ins class="">3</ins>
-                <a target="_blank" href="http://shenzhen7.fangcms.cn/article/shichangjingji/259.html"
+                <a target="_blank" href=""
                    title="深圳大鹏新区：三年释放土地面积141万平方米">深圳大鹏新区：三年释放土地面积141万平...</a></li>
             <li>
                 <ins class="">4</ins>
-                <a target="_blank" href="http://eju7.fangcms.cn/article/zixun/33.html" title="购房指南：实地看房时需要注意哪些问题">购房指南：实地看房时需要注意哪些问题</a>
+                <a target="_blank" href="" title="购房指南：实地看房时需要注意哪些问题">购房指南：实地看房时需要注意哪些问题</a>
             </li>
             <li>
                 <ins class="">5</ins>
-                <a target="_blank" href="http://eju7.fangcms.cn/article/xieziloubaike/112.html"
+                <a target="_blank" href=""
                    title="雅居乐金沙湾主推四期6#产品 智能家电呵护安全">雅居乐金沙湾主推四期6#产品 智能家电呵...</a></li>
             <li>
                 <ins class="">6</ins>
-                <a target="_blank" href="http://eju7.fangcms.cn/article/zixun/34.html"
+                <a target="_blank" href=""
                    title="房子继承问题差别早知道！">房子继承问题差别早知道！</a></li>
             <li>
                 <ins class="">7</ins>
-                <a target="_blank" href="http://eju7.fangcms.cn/article/xieziloubaike/106.html"
+                <a target="_blank" href=""
                    title="融创观澜湖公园壹号纯板式果岭美宅热销中 均价13300元/㎡">融创观澜湖公园壹号纯板式果岭美宅热销中 ...</a></li>
             <li>
-                <ins class="">8</ins>
-                <a target="_blank" href="http://eju7.fangcms.cn/article/zixun/269.html" title="测试">测试</a></li>
-            <li>
                 <ins class="">9</ins>
-                <a target="_blank" href="http://eju7.fangcms.cn/article/changfangdongtai/79.html"
+                <a target="_blank" href=""
                    title="绿地集团战略重组贵州药材 大健康产业混改首单亮相">绿地集团战略重组贵州药材 大健康产业混改...</a></li>
             <li>
                 <ins class="">10</ins>
-                <a target="_blank" href="http://eju7.fangcms.cn/article/chanjingdongtai/98.html"
+                <a target="_blank" href=""
                    title="选房看什么？从区位到配套为您详细解读">选房看什么？从区位到配套为您详细解读</a></li>
 
         </ul>

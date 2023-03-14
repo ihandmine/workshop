@@ -38,16 +38,17 @@
 }
 .xzlcss-img-tag {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 69px;
+    top: 87px;
     z-index: 99;
     padding: 6px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.8);
     color: #FFFFFF;
     font-size: 14px;
+    width: 91px;
 }
 .zxli{
-    height: 147px;
+    height: 351px;
     overflow: hidden;
 }
 .zxli_1 li{
