@@ -138,15 +138,14 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
 
 
 @app.get("/xiezilou")
-async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query(""), price=Query(""), space=Query(""),
-                strc=Query(''), floor=Query("")):
+async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query(""), price=Query(""), space=Query("")):
     if page is None or page == 1:
         _sql = "select * from sz_xiezilou_index limit 0, 10"
     else:
         _sql = "select * from sz_xiezilou_index limit %s, 10" % (int(page) * 10)
     count_sql = "select count(*) from sz_xiezilou_index"
-    if area_id or price or space or strc or floor:
-        price_start, price_end = 0, 100
+    if area_id or price or space:
+        price_start, price_end = 0, 100000
         space_start, space_end = 0, 99999
         if price:
             price_start, price_end = price.split(',')
@@ -159,15 +158,13 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
                 sz_xiezilou_index 
             WHERE
                 locate( '%s', address ) > 0 
-                AND locate( '%s', structure ) > 0 
-                AND locate( '%s', floor ) > 0 
                 AND price_month >=% s 
                 AND price_month <= % s AND area >=% s 
                 AND area <= % s 
                 LIMIT 0,
                 10
         """ % (
-            area_id, strc, floor, price_start, price_end, space_start, space_end)
+            area_id, price_start, price_end, space_start, space_end)
         count_sql = """
             SELECT
                 count(*) 
@@ -175,13 +172,11 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
                 sz_xiezilou_index 
             WHERE
                 locate( '%s', address ) > 0 
-                AND locate( '%s', structure ) > 0 
-                AND locate( '%s', floor ) > 0 
                 AND price_month >=% s 
                 AND price_month <= % s AND area >=% s 
                 AND area <= %s
         """ % (
-            area_id, strc, floor, price_start, price_end, space_start, space_end)
+            area_id, price_start, price_end, space_start, space_end)
     init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
     data = execute_query(_sql)
     print(_sql)
@@ -195,8 +190,6 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
         "area_id": area_id,
         "price": price,
         "space": space,
-        "strc": strc,
-        "floor": floor
     }
     return templates.TemplateResponse("xiezilou.html", {"request": request, "data": data[:10], "other": other})
 

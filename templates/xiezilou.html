@@ -370,11 +370,11 @@
             {% for area in other.areas %}
             {% if area == other.area_id %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ area }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}'
+               data-url='/xiezilou?area_id={{ area }}&price={{ other.price }}&space={{ other.space }}'
                class="c_d42">{{ area }}</a>
             {% else %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ area }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}'
+               data-url='/xiezilou?area_id={{ area }}&price={{ other.price }}&space={{ other.space }}'
                class="">{{ area }}</a>
             {% endif %}
             {% endfor %}
@@ -391,11 +391,11 @@
             "50000-70000元/月"), ("70000,100000", "70000-100000元/月"), ("100000, 999999", "100000元/月以上")] %}
             {% if p == other.price %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ p }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}'
+               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ p }}&space={{ other.space }}'
                class="c_d42">{{ p_context }}</a>
             {% else %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ p }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}'
+               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ p }}&space={{ other.space }}'
                class="">{{ p_context }}</a>
             {% endif %}
             {% endfor %}
@@ -405,7 +405,7 @@
         <dt>面积：</dt>
         <dd>
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ other.price }}&strc={{ strc }}&floor={{ other.floor }}'
+               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ other.price }}'
                class="c_d42">不限</a>
             {% for s, s_context in [("0,100", "100平米以下"), ("100,200", "100-200平米"), ("200,300", "200-300平米"),
             ("300,500",
@@ -413,11 +413,11 @@
             ("2000,99999", "2000平米以上") ] %}
             {% if s == other.space %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ other.price }}&space={{ s }}&strc={{ other.strc }}&floor={{ other.floor }}'
+               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ other.price }}&space={{ s }}'
                class="c_d42">{{ s_context }}</a>
             {% else %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ other.price }}&space={{ s }}&strc={{ other.strc }}&floor={{ other.floor }}'
+               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ other.price }}&space={{ s }}'
                class="">{{ s_context }}</a>
             {% endif %}
             {% endfor %}
