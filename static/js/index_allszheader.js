@@ -6,7 +6,7 @@ $(function(){
 			$(".nav ul li").mouseenter(
 						function(){
 							
-							 $(this).children("a").css("background","#c3221c");
+							 $(this).children("a").css("background","blue");
 						}
 					);
 					

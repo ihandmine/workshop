@@ -172,8 +172,8 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
                 sz_xiezilou_index 
             WHERE
                 locate( '%s', address ) > 0 
-                AND price_month >=% s 
-                AND price_month <= % s AND area >=% s 
+                AND price_month >= %s 
+                AND price_month <= %s AND area >= %s 
                 AND area <= %s
         """ % (
             area_id, price_start, price_end, space_start, space_end)
