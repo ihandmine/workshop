@@ -27,11 +27,11 @@ app.add_middleware(
 templates = Jinja2Templates(directory='templates')
 
 address_mapping = {
-    "sz": ['龙岗', '横岗', '坪山', '坪地', '坑梓', '平湖', '观澜', '龙华', '布吉', '坂田', '民治', '大浪', '新安', '西乡', '福永', '沙井', '松岗', '石岩',
+    "深圳": ['龙岗', '横岗', '坪山', '坪地', '坑梓', '平湖', '观澜', '龙华', '布吉', '坂田', '民治', '大浪', '新安', '西乡', '福永', '沙井', '松岗', '石岩',
            '光明', '公明', '沙头角', '海山', '盐田', '梅沙', '葵涌', '大鹏', '南澳'],
-    "dg": ["塘厦", "清溪", "黄江", "大朗", "虎门", "大岭山", "石排", "横沥", "企石", "常平", "桥头", "凤岗", "樟木头", "谢岗", "东坑", "寮步", "茶山", "长安",
+    "东莞": ["塘厦", "清溪", "黄江", "大朗", "虎门", "大岭山", "石排", "横沥", "企石", "常平", "桥头", "凤岗", "樟木头", "谢岗", "东坑", "寮步", "茶山", "长安",
            "沙田", "厚街", "东城", "南城", "莞城", "石龙", "石碣", "高埗", "望牛墩", "洪梅", "万江", "道滘", "中堂", "麻涌"],
-    "hz": ["新圩", "镇隆", "秋长", "淡水", "沙田", "永湖", "良井", "平潭", "三和", "霞涌", "澳头", "西区", "陈江", "惠环", "沥林", "潼侨", "潼湖", "桥东",
+    "惠州": ["新圩", "镇隆", "秋长", "淡水", "沙田", "永湖", "良井", "平潭", "三和", "霞涌", "澳头", "西区", "陈江", "惠环", "沥林", "潼侨", "潼湖", "桥东",
            "桥西", "江南", "江北", "龙丰", "水口", "河南岸", "小金口", "马安", "横沥", "芦洲", "汝湖", "三栋", "平山", "大岭", "白花", "梁化", "稔山", "铁涌",
            "平海", "吉隆", "黄埠", "多祝", "白盆珠", "安墩", "高潭", "宝口", "罗阳", "龙溪", "龙华", "园洲", "石湾", "福田", "长宁", "湖镇", "横河", "柏塘",
            "公庄", "观音阁", "杨侨", "麻陂", "石坝", "泰美", "杨村", "平陵", "龙城", "地派", "龙田", "麻榨", "龙江", "龙潭"]
@@ -74,14 +74,14 @@ async def index(request: Request):
 
 
 @app.get("/chuzu")
-async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query(""), price=Query(""), space=Query(""),
-                strc=Query(''), floor=Query("")):
+async def index(request: Request, page=Query(1), area=Query("深圳"), area_id=Query(""), price=Query(""), space=Query(""),
+                strc=Query(''), floor=Query(""), keyword=Query("")):
     if page is None or page == 1:
         _sql = "select * from sz_changfang_index limit 0, 10"
     else:
         _sql = "select * from sz_changfang_index limit %s, 10" % (int(page) * 10)
     count_sql = "select count(*) from sz_changfang_index"
-    if area_id or price or space or strc or floor:
+    if area_id or price or space or strc or floor or keyword:
         price_start, price_end = 0, 100
         space_start, space_end = 0, 99999
         if price:
@@ -95,6 +95,7 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
                 sz_changfang_index 
             WHERE
                 locate( '%s', address ) > 0 
+                AND locate( '%s', detail ) > 0 
                 AND locate( '%s', structure ) > 0 
                 AND locate( '%s', floor ) > 0 
                 AND price_month >=% s 
@@ -103,7 +104,7 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
                 LIMIT 0,
                 10
         """ % (
-            area_id, strc, floor, price_start, price_end, space_start, space_end)
+            area_id, keyword, strc, floor, price_start, price_end, space_start, space_end)
         count_sql = """
             SELECT
                 count(*) 
@@ -111,13 +112,14 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
                 sz_changfang_index 
             WHERE
                 locate( '%s', address ) > 0 
+                AND locate( '%s', detail ) > 0 
                 AND locate( '%s', structure ) > 0 
                 AND locate( '%s', floor ) > 0 
                 AND price_month >=% s 
                 AND price_month <= % s AND area >=% s 
                 AND area <= %s
         """ % (
-            area_id, strc, floor, price_start, price_end, space_start, space_end)
+            area_id, keyword, strc, floor, price_start, price_end, space_start, space_end)
     init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
     data = execute_query(_sql)
     print(_sql)
@@ -132,19 +134,22 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
         "price": price,
         "space": space,
         "strc": strc,
-        "floor": floor
+        "floor": floor,
+        "keyword": keyword,
+        "area": area
     }
     return templates.TemplateResponse("chuzu.html", {"request": request, "data": data[:10], "other": other})
 
 
 @app.get("/xiezilou")
-async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query(""), price=Query(""), space=Query("")):
+async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query(""), price=Query(""), space=Query(""),
+                keyword=Query("")):
     if page is None or page == 1:
         _sql = "select * from sz_xiezilou_index limit 0, 10"
     else:
         _sql = "select * from sz_xiezilou_index limit %s, 10" % (int(page) * 10)
     count_sql = "select count(*) from sz_xiezilou_index"
-    if area_id or price or space:
+    if area_id or price or space or keyword:
         price_start, price_end = 0, 100000
         space_start, space_end = 0, 99999
         if price:
@@ -158,13 +163,14 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
                 sz_xiezilou_index 
             WHERE
                 locate( '%s', address ) > 0 
+                AND locate( '%s', detail ) > 0 
                 AND price_month >=% s 
                 AND price_month <= % s AND area >=% s 
                 AND area <= % s 
                 LIMIT 0,
                 10
         """ % (
-            area_id, price_start, price_end, space_start, space_end)
+            area_id, keyword, price_start, price_end, space_start, space_end)
         count_sql = """
             SELECT
                 count(*) 
@@ -172,11 +178,12 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
                 sz_xiezilou_index 
             WHERE
                 locate( '%s', address ) > 0 
+                AND locate( '%s', detail ) > 0 
                 AND price_month >= %s 
                 AND price_month <= %s AND area >= %s 
                 AND area <= %s
         """ % (
-            area_id, price_start, price_end, space_start, space_end)
+            area_id, keyword, price_start, price_end, space_start, space_end)
     init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
     data = execute_query(_sql)
     print(_sql)
@@ -190,8 +197,53 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
         "area_id": area_id,
         "price": price,
         "space": space,
+        "keyword": keyword,
+        "area": area
     }
     return templates.TemplateResponse("xiezilou.html", {"request": request, "data": data[:10], "other": other})
+
+
+@app.get("/keywords")
+async def index(request: Request, keyword=Query(""), page_type=Query("changfang"), area=Query('sz')):
+    _sql = """
+            SELECT
+                * 
+            FROM
+                sz_%s_index 
+            WHERE
+                locate( '%s', detail ) > 0 
+                LIMIT 0,
+                10
+    """ % (page_type, keyword)
+
+    count_sql = """
+            SELECT
+                count(*) 
+            FROM
+                sz_%s_index 
+            WHERE
+                locate( '%s', detail ) > 0 
+    """ % (page_type, keyword)
+    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    data = execute_query(_sql)
+    print(_sql)
+    total_count = execute_query(count_sql)[0]["count(*)"]
+    page_count = math.floor(total_count / 10) if total_count >= 10 else 1
+    other = {
+        "total": total_count,
+        "page": page_count,
+        "current_page": 1,
+        "areas": address_mapping[area],
+        "area_id": "",
+        "price": "",
+        "space": "",
+        "keyword": keyword,
+        "area": area
+    }
+    if page_type == "xiezilou":
+        return templates.TemplateResponse("xiezilou.html", {"request": request, "data": data[:10], "other": other})
+    else:
+        return templates.TemplateResponse("chuzu.html", {"request": request, "data": data[:10], "other": other})
 
 
 # @app.get('/', response_class=HTMLResponse)

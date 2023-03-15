@@ -68,57 +68,6 @@
         <p class="lf">厂房出租 • 产业园区招商 • 企业选址平台</p>
         <ul class="rt">
 
-            <li><a href="http://eju7.fangcms.cn/user/Users/login.html" id="70bd7be5c084dddd5f7d3be4370b9e31"
-                   target="_blank" rel="nofollow">登录</a></li>
-            <script type="text/javascript" src="static/js/tag_user.js"></script><!--!‬‏‪‫‭‪‭‫‬‭‪‫‭‬‪‭‫‪‭‫‏-->
-            <script type="text/javascript">
-                var tag_user_result_json = {
-                    "id": "70bd7be5c084dddd5f7d3be4370b9e31",
-                    "txtid": "fa75c4a0cee7c5bf2c78ed007813e62f",
-                    "txt": "",
-                    "img": "off",
-                    "url": "http:\/\/eju7.fangcms.cn\/user\/Users\/login.html",
-                    "type": "login",
-                    "currentstyle": "",
-                    "root_dir": ""
-                };
-                var url = "http://eju7.fangcms.cn/api/Ajax/check_user/type/login/img/off.html";
-                tag_user(tag_user_result_json, url);
-            </script>
-            <li><a href="http://eju7.fangcms.cn/user/Users/reg.html" id="fecb8791f622bddf4f71fb2240331abf"
-                   target="_blank">注册</a></li>
-            <script type="text/javascript" src="static/js/tag_user.js"></script>
-            <script type="text/javascript">
-                var tag_user_result_json = {
-                    "id": "fecb8791f622bddf4f71fb2240331abf",
-                    "txtid": "9ad803b1796c11e0753a494ca26bd9b7",
-                    "txt": "",
-                    "img": "off",
-                    "url": "http:\/\/eju7.fangcms.cn\/user\/Users\/reg.html",
-                    "type": "reg",
-                    "currentstyle": "",
-                    "root_dir": ""
-                };
-                var url = "http://eju7.fangcms.cn/api/Ajax/check_user/type/reg/img/off.html";
-                tag_user(tag_user_result_json, url);
-            </script>
-            <li><a href="http://eju7.fangcms.cn/user/Users/logout.html" id="9bd5c14f5a69c470745c3d588da587ef">退出</a>
-            </li>
-            <script type="text/javascript" src="static/js/tag_user.js"></script>
-            <script type="text/javascript">
-                var tag_user_result_json = {
-                    "id": "9bd5c14f5a69c470745c3d588da587ef",
-                    "txtid": "9fc8f673311be6cd683eab35017b5c7d",
-                    "txt": "",
-                    "img": "off",
-                    "url": "http:\/\/eju7.fangcms.cn\/user\/Users\/logout.html",
-                    "type": "logout",
-                    "currentstyle": "",
-                    "root_dir": ""
-                };
-                var url = "http://eju7.fangcms.cn/api/Ajax/check_user/type/logout/img/off.html";
-                tag_user(tag_user_result_json, url);
-            </script>
             <li class="club"><a href="http://eju7.fangcms.cn/single/yewuhezuo245.html">业务合作 <i
                     class="icon_arrowico"></i></a>
                 <p class="shorJoin shadow8px" style="display: none;"><i class="triaArrow"></i>
@@ -185,7 +134,7 @@
         </div>
         <div class="zgSearch lf">
             <div class="mode_div" id="cangfcz">
-                <form method="get" action="/" id="form_cangfcz" class="zgSearchForm clearFix">
+                <form method="get" action="/keywords" id="form_cangfcz" class="zgSearchForm clearFix">
                     <div class="searTypeBox">
                         <div class="searchType lf">厂房出租<i class="icon_arrow"></i></div>
                         <div class="searTypeList">
@@ -197,17 +146,22 @@
                     </div>
 
                     <div class="searTxt lf">
-                        <input type="text" name="keywords" placeholder="请输入厂房出租关键词，例如：深圳厂房出租等">
+                        <input type="text" name="keyword" placeholder="请输入厂房出租关键词，例如：深圳厂房出租等">
                     </div>
                     <button type="submit" data-mode="cangfcz" class="icon_serchSub"></button>
-                    <input type="hidden" name="m" value="home"><input type="hidden" name="c" value="Lists"><input
-                        type="hidden" name="a" value="index"><input type="hidden" name="tid" id="tid" value="35"><input
-                        type="hidden" name="_screen" value="1"><input type="hidden" name="regionid" value="0"><input
-                        type="hidden" name="fid" value="0"><input type="hidden" name="achieve" value="0"><input
-                        type="hidden" name="subdomain" value="shenzhen7"></form>
+                    <input type="hidden" name="type" value="changfang">
+<!--                    <input type="hidden" name="c" value="Lists">-->
+<!--                    <input type="hidden" name="a" value="index">-->
+<!--                    <input type="hidden" name="tid" id="tid" value="35">-->
+<!--                    <input type="hidden" name="_screen" value="1">-->
+<!--                    <input type="hidden" name="regionid" value="0">-->
+<!--                    <input type="hidden" name="fid" value="0">-->
+<!--                    <input type="hidden" name="achieve" value="0">-->
+<!--                    <input type="hidden" name="subdomain" value="shenzhen7">-->
+                </form>
             </div>
             <div style="display: none" class="mode_div" id="officecz">
-                <form method="get" action="/" id="form_officecz" class="zgSearchForm clearFix">
+                <form method="get" action="/keywords" id="form_officecz" class="zgSearchForm clearFix">
                     <div class="searTypeBox">
                         <div class="searchType lf">写字楼出租<i class="icon_arrow"></i></div>
                         <div class="searTypeList">
@@ -218,15 +172,20 @@
                         </div>
                     </div>
                     <div class="searTxt lf">
-                        <input type="text" name="keywords" placeholder="请输入写字楼出租关键词，例如：深圳写字楼出租等">
+                        <input type="text" name="keyword" placeholder="请输入写字楼出租关键词，例如：深圳写字楼出租等">
                     </div>
                     <button type="submit" data-mode="officecz" onclick="submitForm(this);"
                             class="icon_serchSub"></button>
-                    <input type="hidden" name="m" value="home"><input type="hidden" name="c" value="Lists"><input
-                        type="hidden" name="a" value="index"><input type="hidden" name="tid" id="tid" value="28"><input
-                        type="hidden" name="_screen" value="1"><input type="hidden" name="regionid" value="0"><input
-                        type="hidden" name="fid" value="0"><input type="hidden" name="achieve" value="0"><input
-                        type="hidden" name="subdomain" value="shenzhen7"></form>
+                    <input type="hidden" name="page_type" value="xiezilou">
+<!--                    <input type="hidden" name="c" value="Lists">-->
+<!--                    <input type="hidden" name="a" value="index">-->
+<!--                    <input type="hidden" name="tid" id="tid" value="28">-->
+<!--                    <input type="hidden" name="_screen" value="1">-->
+<!--                    <input type="hidden" name="regionid" value="0">-->
+<!--                    <input type="hidden" name="fid" value="0">-->
+<!--                    <input type="hidden" name="achieve" value="0">-->
+<!--                    <input type="hidden" name="subdomain" value="shenzhen7">-->
+                </form>
             </div>
         </div>
         <div class="Hotline rt clearFix">

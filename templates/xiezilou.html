@@ -96,7 +96,7 @@
         </script>
         <div class="mr_search FR marginT5">
             <div class="mode_div" id="cangfcz">
-                <form method="get" action="/" id="form_cangfcz" class="zform">
+                <form method="get" action="/keywords" id="form_cangfcz" class="zform">
                     <div class="select fl" onMouseOver="xiala('s_xlmenu_cangfcz',true)"
                          onMouseOut="xiala('s_xlmenu_cangfcz',false)">
                         <div class="s_xiala">
@@ -110,24 +110,19 @@
                         </div>
                     </div>
                     <div class="text fl">
-                        <input name="keywords" type="text" placeholder="请输入厂房出租关键词，例如：深圳厂房出租等"/>
+                        <input name="keyword" type="text" placeholder="{{ other.keyword }}"/>
                     </div>
                     <div class="searbut fr" style="height:32px; overflow:hidden;">
                         <input type="submit" data-mode="cangfcz" class="searanniu" value="搜索"/>
                     </div>
-                    <input type="hidden" name="m" value="home"/><input type="hidden" name="c" value="Lists"/><input
-                        type="hidden" name="a" value="index"/><input type="hidden" name="tid" id="tid"
-                                                                     value="35"/><input type="hidden" name="_screen"
-                                                                                        value="1"/><input type="hidden"
-                                                                                                          name="subdomain"
-                                                                                                          value="shenzhen7"/>
+                     <input type="hidden" name="page_type" value="changfang">
                 </form>
 
             </div>
 
 
             <div style="display: none" class="mode_div" id="officecz">
-                <form method="get" action="/" id="form_officecz" class="zform">
+                <form method="get" action="/keywords" id="form_officecz" class="zform">
                     <div class="select fl" onMouseOver="xiala('s_xlmenu_officecz',true)"
                          onMouseOut="xiala('s_xlmenu_officecz',false)">
                         <div class="s_xiala">
@@ -141,17 +136,12 @@
                         </div>
                     </div>
                     <div class="text fl">
-                        <input name="keywords" type="text" placeholder="请输入写字楼出租关键词，例如：深圳写字楼出租等"/>
+                        <input name="keyword" type="text" placeholder="{{ other.keyword }}"/>
                     </div>
                     <div class="searbut fr" style="height:32px; overflow:hidden;">
                         <input type="submit" data-mode="officecz" class="searanniu" value="搜索"/>
                     </div>
-                    <input type="hidden" name="m" value="home"/><input type="hidden" name="c" value="Lists"/><input
-                        type="hidden" name="a" value="index"/><input type="hidden" name="tid" id="tid"
-                                                                     value="28"/><input type="hidden" name="_screen"
-                                                                                        value="1"/><input type="hidden"
-                                                                                                          name="subdomain"
-                                                                                                          value="shenzhen7"/>
+                    <input type="hidden" name="page_type" value="xiezilou">
                 </form>
 
             </div>
@@ -212,16 +202,16 @@
         <dt>区域：</dt>
         <dd>
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?price={{ other.price }}&space={{ other.space }}'
+               data-url='/xiezilou?price={{ other.price }}&space={{ other.space }}&keyword={{ other.keyword }}'
                class="c_d42">不限</a>
             {% for area in other.areas %}
             {% if area == other.area_id %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ area }}&price={{ other.price }}&space={{ other.space }}'
+               data-url='/xiezilou?area_id={{ area }}&price={{ other.price }}&space={{ other.space }}&keyword={{ other.keyword }}'
                class="c_d42">{{ area }}</a>
             {% else %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ area }}&price={{ other.price }}&space={{ other.space }}'
+               data-url='/xiezilou?area_id={{ area }}&price={{ other.price }}&space={{ other.space }}&keyword={{ other.keyword }}'
                class="">{{ area }}</a>
             {% endif %}
             {% endfor %}
@@ -231,18 +221,18 @@
         <dt>租金：</dt>
         <dd>
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ other.area_id }}&space={{ other.space }}&strc={{ strc }}&floor={{ other.floor }}'
+               data-url='/xiezilou?area_id={{ other.area_id }}&space={{ other.space }}&strc={{ strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="c_d42">不限</a>
             {% for p, p_context in [("0,10000", "10000元/月以下"), ("10000,30000", "10000-30000元/月"), ("30000,50000",
             "30000-50000元/月"), ("50000,70000",
             "50000-70000元/月"), ("70000,100000", "70000-100000元/月"), ("100000, 999999", "100000元/月以上")] %}
             {% if p == other.price %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ p }}&space={{ other.space }}'
+               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ p }}&space={{ other.space }}&keyword={{ other.keyword }}'
                class="c_d42">{{ p_context }}</a>
             {% else %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ p }}&space={{ other.space }}'
+               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ p }}&space={{ other.space }}&keyword={{ other.keyword }}'
                class="">{{ p_context }}</a>
             {% endif %}
             {% endfor %}
@@ -252,7 +242,7 @@
         <dt>面积：</dt>
         <dd>
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ other.price }}'
+               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ other.price }}&keyword={{ other.keyword }}'
                class="c_d42">不限</a>
             {% for s, s_context in [("0,100", "100平米以下"), ("100,200", "100-200平米"), ("200,300", "200-300平米"),
             ("300,500",
@@ -260,11 +250,11 @@
             ("2000,99999", "2000平米以上") ] %}
             {% if s == other.space %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ other.price }}&space={{ s }}'
+               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ other.price }}&space={{ s }}&keyword={{ other.keyword }}'
                class="c_d42">{{ s_context }}</a>
             {% else %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ other.price }}&space={{ s }}'
+               data-url='/xiezilou?area_id={{ other.area_id }}&price={{ other.price }}&space={{ s }}&keyword={{ other.keyword }}'
                class="">{{ s_context }}</a>
             {% endif %}
             {% endfor %}
@@ -594,12 +584,12 @@
                 <nav aria-label="...">
                     <ul class="pager">
                         {% if (other.current_page - 1) >= 1 %}
-                        <li><a href="/xiezilou?page={{ other.current_page - 1 }}&area_id={{ other.area_id }}">上一页</a>
+                        <li><a href="/xiezilou?page={{ other.current_page - 1 }}area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&keyword={{ other.keyword }}">上一页</a>
                         </li>
                         {% endif %}
                         <li><a>{{ other.current_page }}</a></li>
                         {% if other.current_page + 1 <= other.page %}
-                        <li><a href="/xiezilou?page={{ other.current_page + 1 }}&area_id={{ other.area_id }}">下一页</a>
+                        <li><a href="/xiezilou?page={{ other.current_page + 1 }}area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&keyword={{ other.keyword }}">下一页</a>
                         </li>
                         {% endif %}
                     </ul>
