@@ -1,0 +1,122 @@
+.lp-map-s11 {
+    width: 870px;
+    height: 340px;
+    overflow: hidden;
+}
+.lp-map-s12 {
+    width: 300px;
+    height: 340px;
+    overflow: hidden;
+    padding-left: 30px;
+}
+.mt10 {
+    margin-top: 10px;
+}
+
+.lp-map-a-1, .lp-map-a-2, .lp-map-a-3, .lp-map-a-4 {
+    color: #ee4433;
+}
+.lp-map-1 {
+    background-position: 0 -628px;
+}
+.lp-map-a-1 {
+    background-position: -91px -628px;
+}
+.lp-map-2 {
+    background-position: 0 -714px;
+}
+.lp-map-a-2 {
+    background-position: -92px -714px;
+}
+.lp-map-3 {
+    background-position: 0 -800px;
+}
+.lp-map-a-3 {
+    background-position: -92px -800px;
+}
+.lp-map-4 {
+    background-position: 0 -898px;
+}
+.lp-map-a-4 {
+    background-position: -91px -898px;
+}
+.lp-map-1, .lp-map-2, .lp-map-3 {
+    margin-right: 17px;
+}
+.lp-map-s {
+    display: block;
+    width: 62px;
+    padding-top: 66px;
+    text-align: center;
+}
+.icons {
+    background-image: url(../images/surroundings/all.png);
+    background-repeat: no-repeat;
+}
+
+.lpm-map-recond {
+    height: 30px;
+    line-height: 30px;
+    background: #f4f4f4;
+    font-size: 12px;
+    text-indent: 20px;
+}
+.mt20 {
+    margin-top: 20px;
+}
+.lp-map-tab {
+    height: 202px;
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+}
+.lp-map-s19 li {
+    height: 18px;
+    width: 280px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+.lp-map-s20 {
+    width: 17px;
+    height: 20px;
+    display: block;
+    background: red;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-position: 0 -1010px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    margin-right: 10px;
+    text-align: center;background: red;
+}
+.lp-map-s22 {
+    height: 20px;
+    line-height: 20px;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+.lp-map-s21 {
+    float: right;
+    margin-right: 3px;
+    color: #999;
+}
+.divScrollBar {
+    background-color: #ddd;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: .5;
+    filter: Alpha(opacity=50);
+    z-index: 11;
+}
+.divScrollBar div {
+    background-color: #aaa;
+    position: absolute;
+    left: 0;
+    top: 0;
+}

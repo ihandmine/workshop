@@ -10,8 +10,6 @@ from dbhandler import init_connection, execute_insert
 def data_format_save(data):
     init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
     cols, values = zip(*data.items())
-    table = "sz_changfang_index"
-    table = "hz_changfang_index"
     table = "sz_xiezilou_index"
     sql = "INSERT INTO `{}` ({}) VALUES ({})".format(
         table,
@@ -40,6 +38,7 @@ def parse_html(html: str) -> list:
     for left_fen in parser.xpath('//*[@id="list-content"]/a'):
         _item = {
             'detail': left_fen.xpath('.//dt[@class="item-title"]/@title').get(),
+            'item_id': ''.join(re.findall(r"/(\d+)-\d+.html", left_fen.xpath('.//@href').get())),
             'title': left_fen.xpath(".//dl/dd[1]/span[1]/text()").get(),
             'address': left_fen.xpath('.//dl/dd[1]/span[2]/text()').get(),
             'img_url': left_fen.xpath('.//img/@src').get(),

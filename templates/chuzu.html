@@ -20,6 +20,7 @@
     <link href="static/css/szlist.css" rel="stylesheet" type="text/css"/>
     <link href="static/css/szheader.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="static/css/newcfpic.css">
+    <link rel="stylesheet" href="static/css/newpic.css">
 </head>
 <body>
 
@@ -55,7 +56,8 @@
     <div class="FL marginT17"><a href="http://eju7.qiudei.com"><img src="static/img/logo.jpg" alt="房产租售网"></a></div>
     <div class="FL LH24 marginL20" style="margin-top:37px;">
         <div class="m_city fl" style="position:relative;">
-            <div id="change_city"><font color="blue" style="font-size:18px;"><strong class="F19 cred">{{ other.area }}</strong></font>
+            <div id="change_city"><font color="blue" style="font-size:18px;"><strong class="F19 cred">{{ other.area
+                }}</strong></font>
                 <a class="F12 cGray" href="javascript:void(0);" onMouseOver="javascript:ChangeCity(1);">[切换城市]</a></div>
             <div class="qhcity_box" id="popwindow" style="display:none;z-index: 20;">
                 <div class="qhcity_close" onclick="javascript:ChangeCity();"><img src="static/img/close.gif" alt="关闭"
@@ -63,9 +65,12 @@
                 <div class="qhcity_hot" style="line-height:20px; padding-top:5px; padding-bottom:5px;">
                     <span>当前城市：</span> <a href="">{{ other.area }}</a></div>
                 <div class="qhcity_area" style="line-height:20px; padding-top:5px; padding-bottom:5px;"> 广东：
-                    <a href="//guangzhou7.fangcms.cn/" title="东莞">东莞</a>
-                    <a href="//shenzhen7.fangcms.cn/" title="深圳">深圳</a>
-                    <a href="//shenzhen7.fangcms.cn/" title="惠州">惠州</a>
+                    <a href="/chuzu?price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}&area=东莞"
+                       title="东莞">东莞</a>
+                    <a href="/chuzu?price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}&area=深圳"
+                       title="深圳">深圳</a>
+                    <a href="/chuzu?price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}&area=惠州"
+                       title="惠州">惠州</a>
                 </div>
             </div>
         </div>
@@ -223,7 +228,8 @@
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
                data-url='/chuzu?area_id={{ other.area_id }}&space={{ other.space }}&strc={{ strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="c_d42">不限</a>
-            {% for p, p_context in [("0,10", "10元/平米/月以下"), ("10,15", "10-15元/平米/月"), ("15,20", "15-20元/平米/月"), ("20,25",
+            {% for p, p_context in [("0,10", "10元/平米/月以下"), ("10,15", "10-15元/平米/月"), ("15,20", "15-20元/平米/月"),
+            ("20,25",
             "20-25元/平米/月"), ("25,99", "25元/平米/月以上")] %}
             {% if p == other.price %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
@@ -524,49 +530,53 @@
                 <div class="list_dtit dtit_n fl"><span>共有</span><span class="search_count cE03"
                                                                       id="search_count"></span><span>套符合要求的厂房</span>
                 </div>
-                <div class="list_qieh fr"><a style="line-height: 42px;font-size: 12px;color: #4B4B4B;">排列方式：</a>
-                    <div class="lq_qh">
-                        <a href="javascript:;" onClick='ey_625c075d9176519a0a568ed439fda776(this);'
-                           data-url='/?m=home&c=Lists&a=index&tid=35&_screen=1' class=" hover "><span>默认排序</span></a> <a
-                            href="javascript:;" onClick='ey_625c075d9176519a0a568ed439fda776(this);'
-                            data-url='/?m=home&c=Lists&a=index&tid=35&_screen=1&orderby=cfzj&orderway=asc'
-                            class="sort_jg  "><span>租金</span></a>
-                        <script type="text/javascript">
-                            function ey_625c075d9176519a0a568ed439fda776(obj) {
-                                var dataurl = obj.getAttribute('data-url'); //obj.attributes['data-url'].value;
-                                if (dataurl) {
-                                    window.location.href = dataurl;
-                                } else {
-                                    console.log('内部错误，data-url 没有赋值！');
-                                }
-                            }
+<!--                <div class="list_qieh fr"><a style="line-height: 42px;font-size: 12px;color: #4B4B4B;">排列方式：</a>-->
+<!--                    <div class="lq_qh">-->
+<!--                        <a href="javascript:;" onClick='ey_625c075d9176519a0a568ed439fda776(this);'-->
+<!--                           data-url='/?m=home&c=Lists&a=index&tid=35&_screen=1' class=" hover "><span>默认排序</span></a>-->
+<!--                        <a href="javascript:;" onClick='ey_625c075d9176519a0a568ed439fda776(this);'-->
+<!--                           data-url='/?m=home&c=Lists&a=index&tid=35&_screen=1&orderby=cfzj&orderway=asc'-->
+<!--                           class="sort_jg  "><span>租金</span></a>-->
+<!--                        <script type="text/javascript">-->
+<!--                            function ey_625c075d9176519a0a568ed439fda776(obj) {-->
+<!--                                var dataurl = obj.getAttribute('data-url'); //obj.attributes['data-url'].value;-->
+<!--                                if (dataurl) {-->
+<!--                                    window.location.href = dataurl;-->
+<!--                                } else {-->
+<!--                                    console.log('内部错误，data-url 没有赋值！');-->
+<!--                                }-->
+<!--                            }-->
 
-                            function ey_43d32619d627575867f213d215186353(obj) {
-                                var index = obj.selectedIndex
-                                var dataurl = obj.options[index].attributes['data-url'].value;
-                                if (dataurl) {
-                                    window.location.href = dataurl;
-                                } else {
-                                    console.log('内部错误，data-url 没有赋值！');
-                                }
-                            }
-                        </script>
-                    </div>
-                </div>
+<!--                            function ey_43d32619d627575867f213d215186353(obj) {-->
+<!--                                var index = obj.selectedIndex-->
+<!--                                var dataurl = obj.options[index].attributes['data-url'].value;-->
+<!--                                if (dataurl) {-->
+<!--                                    window.location.href = dataurl;-->
+<!--                                } else {-->
+<!--                                    console.log('内部错误，data-url 没有赋值！');-->
+<!--                                }-->
+<!--                            }-->
+<!--                        </script>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <div class="cl"></div>
             </div>
             <div class="m12 lp_lb">
                 <ul>
                     {% for item in data %}
                     <li id="factory0">
-                        <div class="l_pt fl"><a class="l_pta fl"
-                                                href="http://shenzhen7.fangcms.cn/cangkcz/cangku/169.html"
-                                                target="_blank" title="{{ item.title }}"><img alt="{{ item.title }}"
-                                                                                              src="{{ item.img_url }}"
-                                                                                              acv="{{ item.img_url }}"
-                                                                                              onerror="javascript:this.src=''"/></a>
+                        <div class="l_pt fl">
+                            <a class="l_pta fl"
+                               href="/item?item_id={{ item.item_id }}"
+                               target="_blank" title="{{ item.title }}">
+                                <div class="xzlcss-img-wrapper"><img
+                                        onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
+                                        src="{{ item.img_url }}">
+                                    <div class="xzlcss-img-tag-list">{{ item.address }}</div>
+                                </div>
+                            </a>
                             <div class="l_ptxt fl"><a class="lp_tit"
-                                                      href="http://shenzhen7.fangcms.cn/cangkcz/cangku/169.html"
+                                                      href="/item?item_id={{ item.item_id }}"
                                                       target="_blank" title="{{ item.title }}" style=" ">
                                 <h3 style=" ">{{ item.title }}</h3>
                             </a>
@@ -592,7 +602,7 @@
                             {% endif %}
                             <p><span>面积：<span class="f16">{{ item.area }}</span><font
                                     style="color:#e03b36">平米</font></span></p>
-                            <a class="r_ckxq" href="http://shenzhen7.fangcms.cn/cangkcz/cangku/169.html"
+                            <a class="r_ckxq" href="/item?item_id={{ item.item_id }}"
                                target="_blank">查看详情</a></div>
                         <div class="cl"></div>
                     </li>
@@ -617,11 +627,15 @@
                 <nav aria-label="...">
                     <ul class="pager">
                         {% if (other.current_page - 1) >= 1 %}
-                        <li><a href="/chuzu?page={{ other.current_page - 1 }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}">上一页</a></li>
+                        <li>
+                            <a href="/chuzu?page={{ other.current_page - 1 }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}">上一页</a>
+                        </li>
                         {% endif %}
                         <li><a>{{ other.current_page }}</a></li>
                         {% if other.current_page + 1 <= other.page %}
-                        <li><a href="/chuzu?page={{ other.current_page + 1 }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}">下一页</a></li>
+                        <li>
+                            <a href="/chuzu?page={{ other.current_page + 1 }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}">下一页</a>
+                        </li>
                         {% endif %}
                     </ul>
                 </nav>

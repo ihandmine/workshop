@@ -20,6 +20,7 @@
     <link href="/static/css/szlist.css" rel="stylesheet" type="text/css"/>
     <link href="/static/css/szheader.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/static/css/newcfpic.css">
+    <link rel="stylesheet" href="static/css/newpic.css">
 </head>
 <body>
 
@@ -115,7 +116,7 @@
                     <div class="searbut fr" style="height:32px; overflow:hidden;">
                         <input type="submit" data-mode="cangfcz" class="searanniu" value="搜索"/>
                     </div>
-                     <input type="hidden" name="page_type" value="changfang">
+                    <input type="hidden" name="page_type" value="changfang">
                 </form>
 
             </div>
@@ -361,7 +362,7 @@
                 <input type="hidden" name="__token__fa6171743e16b8a2b2701eece79fd448"
                        id="fa6171743e16b8a2b2701eece79fd448" value=""/>
                 <!--<script type="text/javascript" src="/public/static/common/js/jquery.min.js?v=v3.9.0"></script>-->
-                <script type="text/javascript" src="/public/plugins/layer-v3.1.0/layer.js?v=v3.9.0"></script>
+                <script type="text/javascript" src="/static/jslayer.js?v=v3.9.0"></script>
                 <script type="text/javascript">
                     function ffa6171743e16b8a2b2701eece79fd448() {
 
@@ -490,48 +491,52 @@
                 <div class="list_dtit dtit_n fl"><span>共有</span><span class="search_count cE03"
                                                                       id="search_count"></span><span>套符合要求的写字楼</span>
                 </div>
-                <div class="list_qieh fr"><a style="line-height: 42px;font-size: 12px;color: #4B4B4B;">排列方式：</a>
-                    <div class="lq_qh">
+<!--                <div class="list_qieh fr"><a style="line-height: 42px;font-size: 12px;color: #4B4B4B;">排列方式：</a>-->
+<!--                    <div class="lq_qh">-->
 
-                        <a href="javascript:;" onClick='ey_625c075d9176519a0a568ed439fda776(this);'
-                           data-url='/?m=home&c=Lists&a=index&tid=28&_screen=1' class=" hover "><span>默认排序</span></a>
-                        <a href="javascript:;" onClick='ey_625c075d9176519a0a568ed439fda776(this);'
-                           data-url='/?m=home&c=Lists&a=index&tid=28&_screen=1&orderby=total_price&orderway=asc'
-                           class="sort_jg  "><span>租金</span></a>
-                        <script type="text/javascript">
-                            function ey_625c075d9176519a0a568ed439fda776(obj) {
-                                var dataurl = obj.getAttribute('data-url'); //obj.attributes['data-url'].value;
-                                if (dataurl) {
-                                    window.location.href = dataurl;
-                                } else {
-                                    console.log('内部错误，data-url 没有赋值！');
-                                }
-                            }
+<!--                        <a href="javascript:;" onClick='ey_625c075d9176519a0a568ed439fda776(this);'-->
+<!--                           data-url='/?m=home&c=Lists&a=index&tid=28&_screen=1' class=" hover "><span>默认排序</span></a>-->
+<!--                        <a href="javascript:;" onClick='ey_625c075d9176519a0a568ed439fda776(this);'-->
+<!--                           data-url='/?m=home&c=Lists&a=index&tid=28&_screen=1&orderby=total_price&orderway=asc'-->
+<!--                           class="sort_jg  "><span>租金</span></a>-->
+<!--                        <script type="text/javascript">-->
+<!--                            function ey_625c075d9176519a0a568ed439fda776(obj) {-->
+<!--                                var dataurl = obj.getAttribute('data-url'); //obj.attributes['data-url'].value;-->
+<!--                                if (dataurl) {-->
+<!--                                    window.location.href = dataurl;-->
+<!--                                } else {-->
+<!--                                    console.log('内部错误，data-url 没有赋值！');-->
+<!--                                }-->
+<!--                            }-->
 
-                            function ey_43d32619d627575867f213d215186353(obj) {
-                                var index = obj.selectedIndex
-                                var dataurl = obj.options[index].attributes['data-url'].value;
-                                if (dataurl) {
-                                    window.location.href = dataurl;
-                                } else {
-                                    console.log('内部错误，data-url 没有赋值！');
-                                }
-                            }
-                        </script>
-                    </div>
-                </div>
+<!--                            function ey_43d32619d627575867f213d215186353(obj) {-->
+<!--                                var index = obj.selectedIndex-->
+<!--                                var dataurl = obj.options[index].attributes['data-url'].value;-->
+<!--                                if (dataurl) {-->
+<!--                                    window.location.href = dataurl;-->
+<!--                                } else {-->
+<!--                                    console.log('内部错误，data-url 没有赋值！');-->
+<!--                                }-->
+<!--                            }-->
+<!--                        </script>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <div class="cl"></div>
             </div>
             <div class="m12 lp_lb">
                 <ul>
                     {% for item in data %}
                     <li id="factory0">
-                        <div class="l_pt fl"><a class="l_pta fl"
-                                                href="http://shenzhen7.fangcms.cn/cangkcz/cangku/169.html"
-                                                target="_blank" title="{{ item.title }}"><img alt="{{ item.title }}"
-                                                                                              src="{{ item.img_url }}"
-                                                                                              acv="{{ item.img_url }}"
-                                                                                              onerror="javascript:this.src=''"/></a>
+                        <div class="l_pt fl">
+                            <a class="l_pta fl"
+                               href="http://shenzhen7.fangcms.cn/cangkcz/cangku/169.html"
+                               target="_blank" title="{{ item.title }}">
+                                <div class="xzlcss-img-wrapper"><img
+                                        onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
+                                        src="{{ item.img_url }}">
+                                    <div class="xzlcss-img-tag-list">{{ item.address }}</div>
+                                </div>
+                            </a>
                             <div class="l_ptxt fl"><a class="lp_tit"
                                                       href="http://shenzhen7.fangcms.cn/cangkcz/cangku/169.html"
                                                       target="_blank" title="{{ item.title }}" style=" ">
@@ -584,12 +589,14 @@
                 <nav aria-label="...">
                     <ul class="pager">
                         {% if (other.current_page - 1) >= 1 %}
-                        <li><a href="/xiezilou?page={{ other.current_page - 1 }}area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&keyword={{ other.keyword }}">上一页</a>
+                        <li>
+                            <a href="/xiezilou?page={{ other.current_page - 1 }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&keyword={{ other.keyword }}">上一页</a>
                         </li>
                         {% endif %}
                         <li><a>{{ other.current_page }}</a></li>
                         {% if other.current_page + 1 <= other.page %}
-                        <li><a href="/xiezilou?page={{ other.current_page + 1 }}area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&keyword={{ other.keyword }}">下一页</a>
+                        <li>
+                            <a href="/xiezilou?page={{ other.current_page + 1 }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&keyword={{ other.keyword }}">下一页</a>
                         </li>
                         {% endif %}
                     </ul>

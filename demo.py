@@ -76,11 +76,12 @@ async def index(request: Request):
 @app.get("/chuzu")
 async def index(request: Request, page=Query(1), area=Query("深圳"), area_id=Query(""), price=Query(""), space=Query(""),
                 strc=Query(''), floor=Query(""), keyword=Query("")):
+    table_prefix = area == "深圳" and "sz" or area == "东莞" and "dg" or area == "惠州" and "hz"
     if page is None or page == 1:
-        _sql = "select * from sz_changfang_index limit 0, 10"
+        _sql = "select * from %s_changfang_index limit 0, 10" % table_prefix
     else:
-        _sql = "select * from sz_changfang_index limit %s, 10" % (int(page) * 10)
-    count_sql = "select count(*) from sz_changfang_index"
+        _sql = "select * from %s_changfang_index limit %s, 10" % (table_prefix, int(page) * 10)
+    count_sql = "select count(*) from %s_changfang_index" % table_prefix
     if area_id or price or space or strc or floor or keyword:
         price_start, price_end = 0, 100
         space_start, space_end = 0, 99999
@@ -92,7 +93,7 @@ async def index(request: Request, page=Query(1), area=Query("深圳"), area_id=Q
             SELECT
                 * 
             FROM
-                sz_changfang_index 
+                %s_changfang_index 
             WHERE
                 locate( '%s', address ) > 0 
                 AND locate( '%s', detail ) > 0 
@@ -104,12 +105,12 @@ async def index(request: Request, page=Query(1), area=Query("深圳"), area_id=Q
                 LIMIT 0,
                 10
         """ % (
-            area_id, keyword, strc, floor, price_start, price_end, space_start, space_end)
+            table_prefix, area_id, keyword, strc, floor, price_start, price_end, space_start, space_end)
         count_sql = """
             SELECT
                 count(*) 
             FROM
-                sz_changfang_index 
+                %s_changfang_index 
             WHERE
                 locate( '%s', address ) > 0 
                 AND locate( '%s', detail ) > 0 
@@ -119,7 +120,7 @@ async def index(request: Request, page=Query(1), area=Query("深圳"), area_id=Q
                 AND price_month <= % s AND area >=% s 
                 AND area <= %s
         """ % (
-            area_id, keyword, strc, floor, price_start, price_end, space_start, space_end)
+            table_prefix, area_id, keyword, strc, floor, price_start, price_end, space_start, space_end)
     init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
     data = execute_query(_sql)
     print(_sql)
@@ -142,7 +143,7 @@ async def index(request: Request, page=Query(1), area=Query("深圳"), area_id=Q
 
 
 @app.get("/xiezilou")
-async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query(""), price=Query(""), space=Query(""),
+async def index(request: Request, page=Query(1), area=Query("深圳"), area_id=Query(""), price=Query(""), space=Query(""),
                 keyword=Query("")):
     if page is None or page == 1:
         _sql = "select * from sz_xiezilou_index limit 0, 10"
@@ -204,7 +205,7 @@ async def index(request: Request, page=Query(1), area=Query("sz"), area_id=Query
 
 
 @app.get("/keywords")
-async def index(request: Request, keyword=Query(""), page_type=Query("changfang"), area=Query('sz')):
+async def index(request: Request, keyword=Query(""), page_type=Query("changfang"), area=Query('深圳')):
     _sql = """
             SELECT
                 * 
@@ -244,6 +245,31 @@ async def index(request: Request, keyword=Query(""), page_type=Query("changfang"
         return templates.TemplateResponse("xiezilou.html", {"request": request, "data": data[:10], "other": other})
     else:
         return templates.TemplateResponse("chuzu.html", {"request": request, "data": data[:10], "other": other})
+
+
+@app.get("/item")
+async def index(request: Request, item_id=Query("")):
+    _sql = """
+        select * from sz_changfang_detail where item_id='%s'
+    """ % item_id
+    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    data = execute_query(_sql)[0]
+    data['images'] = data['img_url'].split(',')
+
+    _sql_recommand = """
+            SELECT
+                * 
+            FROM
+                sz_changfang_index 
+            WHERE
+                locate( '%s', address) > 0 
+                LIMIT 5
+    """ % (data['address'])
+    data_recommand = execute_query(_sql_recommand)
+    other = {
+        "recommand": data_recommand
+    }
+    return templates.TemplateResponse("detail.html", {"request": request, "data": data, "other": other})
 
 
 # @app.get('/', response_class=HTMLResponse)

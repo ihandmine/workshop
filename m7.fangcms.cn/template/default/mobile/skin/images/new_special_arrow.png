@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+    <link rel="icon" href="/NewStyles/images/favicon.ico">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="applicable-device" content="mobile">
+    <link rel="stylesheet" href="/NewStyles/css/swiper-4.3.5.min.css">
+    <link rel="stylesheet" href="/NewStyles/css/reset.css">
+    <link rel="stylesheet" href="/NewStyles/css/base.css">
+    <script src="/NewStyles/js/rem.js"></script>
+</head>
+<body>
+<style>
+    .content{
+        position: fixed;
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+    .content .pic{
+        text-align: center;
+    }
+    .content .pic img{
+        width: 5.06rem;
+        height: 2.78rem;
+    }
+    .content .tit{
+        font-size:0.3rem;
+        font-weight:400;
+        color:#333;
+        line-height:0.32rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .content .txt{
+        font-size:0.24rem;
+        font-weight:400;
+        color:#999;
+        line-height:0.32rem;
+        text-align: center;
+        margin-top:0.36rem;
+        margin-bottom: 2.16rem;
+    }
+    .content .btn{
+        display: block;
+        width:2.60rem;
+        height: 0.68rem;
+        line-height: 0.68rem;
+        text-align: center;
+        font-size:0.3rem;
+        background-color: #dd2534;
+        color: #fff;
+        -webkit-border-radius: 0.04rem;
+        -moz-border-radius: 0.04rem;
+        border-radius: 0.04rem;
+        margin: 0 auto;
+    }
+    .content .btn.back{
+        border: 1px solid #DD2534;
+        background-color: transparent;
+        color: #333;
+        margin-bottom: 0.62rem;
+    }
+
+</style>
+
+
+<div class="content">
+    <div  class="pic">
+        <img src="/NewStyles/images/404.png" alt="404">
+    </div>
+    <p class="tit">您访问的页面可能已被删除或暂不可用</p>
+    <p class="txt">您可以点击以下按钮继续访问</p>
+    <a href="javascript:void(0);" class="btn back">返回上一页</a>
+    <a href="/" class="btn">返回首页</a>
+</div>
+    <script src="/NewStyles/js/zepto.js"></script>
+    <script src="/NewStyles/js/touch.js"></script>
+    <script src="/NewStyles/js/base.js"></script>
+</body>
+</html>

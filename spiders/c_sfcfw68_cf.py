@@ -1,4 +1,5 @@
 import requests
+import re
 
 from anti_header import Header
 from parsel import Selector
@@ -9,8 +10,8 @@ from dbhandler import init_connection, execute_insert
 def data_format_save(data):
     init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
     cols, values = zip(*data.items())
-    table = "sz_changfang_index"
-    table = "hz_changfang_index"
+    # table = "sz_changfang_index"
+    # table = "hz_changfang_index"
     table = "dg_changfang_index"
     sql = "INSERT INTO `{}` ({}) VALUES ({})".format(
         table,
@@ -21,7 +22,7 @@ def data_format_save(data):
 
 
 def get_html() -> str:
-    base_url: str = "http://www.sfcfw68.com/dg/index_2.html"
+    base_url: str = "http://www.sfcfw68.com/sz/index_2.html"
     headers: dict = Header(browser='chrome', connection=True).base.to_unicode_dict()
     response = requests.get(base_url, headers=headers)
     # print(response.content.decode('utf-8'))
@@ -39,6 +40,7 @@ def parse_html(html: str) -> list:
         string_node_sf = left_fen.xpath('.//div[@class="listLeft_fen_word_3"]/text()').get().split("\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0")
         _item = {
             'title': left_fen.xpath('.//div[@class="listLeft_fen_word_1"]/a/text()').get(),
+            'item_id': ''.join(re.findall(r"\d+", left_fen.xpath('.//div[@class="listLeft_fen_pic"]/a/@href').get())),
             'detail': left_fen.xpath(".//div[@class='listLeft_fen_word_2']/text()").get(),
             'address': left_fen.xpath('.//div[@class="listLeft_fen_zi"]//b/text()').get(),
             'img_url': left_fen.xpath('.//div[@class="listLeft_fen_pic"]//img/@src').get(),
