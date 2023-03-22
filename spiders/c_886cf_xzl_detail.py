@@ -1,16 +1,14 @@
 import requests
-import re
-
 from anti_header import Header
 from parsel import Selector
 
-from dbhandler import init_connection, execute_insert
+from dbhandler import init_connection, execute_insert, execute_query
 
 
 def data_format_save(data):
     init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
     cols, values = zip(*data.items())
-    table = "sz_xiezilou_index"
+    table = "sz_xiezilou_detail"
     sql = "INSERT INTO `{}` ({}) VALUES ({})".format(
         table,
         ','.join(cols),
@@ -19,8 +17,8 @@ def data_format_save(data):
     execute_insert(sql, values)
 
 
-def get_html() -> str:
-    base_url: str = "http://xzl.886cf.com/xzllist-sz/?page=2"
+def get_html(item: dict=None) -> str:
+    base_url: str = item['item_url']
     headers: dict = Header(browser='chrome', connection=True, platform='windows').base.to_unicode_dict()
     response = requests.get(base_url, headers=headers)
     # print(response.content.decode('utf-8'))
@@ -29,32 +27,36 @@ def get_html() -> str:
     return response.text
 
 
-def parse_html(html: str) -> list:
+def parse_html(html: str, item: dict) -> list:
     parser: Selector = Selector(html)
     """
     parse response content to dict type
     """
     collects = []
-    for left_fen in parser.xpath('//*[@id="list-content"]/a'):
-        _item = {
-            'detail': left_fen.xpath('.//dt[@class="item-title"]/@title').get(),
-            'item_id': ''.join(re.findall(r"/(\d+)-\d+.html", left_fen.xpath('.//@href').get())),
-            'title': left_fen.xpath(".//dl/dd[1]/span[1]/text()").get(),
-            'address': left_fen.xpath('.//dl/dd[1]/span[2]/text()').get(),
-            'img_url': left_fen.xpath('.//img/@src').get(),
-            'item_url': left_fen.xpath('.//@href').get(),
-            'structure': "",
-            'floor': "",
-            # 'price_day': "",
-            'area': ''.join(re.findall(r"\d+", left_fen.xpath('.//dd[@class="mianji"]/span/text()').get())) or 0
-        }
-        price_month = ''.join(re.findall(r"\d+", left_fen.xpath('.//span[@class="price-b"]/text()').get())) or 0
-        if "面议" in price_month:
-            price_month = 0
-        _item['price_month'] = price_month
-        collects.append(_item)
-        print(_item)
-        data_format_save(_item)
+    _item = {
+        'index_id': item['auto_id'],
+        'item_id': item['item_id'],
+        "title": item['title'],
+        "address": item['address'],
+        "structure": item['structure'],
+        "floor": item['floor'],
+        "price_day": item['price_day'],
+        "price_month": item['price_month'],
+        "area": item['area'],
+        "other_info": parser.xpath('//td/text()').get(),
+        "detail": '\n'.join([li.xpath('./span[1]/text()').get() + li.xpath('./span[2]/text()').get() for li in parser.xpath('//ul[@class="miaoshu-ul"]/li')]),
+        "img_url": ','.join(parser.xpath('//div[@id="bz_photo"]/img/@src').extract()),
+        "zhuangxiu": parser.xpath('//div[@class="info-box clearfix"][2]/dl[1]/dt/text()').get(),
+        "mianzu": parser.xpath('//div[@class="info-box clearfix"][2]/dl[2]/dt/text()').get(),
+        "loupan": parser.xpath('//a[@class="a1"]/text()').get(),
+        "zhuce": parser.xpath('//span[@class="colorGreen note"]/text()').get(),
+        "fenge": parser.xpath('//span[@class="colorRed note"][1]/text()').get(),
+        "shangwuqu": parser.xpath('//span[@class="colorBlue note"]/text()').get(),
+        "chewei": parser.xpath('//span[@class="colorRed note"][2]/text()').get(),
+    }
+    collects.append(_item)
+    print(_item)
+    data_format_save(_item)
     return collects
 
 
@@ -85,7 +87,13 @@ def unit_test():
     print(response.status_code)
 
 
+def run():
+    _sql = "select * from sz_xiezilou_index"
+    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    data = execute_query(_sql)
+    for item in data:
+        parse_html(get_html(item=item), item)
+
+
 if __name__ == '__main__':
-    # unit_test()
-    # get_html()
-    parse_html(get_html())
+    run()

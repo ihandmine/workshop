@@ -1,4 +1,5 @@
 import math
+import re
 
 import uvicorn
 from fastapi import FastAPI
@@ -37,6 +38,40 @@ address_mapping = {
            "公庄", "观音阁", "杨侨", "麻陂", "石坝", "泰美", "杨村", "平陵", "龙城", "地派", "龙田", "麻榨", "龙江", "龙潭"]
 
 }
+
+
+@app.get("/")
+async def index(request: Request):
+    _sql_sz = """
+        select * from sz_changfang_index order by auto_id desc limit 13
+    """
+    _sql_hz = """
+        select * from hz_changfang_index order by auto_id desc limit 13
+    """
+    _sql_dg = """
+        select * from dg_changfang_index order by auto_id desc limit 13
+    """
+    _sql_sz_xiezi = """
+        select * from sz_xiezilou_index order by auto_id desc limit 13
+    """
+    _sql_sz_xiezi_title = """
+        select DISTINCT title from sz_xiezilou_index limit 12
+    """
+    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    data_sz = execute_query(_sql_sz)
+    data_hz = execute_query(_sql_hz)
+    data_dg = execute_query(_sql_dg)
+    data_xiezi = execute_query(_sql_sz_xiezi)
+    data_xiezi_title = execute_query(_sql_sz_xiezi_title)
+    data = {
+        "map": address_mapping,
+        "data_sz": data_sz,
+        "data_hz": data_hz,
+        "data_dg": data_dg,
+        "data_xiezi": data_xiezi,
+        "data_xiezi_title": data_xiezi_title,
+    }
+    return templates.TemplateResponse("index.html", {"request": request, "data": data})
 
 
 @app.get("/index")
@@ -248,10 +283,11 @@ async def index(request: Request, keyword=Query(""), page_type=Query("changfang"
 
 
 @app.get("/item")
-async def index(request: Request, item_id=Query("")):
+async def index(request: Request, item_id=Query(""), area=Query("深圳")):
+    table_prefix = area == "深圳" and "sz" or area == "东莞" and "dg" or area == "惠州" and "hz"
     _sql = """
-        select * from sz_changfang_detail where item_id='%s'
-    """ % item_id
+        select * from %s_changfang_detail where item_id='%s'
+    """ % (table_prefix, item_id)
     init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
     data = execute_query(_sql)[0]
     data['images'] = data['img_url'].split(',')
@@ -260,7 +296,33 @@ async def index(request: Request, item_id=Query("")):
             SELECT
                 * 
             FROM
-                sz_changfang_index 
+                %s_changfang_index 
+            WHERE
+                locate( '%s', address) > 0 
+                LIMIT 5
+    """ % (table_prefix, data['address'])
+    data_recommand = execute_query(_sql_recommand)
+    other = {
+        "recommand": data_recommand,
+        "area": area
+    }
+    return templates.TemplateResponse("detail.html", {"request": request, "data": data, "other": other})
+
+
+@app.get("/xzl_item")
+async def index(request: Request, item_id=Query("")):
+    _sql = """
+        select * from sz_xiezilou_detail where item_id='%s'
+    """ % item_id
+    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    data = execute_query(_sql)[0]
+    data['images'] = re.findall(r"http://img.*?\.jpg", data['img_url'])
+
+    _sql_recommand = """
+            SELECT
+                * 
+            FROM
+                sz_xiezilou_index 
             WHERE
                 locate( '%s', address) > 0 
                 LIMIT 5
@@ -269,8 +331,7 @@ async def index(request: Request, item_id=Query("")):
     other = {
         "recommand": data_recommand
     }
-    return templates.TemplateResponse("detail.html", {"request": request, "data": data, "other": other})
-
+    return templates.TemplateResponse("xiezilou_detail.html", {"request": request, "data": data, "other": other})
 
 # @app.get('/', response_class=HTMLResponse)
 # async def index_block():  # async加了就支持异步  把Request赋值给request

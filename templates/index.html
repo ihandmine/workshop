@@ -68,13 +68,13 @@
         <p class="lf">厂房出租 • 产业园区招商 • 企业选址平台</p>
         <ul class="rt">
 
-            <li class="club"><a href="http://eju7.fangcms.cn/single/yewuhezuo245.html">业务合作 <i
+            <li class="club"><a href="">业务合作 <i
                     class="icon_arrowico"></i></a>
                 <p class="shorJoin shadow8px" style="display: none;"><i class="triaArrow"></i>
-                    <a href="http://eju7.fangcms.cn/single/gongsijianjie.html" target="_blank">公司简介</a>
-                    <a href="http://eju7.fangcms.cn/single/lianxiwomen949.html" target="_blank">联系我们</a>
-                    <a href="http://eju7.fangcms.cn/single/yonghuxieyi916.html" target="_blank">用户协议</a>
-                    <a href="http://eju7.fangcms.cn/single/mianzeshengming.html" target="_blank">免责声明</a>
+                    <a href="" target="_blank">公司简介</a>
+                    <a href="" target="_blank">联系我们</a>
+                    <a href="" target="_blank">用户协议</a>
+                    <a href="" target="_blank">免责声明</a>
                 </p>
             </li>
         </ul>
@@ -84,8 +84,8 @@
 <!--头部-->
 <header class="header">
     <div class="w1190 clearFix">
-        <div class="logo lf"><a href="http://eju7.qiudei.com" target="_blank"><img
-                src="/static/img/1-191011115322C1.png" alt="房产租售网"></a></div>
+        <div class="logo lf"><a href="/" target="_blank"><img
+                src="/static/img/logo.jpg" alt="房产租售网"></a></div>
         <div class="myCity lf"><a href="#"><i class="icon_myCityLoca"></i><span>全国</span></a>
             <div class="myCityCon shadow8px ">
                 <div class="cityListBox" style="margin: 0">
@@ -95,18 +95,18 @@
                         </li>
                         <li><span>热门城市：</span>
                             <div class="cityList">
-                                <a style="color:#e03b36" href="//shenzhen7.fangcms.cn/" title="深圳">深圳</a>
-                                <a style="color:#e03b36" href="//shenzhen7.fangcms.cn/" title="惠州">惠州</a>
-                                <a style="color:#e03b36" href="//shenzhen7.fangcms.cn/" title="东莞">东莞</a>
+                                <a style="color:#e03b36" href="/chuzu?area=深圳" title="深圳">深圳</a>
+                                <a style="color:#e03b36" href="/chuzu?area=惠州" title="惠州">惠州</a>
+                                <a style="color:#e03b36" href="/chuzu?area=东莞" title="东莞">东莞</a>
                             </div>
                         </li>
                         <li><span>广东：</span>
                             <div class="cityList">
-                                <a style="color:#e03b36" href="//guangzhou7.fangcms.cn/" title="惠州"
+                                <a style="color:#e03b36" href="/chuzu?area=惠州" title="惠州"
                                    target="_blank">惠州</a>
-                                <a style="color:#e03b36" href="//shenzhen7.fangcms.cn/" title="深圳"
+                                <a style="color:#e03b36" href="/chuzu?area=深圳" title="深圳"
                                    target="_blank">深圳</a>
-                                <a style="color:#e03b36" href="//shenzhen7.fangcms.cn/" title="东莞"
+                                <a style="color:#e03b36" href="/chuzu?area=东莞" title="东莞"
                                    target="_blank">东莞</a>
                             </div>
                         </li>
@@ -255,7 +255,7 @@
             <h3 class="flNav-section-title">找厂房</h3>
             <div class="flNav-section-item">
                 <ul class="flNav-section-tabnav clearfix">
-                    <li class="active" data-target="#Tab"><a href="http://guangdong.fangcms.cn/single/changfang.html"
+                    <li class="active" data-target="#Tab"><a href="/chuzu?area=深圳"
                                                              target="_blank">深圳</a></li>
                 </ul>
                 <div class="flNav-section-tab-container">
@@ -284,7 +284,7 @@
             </div>
             <div class="flNav-section-item">
                 <ul class="flNav-section-tabnav clearfix">
-                    <li class="active" data-target="#Tab"><a href="http://guangdong.fangcms.cn/single/changfang.html"
+                    <li class="active" data-target="#Tab"><a href="/chuzu?area=东莞"
                                                              target="_blank">东莞</a></li>
                 </ul>
                 <div class="flNav-section-tab-container">
@@ -313,7 +313,7 @@
             </div>
             <div class="flNav-section-item">
                 <ul class="flNav-section-tabnav clearfix">
-                    <li class="active" data-target="#Tab"><a href="http://guangdong.fangcms.cn/single/changfang.html"
+                    <li class="active" data-target="#Tab"><a href="/chuzu?area=惠州"
                                                              target="_blank">惠州</a></li>
                 </ul>
                 <div class="flNav-section-tab-container">
@@ -353,7 +353,7 @@
             <h3><i class="icon_todayNews"></i>今日推荐</h3>
             <ul>
                 {% for zone in data.data_sz[:5] %}
-                <li><a target="_blank" href="http://eju7.fangcms.cn/article/xieziloubaike/110.html"
+                <li><a target="_blank" href="/item?item_id={{ zone.item_id }}"
                        title="{{ zone.title }}">{{ zone.title }}</a></li>
                 {% endfor %}
             </ul>
@@ -381,12 +381,12 @@
 <div class="w1190 mt20">
     <div class="FL lcon  slideTxtBox1">
         <div class="tit  hd">
-            <h3 class="FL"><a href="http://eju7.fangcms.cn/changfcz/changfangchuzu.html">厂房出租</a></h3>
+            <h3 class="FL"><a href="/chuzu">厂房出租</a></h3>
             <ul class="FR F12 cGray">
                 <li class="FL ti">
-                    <a id="hover" num="0" class="thov" href="//guangdong.fangcms.cn/">深圳</a>
-                    <a num="1" class="thov" href="//hainan.fangcms.cn/">东莞</a>
-                    <a num="2" class="thov" href="//hainan.fangcms.cn/">惠州</a>
+                    <a id="hover" num="0" class="thov" href="/chuzu?area=深圳">深圳</a>
+                    <a num="1" class="thov" href="/chuzu?area=东莞">东莞</a>
+                    <a num="2" class="thov" href="/chuzu?area=惠州">惠州</a>
                 </li>
             </ul>
             <div class="clear"></div>
@@ -396,7 +396,7 @@
                 <div class="top">
                     {% for item in data.data_sz[:5] %}
                     <a target="_blank" title="{{ item.detail }}"
-                       href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/254.html">
+                       href="/item?item_id={{ item.item_id }}">
                         <div class="xzlcss-img-wrapper"><img
                                 onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
                                 src="{{ item.img_url }}">
@@ -409,7 +409,7 @@
                 <ul>
                     {% for item in data.data_sz[5:] %}
                     <li><a href="#" target="_blank">【{{ item.address }}】</a> <a
-                            href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/165.html" target="_blank"
+                            href="/item?item_id={{ item.item_id }}" target="_blank"
                             title="{{ item.title }}">{{ item.title[:20] }}...</a></li>
                     {% endfor %}
                 </ul>
@@ -418,7 +418,7 @@
                 <div class="top">
                     {% for item in data.data_dg[:5] %}
                     <a target="_blank" title="{{ item.detail }}"
-                       href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/254.html">
+                       href="/item?item_id={{ item.item_id }}&area=东莞">
                         <div class="xzlcss-img-wrapper"><img
                                 onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
                                 src="{{ item.img_url }}">
@@ -431,7 +431,7 @@
                 <ul>
                     {% for item in data.data_dg[5:] %}
                     <li><a href="#" target="_blank">【{{ item.address }}】</a> <a
-                            href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/165.html" target="_blank"
+                            href="/item?item_id={{ item.item_id }}&area=东莞" target="_blank"
                             title="{{ item.title }}">{{ item.title[:20] }}...</a></li>
                     {% endfor %}
                 </ul>
@@ -440,7 +440,7 @@
                 <div class="top">
                     {% for item in data.data_hz[:5] %}
                     <a target="_blank" title="{{ item.detail }}"
-                       href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/254.html">
+                       href="/item?item_id={{ item.item_id }}&area=惠州">
                         <div class="xzlcss-img-wrapper"><img
                                 onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
                                 src="{{ item.img_url }}">
@@ -453,7 +453,7 @@
                 <ul>
                     {% for item in data.data_hz[5:] %}
                     <li><a href="#" target="_blank">【{{ item.address }}】</a> <a
-                            href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/165.html" target="_blank"
+                            href="/item?item_id={{ item.item_id }}&area=惠州" target="_blank"
                             title="{{ item.title }}">{{ item.title[:20] }}...</a></li>
                     {% endfor %}
                 </ul>
@@ -470,27 +470,11 @@
         </a>
             <ul><a style="float:left;">
             </a>
-                <li><a style="float:left;"></a><a href="http://eju7.fangcms.cn/agent/index/12.html" title=""
+                <li><a style="float:left;"></a><a href="" title=""
                                                   target="_blank"><img
                         src="http://eju7.fangcms.cn/uploads/allimg/20200717/1-200GG53111P2.jpg" alt="李生"
                         onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"><br>
                     李生</a></li>
-                <li><a href="http://eju7.fangcms.cn/agent/index/11.html" title="" target="_blank"><img
-                        src="http://eju7.fangcms.cn/uploads/allimg/20200717/1-200GG5313YH.jpg" alt="王生"
-                        onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"><br>
-                    王生</a></li>
-                <li><a href="http://eju7.fangcms.cn/agent/index/10.html" title="" target="_blank"><img
-                        src="http://eju7.fangcms.cn/uploads/allimg/20200717/1-200GG5315bA.jpg" alt="陈生"
-                        onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"><br>
-                    陈生</a></li>
-                <li><a href="http://eju7.fangcms.cn/agent/index/9.html" title="" target="_blank"><img
-                        src="http://eju7.fangcms.cn/uploads/allimg/20200717/1-200GG53250460.jpg" alt="赵生"
-                        onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"><br>
-                    赵生</a></li>
-                <li><a href="http://eju7.fangcms.cn/agent/index/8.html" title="" target="_blank"><img
-                        src="http://eju7.fangcms.cn/uploads/allimg/20200717/1-200GG533354M.jpg" alt="周生"
-                        onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"><br>
-                    周生</a></li>
             </ul>
             <div class="clear"></div>
         </div>
@@ -505,10 +489,10 @@
 <div class="w1190 mt20">
     <div class="FL lcon">
         <div class="tit hd">
-            <h3 class="FL"><a target="_blank" href="http://eju7.fangcms.cn/officecz/xiezilouchuzu.html">写字楼出租</a></h3>
+            <h3 class="FL"><a target="_blank" href="/xiezilou">写字楼出租</a></h3>
             <ul class="FR F12 cGray">
                 <li class="FL ti">
-                    <a id="hover" num="0" class="thovxzl" href="//guangdong.fangcms.cn/">深圳</a>
+                    <a id="hover" num="0" class="thovxzl" href="/xiezilou">深圳</a>
                     <!--                    <a num="1" class="thovxzl" href="//hainan.fangcms.cn/">海南</a>-->
                 </li>
             </ul>
@@ -519,7 +503,7 @@
                 <div class="top">
                     {% for item in data.data_xiezi[:5] %}
                     <a target="_blank" title="{{ item.detail }}"
-                       href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/254.html">
+                       href="/xzl_item?item_id={{ item.item_id }}">
                         <div class="xzlcss-img-wrapper"><img
                                 onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
                                 src="{{ item.img_url }}">
@@ -532,7 +516,7 @@
                 <ul>
                     {% for item in data.data_xiezi[5:] %}
                     <li><a href="#" target="_blank">【{{ item.address }}】</a> <a
-                            href="http://shenzhen7.fangcms.cn/officecz/xiezilouchuzu/165.html" target="_blank"
+                            href="/xzl_item?item_id={{ item.item_id }}" target="_blank"
                             title="{{ item.detail }}">{{ item.detail[:20] }}...</a></li>
                     {% endfor %}
 
@@ -551,8 +535,8 @@
     <div class="FR rcon topLoop">
         <div class="tit">
             <h4><a style="float:left;" target="_blank"
-                   href="http://eju7.fangcms.cn/officecs/xiezilouchushou.html">写字楼出租位置</a></h4>
-            <a target="_blank" href="http://eju7.fangcms.cn/officecs/xiezilouchushou.html">更多&gt;&gt;</a></div>
+                   href="/xiezilou">写字楼出租位置</a></h4>
+            <a target="_blank" href="/xiezilou">更多&gt;&gt;</a></div>
         <!--        <div class="zxlg bd">-->
         <!--            <ul>-->
         <!--                <li><a target="_blank" title="{{ data.data_xiezi[0].detail }}"-->
@@ -567,7 +551,7 @@
         <ul class="zxli zxli_1">
             {% for item in data.data_xiezi_title %}
             <li><a target="_blank" title="{{ item.title }}"
-                   href="http://shenzhen7.fangcms.cn/officecs/xiezilouchushou/201.html">{{ item.title }}</a></li>
+                   href="/xiezilou?keyword={{ item.title }}">{{ item.title }}</a></li>
             {% endfor %}
 
         </ul>
@@ -692,25 +676,15 @@
     <div id="con" style="width:1190px;">
         <div>
             <p>
-                <a href="http://guangzhou7.fangcms.cn/single/changfang.html">广州厂房</a>
-                <a href="http://shenzhen7.fangcms.cn/single/changfang.html">深圳厂房</a>
-                <a href="http://haikou7.fangcms.cn/single/changfang.html">海口厂房</a>
-                <a href="http://sanya7.fangcms.cn/single/changfang.html">三亚厂房</a>
+                <a href="/chuzu?area=惠州">惠州厂房</a>
+                <a href="/chuzu?area=深圳">深圳厂房</a>
+                <a href="/chuzu?area=东莞">东莞厂房</a>
             </p>
 
             <p>
 
                 <a href="http://www.baidu.com" target="_blank">百度</a>
 
-                <a href="http://www.qq.com" target="_blank">腾讯</a>
-
-                <a href="http://www.sina.com.cn" target="_blank">新浪</a>
-
-                <a href="http://www.taobao.com" target="_blank">淘宝</a>
-
-                <a href="http://www.weibo.com" target="_blank">微博</a>
-
-                <a href="http://www.ejucms.com/" target="_blank">易居CMS</a>
             </p>
 
         </div>
@@ -718,13 +692,13 @@
 </div>
 <div class="foot w1190">
 
-    <a target="_blank" href="http://shenzhen7.fangcms.cn/single/gongsijianjie.html">关于我们</a>
+    <a target="_blank" href="">关于我们</a>
 
-    <a target="_blank" href="http://shenzhen7.fangcms.cn/single/lianxiwomen949.html">联系我们</a>
+    <a target="_blank" href="">联系我们</a>
 
-    <a target="_blank" href="http://shenzhen7.fangcms.cn/single/yonghuxieyi916.html">用户协议</a>
+    <a target="_blank" href="">用户协议</a>
 
-    <a target="_blank" href="http://shenzhen7.fangcms.cn/single/mianzeshengming.html">免责声明</a>
+    <a target="_blank" href="">免责声明</a>
 
 
     <br>

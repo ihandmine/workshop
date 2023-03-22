@@ -215,8 +215,8 @@
 
 <input type="hidden" value="1683">
 <div class="zs_newmbx"><a href='/' class=' '>首页</a> &gt; <a
-        href='/chuzu' class=' '>厂房</a> &gt; <a
-        href='/chuzu'>厂房出租</a></div>
+        href='/xiezilou' class=' '>写字楼</a> &gt; <a
+        href='/xiezilou'>写字楼出租</a></div>
 <div class="W1000">
     <div class="tab_cf mt13" style="margin-top:0px">
         <div class="tab_l fl">
@@ -405,31 +405,30 @@
                                 <!--                                <span>元/m²·月</span>-->
                             </li>
                             <li>
-                                <div class="w195"><a>面积：</a><span class="rede94">{{ data.area }}</span><span>㎡</span>
+                                <div class="w195">
+                                    <a>面积：</a><span class="rede94">{{ data.area }}</span><span>㎡</span>
                                 </div>
                             </li>
                             <li>
-                                <div><a>结构：</a><span><span
-                                        class="rede94">{{ data.structure }}</span><span></span></span></div>
+                                <div>
+                                    <a>装修：</a><span><span class="rede94">{{ data.zhuangxiu }}</span><span></span></span>
+                                </div>
                             </li>
 
                             <li>
-                                <div class="w195"><a>所属楼层：</a><span>{{ data.floor }}</span></div>
-                                <a>性质：</a><span>{{ data.xinjiu }}</span></li>
+                                <div class="w195"><a>楼盘：</a><span  class="rede94">{{ data.loupan }}</span></div>
+                                <a>免租期：</a><span>{{ data.mianzu }}</span>
+                            </li>
                             <li>
-                                <div class="w195"><a>供电：</a><span>{{ data.gongdian }}</span></div>
+                                <div class="w195"><a>注册：</a><span>{{ data.zhuce }}</span></div>
                             </li>
 
                             <li>
-                                <div class="w195"><a>电费：</a><span>{{ data.dianfei }}</span></div>
+                                <div class="w195"><a>分割：</a><span>{{ data.fenge }}</span></div>
                             </li>
                             <li>
-                                <div class="w195"><a>办公室：</a><span>{{ data.bangonshi }}</span></div>
-                                <a>食堂：</a><span>{{ data.shitang }}</span>
-                            </li>
-                            <li>
-                                <div class="w195"><a>宿舍：</a><span>{{ data.sushe }}</span></div>
-                                <a>电梯：</a><span>{{ data.dianti }}</span>
+                                <div class="w195"><a>商务区：</a><span>{{ data.shangwuqu }}</span></div>
+                                <a>车位：</a><span>{{ data.chewei }}</span>
                             </li>
                             <li><a>更新时间：</a><span>{{ data.created_time }}</span></li>
                             <li><a>地址：</a><span>{{ data.address }}</span></li>
@@ -447,13 +446,26 @@
         </div>
         <div class="w746 mt13 bor1">
             <div>
-                <div class="xq_mtit f_wryh fl">厂房概况</div>
+                <div class="xq_mtit f_wryh fl">写字楼概况</div>
                 <div class="bor2"></div>
                 <div class="cl"></div>
             </div>
             <div class="k_padd">
                 <div class="xq_cfgk">
                     <p>{{ data.detail }}</p>
+                    <p><br/></p>
+                    <p><br/></p></div>
+            </div>
+        </div>
+        <div class="w746 mt13 bor1">
+            <div>
+                <div class="xq_mtit f_wryh fl">房源描述</div>
+                <div class="bor2"></div>
+                <div class="cl"></div>
+            </div>
+            <div class="k_padd">
+                <div class="xq_cfgk">
+                    <p>{{ data.other_info }}</p>
                     <p><br/></p>
                     <p><br/></p></div>
             </div>
@@ -599,10 +611,10 @@
                     <ul>
                         {% for item in other.recommand %}
                         <li>
-                            <a href="/item?item_id={{ item.item_id }}" target="_blank"
+                            <a href="/xzl_item?item_id={{ item.item_id }}" target="_blank"
                                title="{{ item.title }}"><img alt="{{ item.title }}"
-                                                                      src="{{ item.img_url }}"
-                                                                      onerror="javascript:this.src='/static/img/pc_list_placeholder.jpg'"/>
+                                                             src="{{ item.img_url }}"
+                                                             onerror="javascript:this.src='/static/img/pc_list_placeholder.jpg'"/>
                             </a>
                             <a style="padding-top: 4px; height:44px;"
                                href="/item?item_id={{ item.item_id }}"
@@ -966,7 +978,7 @@
     </div>
     <div class="sq_bd1">
         <div class="pl13_6 fl">
-            <span style="margin-top:10px"><a class="f_wryh" href="/chuzu?area=深圳">深圳</a>
+            <span style="margin-top:10px"><a class="f_wryh" href="/xiezilou?area=深圳">深圳</a>
       <div class="cl"></div>
       </span>
             <ul class="fl" style="padding-top: 3px;">
@@ -991,17 +1003,17 @@
 
     <p class="infoList1" id="qlist">
         <a href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-           data-url='/chuzu?area_id=南山'>南山厂房出租</a>
+           data-url='/xiezilou?area_id=南山'>南山写字楼出租</a>
         <a href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-           data-url='/chuzu?area_id=宝安'>宝安厂房出租</a>
+           data-url='/xiezilou?area_id=宝安'>宝安写字楼出租</a>
         <a href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-           data-url='/chuzu?area_id=龙岗'>龙岗厂房出租</a>
+           data-url='/xiezilou?area_id=龙岗'>龙岗写字楼出租</a>
         <a href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-           data-url='/chuzu?area_id=盐田'>盐田厂房出租</a>
+           data-url='/xiezilou?area_id=盐田'>盐田写字楼出租</a>
         <a href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-           data-url='/chuzu?area_id=龙华'>龙华厂房出租</a>
+           data-url='/xiezilou?area_id=龙华'>龙华写字楼出租</a>
         <a href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-           data-url='/chuzu?area_id=坪山'>坪山厂房出租</a>
+           data-url='/xiezilou?area_id=坪山'>坪山写字楼出租</a>
     <div id="ey_f374fa669b56b73635af740ec57faab1" style="display:none;"></div>
     <script type="text/javascript">
         function ey_97c0670026ad69b846ea069ffdb217a9(obj, target) {
