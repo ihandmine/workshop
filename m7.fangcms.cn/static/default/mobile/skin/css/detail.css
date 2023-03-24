@@ -1,0 +1,482 @@
+/************** banner **************/
+.dheadFixBox{
+    height: 1.7rem;
+    line-height: 1.7rem;
+}
+.dheadFixBox h2{
+    height: 1.7rem;
+}
+.dheadFixBox .share{
+    top: 0.575rem;
+}
+.dheadFixBox .nav, .dheadFixBox .nav2{
+    top: 0.63rem;
+    background-position:0.05rem center;
+}
+.dheadFixBox .back, .dheadFixBox .iback{
+    top: 0.4rem;
+}
+/************** content **************/
+.abstractBox .tit{
+    margin-top: 0.24rem;
+    margin-bottom: 0.14rem;
+}
+.absLabBox{
+    margin-top: 0;
+    margin-bottom: 0.28rem;
+}
+.absLabBox .absLab span{
+    background: rgba(235,158,52,0.10) !important;
+    color: #EB9E34 !important;
+    margin-bottom: 0.12rem;
+}
+.absLabBox .absLab span.dd{
+    color: #e03b36 !important;
+    background: rgba(221,37,52,0.10) !important;
+}
+.abstractBox .absList{
+    padding-top: 0.26rem;
+}
+.abstractBox .absList li p{
+    line-height: 0.37rem;
+}
+.appDowDeta a{
+    margin: 0.29rem 0;
+}
+.baseInfoBox.singleRow li{
+    width: auto;
+}
+.baseInfoBox .baseInfo li,.baseInfoBox .baseInfo li span{
+    /*min-height: 0.45rem;*/
+    height: auto;
+    float: left;
+}
+.baseInfoBox .baseInfo li.introduce{
+    margin-top: 0.25rem;
+    width: 100%;
+}
+.baseInfoBox .baseInfo li.introduce p{
+    border-top: 1px solid #EFEFEF;
+    font-size: 0.32rem;
+    color: #333;
+    text-align: justify;
+    line-height: 0.48rem;
+    padding-top: 0.3rem;
+}
+
+.baseInfoBox .baseInfo li span:nth-of-type(1){
+    text-align: right;
+
+}
+.baseInfoBox .baseInfo li span:nth-of-type(2){
+    margin-right: 0;
+    text-align: left;
+    color: #333;
+    /*vertical-align:initial;*/
+}
+.baseInfoBox .baseInfo li span:after{
+    display: none;
+}
+.baseInfoLP{
+    position: relative;
+    height: 5.78rem;
+    overflow: hidden;
+    padding-top: 0;
+}
+.baseInfoLP .unfold{
+    /*position: initial;*/
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.92rem;
+    line-height: 0.92rem;
+    background-color: #fff;
+    text-align: center;
+}
+.baseInfoLP .unfold span{
+    position: relative;
+    display: inline-block;
+    width: 0.34rem;
+    height: 0.35rem;
+    background: url(../images/detailed_unfold.png) no-repeat;
+    background-size: 100%;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.baseInfoLP.fullLpInfo{
+    height: auto;
+}
+.baseInfoLP.fullLpInfo .unfold{
+    position: initial;
+}
+.baseInfoLP.fullLpInfo .unfold span {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+/************** content **************/
+/*.baseInfoBox.singleRow .baseInfo2 li{*/
+/*width: 50%;*/
+/*overflow: hidden;*/
+/*text-overflow: ellipsis;*/
+/*white-space: nowrap;*/
+/*}*/
+/*.baseInfoBox .baseInfo2 li span{*/
+/*text-align: left;*/
+/*display: block;*/
+/*line-height: 0.45rem;*/
+/*margin-bottom: 0.08rem;*/
+/*}*/
+.baseInfoBox a.more{
+    display: block;
+    width: 100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    background: #F8F8F8;
+    -webkit-border-radius: 0.08rem;
+    -moz-border-radius: 0.08rem;
+    border-radius: 0.08rem;
+    font-size: 0.32rem;
+    color: #404B69;
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+
+/************** 联系经纪人对话框 **************/
+.botFixNavBox3{
+    z-index: 1100;
+}
+#agentDialog{
+    position: fixed;
+    left: 0px;
+
+    bottom: -100%;
+    z-index: 1013;
+    background-color: #fff;
+    border-radius: 0.2rem 0.2rem 0 0;
+    color: #4d525d;
+    width: 100%;
+    margin-left: 0px;
+    /*visibility: hidden;*/
+
+    -webkit-transition: all 0.3s linear ;
+    transition: all 0.3s linear ;
+}
+#agentDialog.agentDialogShow{
+    bottom: 1.2rem !important;
+}
+#agentDialog .header{
+    position: relative;
+    border-radius: 0.2rem 0.2rem 0 0;
+    /* border-bottom: 1px solid #e2e2e2; */
+    /* box-shadow: 0 0 0.6rem 0 rgba(0,0,0,0.10); */
+    margin: 0.35rem 0;
+    height: 0.54rem;
+}
+#agentDialog .header i{
+    display: block;
+    width: 0.34rem;
+    height: 0.34rem;
+    position: absolute;
+    right: 0.34rem;
+    top: 0;
+    background: url(../images/entrust_city_cancel.png) no-repeat;
+    background-size: 100%;
+}
+#agentDialog .con li{
+    overflow: hidden;
+    border-bottom: 1px solid #F0F0F0;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+#agentDialog .con li .pic{
+    width: 0.86rem;
+    height: 0.86rem;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    overflow: hidden;
+}
+#agentDialog .con li .txt{
+    float: left;
+    margin-left: 0.3rem;
+    margin-top: 0.02rem;
+
+}
+#agentDialog .con li .txt h2{
+    font-size: 0.32rem;
+    color: #303030;
+    line-height: 0.45rem;
+    margin-bottom: 0.03rem;
+}
+#agentDialog .con li .txt p{
+    font-size: 0.22rem;
+    color: #666;
+    line-height: 0.3rem;
+}
+#agentDialog .con li a{
+    display: block;
+    overflow: hidden;
+}
+#agentDialog .con li .iconTel{
+    float: right;
+    background: url("../images/agenttel.png") no-repeat;
+    background-size: 100%;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-top: 0.18rem;
+}
+/************** 楼盘房源页面 **************/
+.housInfoBox{
+    border-top: 0.2rem solid #f8f8f8;
+    padding: 0;
+}
+.housInfoBox .housInfon{
+    margin-top: 0.4rem;
+}
+.housInfoBox .housInfon li{
+    padding: 0.2rem 0.3rem;
+}
+.housInfoBox .housInfon li:nth-of-type(2n-1){
+    background: #FAFAFA;
+}
+.housInfoBox .housInfon li a .pic{
+    width: 1.38rem;
+    height: 1.04rem;
+    -webkit-border-radius: 0.04rem;
+    -moz-border-radius: 0.04rem;
+    border-radius: 0.04rem;
+    overflow: hidden;
+}
+.housInfoBox .housInfon li a .txt{
+    width: 5.52rem;
+}
+.housInfoBox .housInfon li a .txt p{
+    line-height: 1.04rem;
+}
+.housInfoBox .housInfon li a .txt p:first-of-type{
+    text-align: left;
+    padding-left: 0.3rem;
+    width: 35%;
+}
+.housInfoBox .housInfon li a .txt p:first-of-type span{
+    font-size: 0.24rem;
+    color: #2A2A2A;
+}
+.housInfoBox .housInfon li a .txt p.flex1{
+    width: 25%;
+}
+.housInfoBox .housInfon li a .txt p.price{
+    text-align: right;
+}
+.housInfoBox .housInfon li.housInfonNot{
+    display: none;
+    background-color: #fff !important;
+}
+/************** 详情楼盘房源 **************/
+.dHousInfoBox .detaSectTit{
+    padding: 0.34rem 0.3rem;
+    border-bottom:0;
+}
+.dHousInfoBox .detaSectTit h2{
+    color: #666;
+    font-weight: normal;
+    margin-right: 0.3rem;
+}
+.dHousInfoBox .detaSectTit h2.focus{
+    color: #303030;
+    font-weight: bold;
+}
+
+.dHousInfoBox .housInfonCon{
+    margin-top: 0.4rem;
+    display: none;
+}
+.dHousInfoBox .housInfonCon.hInfon1{
+    display: block;
+}
+.dHousInfoBox .housInfonTag{
+    height: auto;
+    border-bottom:0
+}
+.dHousInfoBox .housInfonTag li{
+    width: 2rem;
+    -webkit-border-radius: 0.04rem;
+    -moz-border-radius: 0.04rem;
+    border-radius: 0.04rem;
+    border: 1px solid #F0F0F0;
+    text-align: center;
+    height: 1.18rem;
+
+}
+.dHousInfoBox .housInfonTag li:not(:last-of-type){
+    margin-right: 0.16rem;
+}
+.dHousInfoBox .housInfonTag li p{
+    font-size: 0.28rem;
+    line-height: 0.4rem;
+    color: #303030;
+    position: relative;
+    display: block;
+    text-align: center;
+}
+.dHousInfoBox .housInfonTag li p:nth-of-type(1){
+    padding-top: 0.14rem;
+    margin-bottom: 0.1rem;
+    color: #303030;
+}
+.dHousInfoBox .housInfonTag li p:nth-of-type(2){
+    color: #979797;
+}
+.dHousInfoBox .housInfonTag li.focus{
+    background: rgba(221,37,52,0.05);
+    border: 1px solid rgba(221,37,52,0.50);
+}
+.dHousInfoBox .whole{
+    background-color: transparent;
+}
+.dHousInfoBox .whole a{
+    background: #F8F8F8;
+    -webkit-border-radius: 0.08rem;
+    -moz-border-radius: 0.08rem;
+    border-radius: 0.08rem;
+}
+/************** 详情楼盘房源-查看大图 **************/
+.photoTabs{
+    width: 100%;
+    position: absolute;
+    bottom: 0.6rem;
+    padding: 0 0.1rem;
+}
+.photoTabs li{
+    font-size: 0.28rem;
+    color: #FFF;
+    padding: 0 0.3rem;
+    line-height: 0.56rem;
+    -webkit-border-radius: 0.28rem;
+    -moz-border-radius: 0.28rem;
+    border-radius: 0.28rem;
+    float: left;
+    width: auto;
+}
+.photoTabs li.focus{
+    background: #394043;
+}
+.atlasesBox2 .headBox h2{
+    width: 4.9rem;
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.atlasesBox2 .view .swiper-container{
+    overflow-x: hidden;
+    overflow: visible;
+}
+.atlasesBox2 .swiper-pagination{
+    bottom: -0.68rem;
+}
+
+
+/*2.4.1*/
+#agentDialog .con{
+    max-height: 7.1rem;
+    overflow-y: scroll;
+}
+.abstractBox .absList li h4.center,.abstractBox .absList li p.center{
+    line-height: 0.94rem;
+    margin-bottom: 0;
+}
+
+/********************** 预约看房 ************************/
+.appointmentBox{
+    background: url("../images/leavimg.jpg") no-repeat;
+    background-size: 100%;
+    padding: 0.58rem 0.3rem;
+
+}
+.appointmentBox .appointment{
+    background: url("../images/leavformimg.png") no-repeat;
+    background-size: 100%;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    border-radius: 0.3rem;
+}
+.appointmentBox .appointment h2{
+    font-size: 0.36rem;
+    color: #303030;
+    text-align: center;
+    padding: 0.58rem 0;
+}
+.appointmentBox .appointment form{
+    padding: 0.49rem 0.68rem 0.78rem 0.68rem;
+}
+.appointmentBox .appointment form input{
+    background: #E6E6E6;
+    -webkit-border-radius: 0.48rem;
+    -moz-border-radius: 0.48rem;
+    border-radius: 0.48rem;
+    width: 100%;
+    height: 0.96rem;
+    font-size: 0.28rem;
+    margin-bottom: 0.2rem;
+    padding: 0 0.6rem;
+}
+.appointmentBox .appointment form input::-webkit-input-placeholde{
+    color: #666;
+}
+.appointmentBox .appointment form button{
+    width: 100%;
+    height: 0.96rem;
+    font-size: 0.32rem;
+    color: #FFF;
+    background: #e03b36;
+    -webkit-border-radius: 0.48rem;
+    -moz-border-radius: 0.48rem;
+    border-radius: 0.48rem;
+    margin-top: 0.2rem;
+}
+
+.housInfonCon .all{
+    width: 2rem;
+    -webkit-border-radius: 0.04rem;
+    -moz-border-radius: 0.04rem;
+    border-radius: 0.04rem;
+    border: 1px solid #F0F0F0;
+    text-align: center;
+    height: 1.18rem;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #F0F0F0;
+    z-index: 111;
+
+}
+.housInfonCon .all.focus{
+    background: rgba(253,244,245,1);
+    border: 1px solid rgba(221,37,52,0.50);
+}
+.housInfonCon .all p{
+    font-size: 0.28rem;
+    line-height: 0.4rem;
+    color: #303030;
+    position: relative;
+    display: block;
+    text-align: center;
+}
+.housInfonCon .all p:nth-of-type(1){
+    padding-top: 0.14rem;
+    /*margin-bottom: 0.1rem;*/
+    color: #303030;
+}
+.housInfonCon .all p:nth-of-type(2){
+    color: #979797;
+}

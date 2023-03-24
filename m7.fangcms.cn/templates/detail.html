@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>{{ data.detail }}_房产租售网</title>
+    <meta name="description" content="{{ data.detail }}"/>
+    <meta name="keywords" content=""/>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="applicable-device" content="mobile">
+    <link rel="stylesheet" type="text/css" href="../static/default/mobile/skin/css/swiper-4.3.5.min.css"/>
+    <link rel="stylesheet" href="../static/default/mobile/skin/css/reset_2.css">
+    <link rel="stylesheet" href="../static/default/mobile/skin/css/base_1.css">
+    <link rel="stylesheet" href="../static/default/mobile/skin/css/details.css">
+    <script src="../static/default/mobile/skin/js/rem.js"></script>
+    <script src="../static/default/mobile/skin/js/index.js"></script>
+    <link rel="stylesheet" href="../static/default/mobile/skin/css/base_2.css">
+    <link rel="stylesheet" href="../static/default/mobile/skin/css/detail.css">
+    <style>
+        .baseInfoBox .baseInfo li {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bodyBgWhite">
+<div id="goToUp"></div>
+
+<!--头部-->
+<header class="headBox dheadFixBox" style="background-color: transparent;position: relative"><a
+        href="javascript:history.back(-1)" class="back"></a>
+    <a href="javascript:void(0)" class="share"></a>
+    <div class="nav"></div>
+</header>
+<!--顶部导航频道-->
+<!--顶部导航频道-->
+<!--<nav id="nav"></nav>-->
+<style>
+    #nav .foot li {
+        width: 33.333%;
+    }
+</style>
+<nav id="nav">
+    <div class="navCon">
+        <div class="head"><img src="../static/default/mobile/skin/images/navigation_banner.png" alt=""> <a
+                href="javascript:void(0);" class="navIcon"></a></div>
+        <ul class="menuNav clearFix">
+            <li><a href="http://m7.fangcms.cn/shenzhen7/changfcz/changfangchuzu.html" target="_self"> <img
+                    src="/uploads/allimg/20200525/1-2005251636055R.png" alt="厂房">
+                <p>厂房出租</p>
+            </a></li>
+
+            <li><a href="http://m7.fangcms.cn/shenzhen7/officecz/xiezilouchuzu.html" target="_self"> <img
+                    src="/uploads/allimg/20200525/1-200525163GBY.png" alt="厂房">
+                <p>写字楼出租</p>
+            </a></li>
+            <li><a href="http://m7.fangcms.cn/shenzhen7/article/zixun.html" target="_self"> <img
+                    src="/uploads/allimg/20200525/1-200525163K2502.png" alt="厂房">
+                <p>资讯</p>
+            </a></li>
+            <li><a href="http://m7.fangcms.cn/shenzhen7/single/yewuhezuo245.html" target="_self"> <img
+                    src="/uploads/allimg/20200525/1-200525163PRc.png" alt="厂房">
+                <p>业务合作</p>
+            </a></li>
+            <li><a href="http://m7.fangcms.cn/shenzhen7/single/qiuzuqiugou.html" target="_self"> <img
+                    src="/uploads/allimg/20200525/1-200525163T5J2.png" alt="厂房">
+                <p>求租求购</p>
+            </a></li>
+            <li><a href="http://m7.fangcms.cn/shenzhen7/single/toufangpanyuan.html" target="_self"> <img
+                    src="/uploads/allimg/20200525/1-20052516393VH.png" alt="厂房">
+                <p>投放盘源</p>
+            </a></li>
+            <li><a href="http://m7.fangcms.cn/user/Users/centre.html" target="_self"> <img
+                    src="/uploads/allimg/20200525/1-20052516392V59.png" alt="厂房">
+                <p>会员中心</p>
+            </a></li>
+        </ul>
+        <ul class="foot clearFix">
+            <li><a href="http://m7.fangcms.cn"> <img
+                    src="../static/default/mobile/skin/images/u4ob1430vlok1pz8lfjxqlrbgvlvply7qkhgzdwq.png" alt="首页">
+                <p>首页</p>
+            </a></li>
+            <li><a href="http://m7.fangcms.cn/shenzhen7/single/gongsijianjie.html"> <img
+                    src="../static/default/mobile/skin/images/ne2z5ipn1kgoknzbpq5dcmkixsvxiqyohfvaqnnl.png" alt="公司简介">
+                <p>公司简介</p>
+            </a></li>
+            <li><a href="http://m7.fangcms.cn/shenzhen7/single/lianxiwomen949.html"> <img
+                    src="../static/default/mobile/skin/images/qqbzyi4culnfeeaye2deq7yduigugqe00uustyuf.png" alt="联系我们">
+                <p>联系我们</p>
+            </a></li>
+        </ul>
+        <div class="close"></div>
+    </div>
+    <div class="mask"></div>
+</nav>
+<!--banner-->
+<section class="deBanner" style="z-index: 1;margin-top: -1.7rem;">
+    <div class="headTansBg"></div>
+    <div class="swiper-container pic deBannerSwiper">
+        <ul class="swiper-wrapper">
+            {% for img in data.images %}
+
+            <li class="swiper-slide"><img src="{{ img }}"
+                                          alt="{{ data.title }}"
+                                          onerror="javascript:this.src='../static/default/mobile/skin/images/none_pic.jpg'">
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="numTips">
+        <p>编号:{{ data.item_id }}</p>
+        <div class="swiper-pagination" style="position: initial;"><span class="swiper-pagination-current">1</span> /
+            <span class="swiper-pagination-total">0</span></div>
+    </div>
+</section>
+<!--相册-->
+<div class="atlasesBox">
+    <header class="headBox" style="background-color: transparent">
+        <div class="backUp"></div>
+    </header>
+    <div class="view">
+        <div class="swiper-container swiper-container-horizontal swiper-container-wp8-horizontal">
+            <ul class="swiper-wrapper">
+                {% for img in data.images %}
+
+                <li class="swiper-slide">
+                    <img src="{{ img }}" alt="{{ data.title }}"
+                         onerror="javascript:this.src='../static/default/mobile/skin/images/none_pic.jpg'">
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="ab-swiper-pagination swiper-pagination"></div>
+    <div class="preview">
+        <!--<a class="arrow-left" href="#"></a>-->
+        <!--<a class="arrow-right" href="#"></a>-->
+        <div class="swiper-container swiper-container-horizontal swiper-container-wp8-horizontal">
+            <div class="swiper-wrapper">
+                {% for img in data.images %}
+
+                <li class="swiper-slide {eyou:eq name='$i' value='1'}active-nav{/eyou:eq}">
+                    <img src="{{ img }}" alt="{{ data.title }}"
+                         onerror="javascript:this.src='../static/default/mobile/skin/images/none_pic.jpg'">
+                </li>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--abstract信息-->
+<section class="abstractBox bt20">
+    <h2 class="tit plr30">{{ data.title }}</h2>
+    <div class="absLabBox plr30 clearFix">
+        <p class="absLab clearFix"><span class="lab_1 dd">厂房出租</span></p>
+    </div>
+    <div class="plr30">
+        <p style="width: 100%;height: 1px;background-color:#EFEFEF"></p>
+    </div>
+    <ul class="absList clearFix" style="border: 0;">
+        <li>
+            <h4><span>{{ data.price_month }}元/㎡/月</span></h4>
+            <p>租金</p>
+        </li>
+        <li>
+            <h4>{{ data.area }}<span>㎡</span></h4>
+            <p>面积</p>
+        </li>
+        <li>
+            <h4>{{ data.structure.strip("结构：") }}</h4>
+            <p>结构</p>
+        </li>
+    </ul>
+    <div class="plr30">
+        <p style="width: 100%;height: 1px;background-color:#EFEFEF"></p>
+    </div>
+    <div class="detaTraffic plr30">
+        <div class="location">
+            <p><a href="#map">{{ data.address }}<i></i></a></p>
+        </div>
+    </div>
+</section>
+
+<!--基本信息-->
+<section class="baseInfoBox plr30 bt20 singleRow">
+    <div class="detaSectTit clearFix">
+        <h2>基本信息</h2>
+        <ul class="baseInfo-tag">
+            <li>{{ data.xinjiu }}</li>
+        </ul>
+    </div>
+    <ul class="baseInfo clearFix baseInfo2" style="padding: 0.25rem 0">
+        <li><span>信息编号</span><span>{{ data.item_id }}</span></li>
+        <li><span>供电</span><span>{{ data.gongdian }}</span></li>
+        <li><span>办公室</span><span>{{ data.bangonshi }}</span></li>
+        <li><span>电费</span><span>{{ data.dianfei }}</span></li>
+        <li><span>食堂</span><span>{{ data.shitang }}</span></li>
+        <li><span>宿舍</span><span>{{ data.sushe }}</span></li>
+        <li><span>电梯</span><span>{{ data.dianti }}</span></li>
+    </ul>
+</section>
+<!--概括-->
+<section class="sumBox plr30 bt20">
+    <div class="detaSectTit clearFix">
+        <h2>概况</h2>
+    </div>
+    <div class="sumCon">
+    <pre class="txt"><p>{{ data.detail }}</p><p><br/></p><p><br/></p><p><br/></p></p>
+</pre>
+        <div class="unfold"><span class="hui-icons hui-icons-down2"></span></div>
+    </div>
+</section>
+<!--周边配套-->
+<section class="mapMatchingBox bt20" id='map'>
+    <div class="detaSectTit clearFix">
+        <h2>周边配套</h2>
+    </div>
+
+    <div class="mapMatchingCon">
+        <div class="detail-map-wrap">
+            <div id="map_canvas" style="width:100%;height: 300px;"></div>
+        </div>
+        <div class="map-mart">
+            <div class="map-mart-title" id="map-keyword"><a href="javascript:;" class="heihei"
+                                                            onclick="select_around(0);">商业</a> <a href="javascript:;"
+                                                                                                  class="heihei"
+                                                                                                  onclick="select_around(1);">交通</a>
+                <a href="javascript:;" class="heihei" onclick="select_around(2);">教育</a> <a href="javascript:;"
+                                                                                            class="heihei"
+                                                                                            onclick="select_around(3);">医疗</a>
+            </div>
+            <!--<ul class="map-mart-lists" id="result">
+            </ul>-->
+        </div>
+        <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=ETLXgCxIoVixggHcAk6mKpMd&s=1"></script>
+        <script type="text/javascript" src="/public/static/common/js/baidu_surroundings.js?v=v3.9.0"></script>
+        <!--<link rel="stylesheet" type="text/css" href="/public/static/common/css/bmap_20.css?v=v3.9.0" />-->
+        <link rel="stylesheet" type="text/css" href="/public/static/common/css/tag_surroundings.css?v=v3.9.0"/>
+        <script type="text/javascript">
+            var lng = "113.93007";
+            var lat = "22.747905";
+            var bid = '1';
+            var bname = "光明高新园区甲级写字楼，形象高大上，2020年全年免租";
+            var address = "广东省深圳市光明区光明区科裕路附近";
+            var price = "0元/㎡";
+            var bprice = bname + "  " + price;
+            if (!isNaN(price)) {
+                bprice = bname + "  " + (price > 0 ? (price + "元/㎡") : "售价待定");
+            }
+            // 百度地图API功能****begin
+            var mp = new BMap.Map("map_canvas", {minZoom: 6, maxZoom: 14});								//50米-5公里缩放
+            //mp.addControl(new BMap.OverviewMapControl()); 											//添加默认缩略地图控件
+            //mp.addControl(new BMap.OverviewMapControl({isOpen:true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT})); //右下角，打开
+            mp.addControl(new BMap.ScaleControl()); 													// 添加默认比例尺控件
+            mp.addControl(new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT})); 					// 左下
+            mp.addControl(new BMap.NavigationControl()); 												//添加默认缩放平移控件
+            //mp.addControl(new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_SMALL})); //左上角，仅包含平移和缩放按钮
+            var pointA = new BMap.Point(lng, lat);
+            mp.centerAndZoom(pointA, 15);
+            //mp.enableScrollWheelZoom();//启用滚轮放大缩小，默认禁用
+            mp.enableKeyboard();
+            mp.enableContinuousZoom(); 							// 开启连续缩放效果
+            mp.enableInertialDragging();　						// 开启惯性拖拽效果
+            //开始搜索
+            var local = new BMap.LocalSearch(mp, {pageCapacity: 10});
+
+            //多个关键字搜索返回结果 ****begin
+            local.setSearchCompleteCallback(function (results) {
+                //判断状态是否正确
+                if (local.getStatus() == BMAP_STATUS_SUCCESS) {
+                    //openInfoWinFuns = [];
+                    var map_total = 0;
+                    var pm = [];
+                    for (var index = 0; index < results.length; index++) {
+                        pm[index] = [];
+                        var zbcount = 0;
+                        for (var i = 0; i < results[index].getCurrentNumPois(); i++) {
+                            //初始化,拼装对象
+                            var _title = results[index].getPoi(i).title;
+                            var _keyword = results[index].keyword;
+                            var _address = results[index].getPoi(i).address;
+                            var _point = results[index].getPoi(i).point;
+                            var _poi = results[index].getPoi(i);
+                            var dist = mp.getDistance(pointA, results[index].getPoi(i).point).toFixed(0);//距离计算
+                            if (dist <= 2000) {
+                                var myPointMarker = new pointMarker(_title, _keyword, _address, dist, _point, _poi);
+                                pm[index][zbcount] = myPointMarker;
+                                zbcount++;
+                                map_total++;
+                            }
+                        }
+                    }
+                    $("#total").html(map_total);//总记录数
+                    //排序
+                    sortOrder(pm, "map_result", "lp-map-tab");
+                    //document.getElementById("map_result").innerHTML = s.join("");
+                } else {
+                    document.getElementById("map_result").innerHTML = '没有查到, 您可以尝试把地图放大之后再查找';
+                }
+            });
+            //多个关键字搜索返回结果 ****end
+            //默认选择第一项
+            function select_around(i) {
+                aaa = $(".heihei").eq(i);
+                for (var n = 0; n < 4; n++) {
+                    $(".heihei").removeClass('active-' + (n + 1));
+                    $(".heihei").removeClass('active');
+                }
+                aaa.addClass('active-' + (i + 1));
+                aaa.addClass('active');
+                search(i, local);
+            }
+
+            select_around(0);
+
+
+        </script>
+
+    </div>
+</section>
+<!--预约看房-->
+<section class="appointmentBox bt20">
+    <div class="appointment">
+        <h2>预约看房</h2>
+        <form method="post" id="form_f0fb35280a74ca4756fbafb514ac0a552"
+              action="http://m7.fangcms.cn/?m=api&c=Ajax&a=form_submit"
+              onsubmit="return f0b3cf272cf5f6cd0aa08654e64ad83af();">
+            <input id="attr_90" name="attr_90" type="text" placeholder="你的称呼">
+            <input id="attr_90" name="attr_90" type="text" placeholder="电话号码">
+            <input style="display: none;" id="attr_92" name="attr_92" type="text" value="光明高新园区甲级写字楼，形象高大上，2020年全年免租">
+            <input type="hidden" name="ajax_form" value=""/>
+            <input type="hidden" name="come_from" value="写字楼出租>光明高新园区甲级写字楼，形象高大上，2020年全年免租"/>
+            <input type="hidden" name="parent_come_url" value=""/>
+            <input type="hidden" name="aid" value="163"/>
+            <input type="hidden" name="come_url"
+                   value="http://m7.fangcms.cn/shenzhen7/officecz/xiezilouchuzu/163.html"/>
+            <input type="hidden" name="form_id" value="23"/>
+            <input type="hidden" name="is_default" value="90"/>
+            <input type="hidden" name="__token__0b3cf272cf5f6cd0aa08654e64ad83af" id="0b3cf272cf5f6cd0aa08654e64ad83af"
+                   value=""/>
+            <!--<script type="text/javascript" src="/public/static/common/js/jquery.min.js?v=v3.9.0"></script>-->
+            <script type="text/javascript" src="/public/plugins/layer-v3.1.0/layer.js?v=v3.9.0"></script>
+            <script type="text/javascript">
+                function f0b3cf272cf5f6cd0aa08654e64ad83af() {
+
+                    var x = document.getElementById('form_f0fb35280a74ca4756fbafb514ac0a552');
+                    for (var i = 0; i < x.length; i++) {
+
+                        if (x[i].name == 'attr_90' && x[i].value.length == 0) {
+                            layer.msg('电话号码不能为空！');
+                            return false;
+                        }
+
+                        if (x[i].name == 'attr_90' && !(/^1\d{10}$/.test(x[i].value))) {
+                            layer.msg('电话号码格式不正确！');
+                            return false;
+                        }
+                    }
+
+                    var elements = document.getElementById("form_f0fb35280a74ca4756fbafb514ac0a552");
+                    var formData = new FormData();
+                    for (var i = 0; i < elements.length; i++) {
+                        formData.append(elements[i].name, elements[i].value);
+                    }
+                    var ajax = new XMLHttpRequest();
+                    ajax.open("post", "/index.php?m=api&c=Ajax&a=form_submit&_ajax=1");
+                    ajax.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                    ajax.send(formData);
+
+                    ajax.onreadystatechange = function () {
+                        if (ajax.readyState == 4 && ajax.status == 200) {
+                            var json = ajax.responseText;
+                            var res = JSON.parse(json);
+                            if (1 == res.code) {
+                                reset_form(elements);
+                                f0fb35280a74ca4756fbafb514ac0a552();
+                                f0fb35280a74ca4756fbafb514ac0a552_notice(res.data.form_id, res.data.list_id);
+                                layer.msg(res.msg);
+
+
+                            } else {
+                                layer.msg(res.msg);
+                                f0fb35280a74ca4756fbafb514ac0a552();
+                            }
+                        }
+                    }
+
+                    return false;
+                }
+
+                function f0fb35280a74ca4756fbafb514ac0a552() {
+                    //步骤一:创建异步对象
+                    var ajax = new XMLHttpRequest();
+                    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
+                    ajax.open("get", "/index.php?m=api&c=Ajax&a=get_token&name=__token__0b3cf272cf5f6cd0aa08654e64ad83af", true);
+
+                    // 给头部添加ajax信息
+                    ajax.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                    //步骤三:发送请求+数据
+                    ajax.send();
+                    //步骤四:注册事件 onreadystatechange 状态改变就会调用
+                    ajax.onreadystatechange = function () {
+                        //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
+                        if (ajax.readyState == 4 && ajax.status == 200) {
+                            document.getElementById("0b3cf272cf5f6cd0aa08654e64ad83af").value = ajax.responseText;
+                        }
+                    }
+                }
+
+                function f0fb35280a74ca4756fbafb514ac0a552_notice(form_id, list_id) {
+                    //步骤一:创建异步对象
+                    var ajax = new XMLHttpRequest();
+                    //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
+                    ajax.open("post", "/index.php?m=api&c=Ajax&a=send_email", true);
+                    // 给头部添加ajax信息
+                    ajax.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                    // 如果需要像 HTML 表单那样 POST 数据，请使用 setRequestHeader() 来添加 HTTP 头。然后在 send() 方法中规定您希望发送的数据：
+                    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    //步骤三:发送请求+数据
+                    ajax.send("type=form_submit&form_id=" + form_id + "&list_id=" + list_id);
+                    //步骤四:注册事件 onreadystatechange 状态改变就会调用
+                    ajax.onreadystatechange = function () {
+                    }
+                }
+
+                //重置form表单
+                function reset_form(Clear_From) {
+                    for (var a = 0; a < Clear_From.elements.length; a++) {
+                        if (Clear_From.elements[a].type == "text") {				//类型为text的
+                            Clear_From.elements[a].value = "";
+                        } else if (Clear_From.elements[a].type == "password") {	//类型为password的
+                            Clear_From.elements[a].value = "";
+                        } else if (Clear_From.elements[a].type == "radio") {		//类型为radio的
+                            Clear_From.elements[a].checked = false;
+                        } else if (Clear_From.elements[a].type == "checkbox") {	//类型为
+                            Clear_From.elements[a].checked = false;
+                        } else if (Clear_From.elements[a].type == "select-one") {	//单选下拉菜单
+                            Clear_From.elements[a].options[0].selected = true;	//选中第一个options
+                        } else if (Clear_From.elements[a].type == "select-multiple") { //多选下拉菜单
+                            for (var b = 0; b < Clear_From.elements[a].options.length; b++) { //将所有options设为false
+                                Clear_From.elements[a].options[b].selected = false;
+                            }
+                        } else if (Clear_From.elements[a].type == "textarea") {
+                            Clear_From.elements[a].value = "";
+                        }
+                    }
+                }
+
+                f0fb35280a74ca4756fbafb514ac0a552();
+            </script>
+            <button type="submit" class="sub">立即预约</button>
+
+        </form>
+
+    </div>
+</section>
+<div class="maskBox"></div>
+<!--为您推荐-->
+<section class="likeBox plr30">
+    <div class="detaSectTit clearFix">
+        <h2>为您推荐</h2>
+        <a href="http://m7.fangcms.cn/shenzhen7/officecz/xiezilouchuzu.html">更多<i></i></a></div>
+    <ul class="listCon listCon4">
+        {% for item in other.recommand %}
+        <li class="xzlLi">
+            <a href="/item?item_id={{ item.item_id }}">
+                <div class="pic">
+                    <img src="{{ item.img_url }}" class=" " alt="{{ item.title }}"
+                         onerror="javascript:this.src='../static/default/mobile/skin/images/none_pic.jpg'">
+                    <!--<p>出租</p>-->
+                    <i>{{ item.address }}</i></div>
+                <div class="txt">
+                    <h2>{{ item.title }}</h2>
+                    <p class="baseInfo"><span>{{ item.address }}</span><span></span></p>
+                    <p class="price cfPrice"><span><span>{{ item.price_month }}元/㎡/月</span></span><span>{{ item.area }}㎡</span></p>
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+
+    </ul>
+</section>
+<!--没找到房源-->
+<section class="CanNotForm plr30" style="margin-top: 0.2rem;padding-bottom: 0.4rem;"><a
+        href="http://m7.fangcms.cn/shenzhen7/single/qiuzuqiugou.html"> <img
+        src="../static/default/mobile/skin/images/detailed_entrust2.png" alt=""> </a></section>
+<!--平台优势-->
+<section class="featureBox featureBoxD">
+    <ul class="clearFix">
+        <li>
+            <h2>品牌实力</h2>
+            <p>上市公司</p>
+            <p>战略投资</p>
+            <img src="../static/default/mobile/skin/images/feat_ico_1.png" alt="品牌实力"></li>
+        <li>
+            <h2>租客免佣</h2>
+            <p>一站式服务</p>
+            <p>省钱又省心</p>
+            <img src="../static/default/mobile/skin/images/feat_ico_2.png" alt="租客免佣"></li>
+        <li>
+            <h2>专业高效</h2>
+            <p>100+实体店</p>
+            <p>5000+选址顾问</p>
+            <img src="../static/default/mobile/skin/images/feat_ico_3.png" alt="专业高效"></li>
+    </ul>
+</section>
+<!--底部栏-->
+<!--底部栏-->
+<footer>
+    <!--电话-->
+    <div class="tel clearFix"><a id="semCall" href="tel:400-1234567" class="semCall">
+        <p class="semCall-tel">400-1234567</p>
+        <p class="semCall-text">点击拨打免费咨询</p>
+    </a></div>
+    <p class="link clearFix">
+        <a href="http://m7.fangcms.cn/shenzhen7/single/gongsijianjie.html">公司简介</a>
+        <a href="http://m7.fangcms.cn/shenzhen7/single/lianxiwomen949.html">联系我们</a>
+        <a href="http://m7.fangcms.cn/shenzhen7/single/yonghuxieyi916.html">用户协议</a>
+        <a href="http://m7.fangcms.cn/shenzhen7/single/mianzeshengming.html">免责声明</a>
+    </p>
+    </br>
+    <p class="copy clearFix" style="margin-bottom: 6px"><span><a href="https://beian.miit.gov.cn/" rel="nofollow"
+                                                                 target="_blank">粤ICP备xxxxxxxx号</a></span></p>
+    <p>Copyright © 2020-2028 房产租售网 版权所有</p>
+</footer>
+<!--底部导航-->
+<!--底部导航-->
+
+<div style="height: 1.2rem;"></div>
+<!--底部导航模块-->
+<section class="botFixNavBox">
+    <div>
+
+        <a href="http://m7.fangcms.cn/shenzhen7/agent/index/8.html" class="agentPic">
+            <div><img src="/uploads/allimg/20200717/1-200GG533354M.jpg" alt="周生">
+                <p>周生</p>
+            </div>
+        </a>
+
+        <a href="http://m7.fangcms.cn/?m=home&c=Index&a=ajax_form&ajax_form=1&aid=163&template=ajax_form_liuyan&parent_url=http%3A%2F%2Fm7.fangcms.cn%2Fshenzhen7%2Fofficecz%2Fxiezilouchuzu%2F163.html"
+           class="leave semDemand"> <i class="icon_leave"></i>
+            <p>留言</p>
+        </a>
+
+        <a href="tel:13944445555" class="tel semCall">
+            <div>
+                <p>点击免费拨打</p>
+                <p>13944445555 </p>
+            </div>
+        </a>
+    </div>
+</section>
+<!--分享-->
+<section class="sharePageBpx">
+    <!--点击右上角分享-->
+    <div class="share share-1"><img src="../static/default/mobile/skin/images/share_pic1.png" alt="" class="pic1"> <a
+            href="javascript:void(0);" class="share-btn"><img src="../static/default/mobile/skin/images/share_know.png"
+                                                              alt=""></a></div>
+    <div class="share share-2">
+        <div class="shareCon">
+            <h3>分享链接给好友</h3>
+            <p class="text">https://realsee.com/lianjia/vdrj5DRkvP3q8OeK/Ydq4ApmvLVbgEf7TghKTeZNrL9jRPDln/</p>
+            <input type="text" class="copyVal" id="copyVal">
+            <p class="btn copyKey">一键复制</p>
+            <p class="btn">取消</p>
+        </div>
+    </div>
+    <div class="share share-3">
+        <div class="shareCon"><a href="javascript:void(0);" class="share-btn"><img
+                src="../static/default/mobile/skin/images/share_know.png" alt=""></a> <img
+                src="../static/default/mobile/skin/images/share_pic2.png" alt="" class="pic2"></div>
+    </div>
+</section>
+<script src="../static/default/mobile/skin/js/swiper-4.3.5.min.js"></script>
+<script src="../static/default/mobile/skin/js/zepto.js"></script>
+<script src="../static/default/mobile/skin/js/touch.js"></script>
+
+<script src="../static/default/mobile/skin/js/base.js"></script>
+<script src="../static/default/mobile/skin/js/details.js"></script>
+<script type="text/javascript" src="../static/default/mobile/skin/js/nativeshare.js"></script><!--分享组件-->
+
+<script src="../static/default/mobile/skin/js/base_1.js"></script>
+<script src="../static/default/mobile/skin/js/detail.js"></script>
+<script src="../static/default/mobile/skin/js/index.js"></script>
+<script>
+    $("#agentDialog").css("bottom", -$("#agentDialog").height());
+    $(".botFixNavBox3 .tel,#closeArea").on("click", function () {
+        $("#agentDialog").toggleClass("agentDialogShow");
+        $("#areaMask").toggle();
+        $("html").toggleClass("noscroll");
+    })
+    $("#areaMask").on('click', function (e) {
+        e.stopPropagation();
+    })
+</script>
+<script>
+
+
+    window.onload = function () {
+        // nav();//顶部抽屉导航
+        switchNav();// 打开、关闭nav
+        baseInforWid();//基本信息
+        share();//分享组件
+        abstractSwiper();//相册
+        // dheadFixBox();//头部滑动固定
+        fullText();//查看全文
+        dheadFixApp();//固定app
+    }
+
+</script>
+</body>
+</html>

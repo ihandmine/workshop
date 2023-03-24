@@ -1,0 +1,363 @@
+
+/************************* 公共style *************************/
+.headBox .xzlLogo{
+    height: 0.4rem;
+}
+.headBox .xzlLogo img{
+    width: 1.26rem;height: 0.4rem
+}
+.noscroll, .noscroll body{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.oTitle h2{
+    font-size: 0.4rem;
+    color: #303030;
+    line-height: 0.56rem;
+    /*margin-top: 0.4rem;*/
+    margin-bottom: 0.4rem;
+}
+.areaMask{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.listFixBot{
+    z-index: 1000;
+}
+
+/*.grade-eject > ul.grade-t li{*/
+
+/*}*/
+/*.grade-eject > ul.grade-t li{*/
+/*display: none;*/
+/*}*/
+/************************* 搜索 *************************/
+.searchWrapBox .tab li:first-of-type{
+    padding-left: 0.4rem;
+}
+.searchWrapBox .tab li{
+    width: auto;
+    padding-right: 0.5rem;
+}
+/************************* 城市切换导航 *************************/
+.oCityNav{
+    /*display: none;*/
+}
+
+.oCityNavCon{
+    background-color: #fff;
+    width: 6.9rem;
+    -webkit-border-radius: 0.04rem;
+    border-radius: 0.04rem;
+    padding: 0.4rem 0.23rem;
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 1012;
+    /*display: none;*/
+    /*opacity: 0;*/
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+}
+.show{
+    /*opacity: 1;*/
+    top: 50%;
+}
+.oCityNavCon>h2{
+    line-height: 0.45rem;
+    font-size: 0.32rem;
+    color: #303030;
+    margin-bottom: 0.6rem;
+    font-weight: normal;
+    position: relative;
+}
+.oCityNavCon>h2 .close{
+    display: block;
+    width: 0.34rem;
+    height: 0.34rem;
+    position: absolute;
+    right: 0;
+    top: 0.04rem;
+    background: url('../images/entrust_city_cancel.png') no-repeat;
+    background-size: 100%;
+}
+.oCityNavCon .con a{
+    display: block;
+    float: left;
+    width: 1.46rem;
+    /*height: 0.64rem;*/
+    /*line-height: 0.64rem;*/
+    font-size: 0.28rem;
+    color: #303030;
+    background: #F8F8F8;
+    -webkit-border-radius: 0.04rem;
+    border-radius: 0.04rem;
+    text-align: center;
+    margin-bottom: 0.2rem;
+
+    line-height: 0.4rem;
+    padding: 0.11rem 0;
+}
+.oCityNavCon .con a:not(:nth-of-type(4n)){
+    margin-right: 0.2rem;
+}
+.oCityNavCon .con a.focus{
+    color: #e03b36;
+    background-color: rgba(221,37,52,0.10);;
+}
+
+/************************* 条件筛选 *************************/
+.screenTabBox .selectWrap ul li span{
+    color: #666;
+}
+body.modal-open,.modal-open{
+    /*overflow: hidden;*/
+    /*height: 100%;*/
+    /*position: initial !important;*/
+
+}
+.grade-eject, .sort-eject, .brand-eject, .more-eject, .type-eject{
+
+
+}
+
+/************************* list *************************/
+.listCon a .txt h2{
+    -webkit-line-clamp:1;
+    line-clamp: 1;
+}
+.listCon a .txt h2, .listCon3 a .txt h2{
+    margin-bottom: 0.12rem;
+}
+.listCon a .txt p.baseInfo, .listCon3 a .txt p.baseInfo{
+    margin-bottom: 0.08rem;
+}
+.xzlList a .txt p.traffic, .xzlLi a .txt p.traffic{
+    margin-bottom: 0.1rem;
+}
+.listCon a .txt p.label, .listCon3 a .txt p.label{
+    margin-bottom: 0.12rem;
+}
+.listCon4 a .txt h2{
+    -webkit-line-clamp:2;
+    line-clamp: 2;
+}
+.listCon4 a .txt h2{
+    margin-bottom: 0.07rem;
+}
+.listCon4 a .txt p.baseInfo{
+    margin-bottom: 0.14rem;
+}
+.listCon a .txt p.label span{
+    max-width: 1.32rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hotSpecList{
+    padding-bottom: 0.92rem;
+}
+.hotSpecList>a.more{
+    display: block;
+    width: 100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    background: #F8F8F8;
+    -webkit-border-radius: 0.08rem;
+    -moz-border-radius: 0.08rem;
+    border-radius: 0.08rem;
+    font-size: 0.32rem;
+    color: #404B69;
+    text-align: center;
+    margin-top: 0.4rem;
+}
+.hotSpecList .notMore{
+    text-align: center;
+    padding-top: 0.5rem;
+}
+.hotSpecList .notMore span{
+    display: inline-block;
+    font-size: 0.32rem;
+    color: #404B69;
+    line-height: 0.45rem;
+    position: relative;
+}
+.hotSpecList .notMore span::before,.hotSpecList .notMore span::after{
+    content: '';
+    display: block;
+    background: #F0F0F0;
+    width: 1.62rem;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+}
+.hotSpecList .notMore span::before{
+    left: -1.82rem;
+
+}
+.hotSpecList .notMore span::after{
+    right: -1.82rem;
+
+}
+
+/************************* 筛选模块 *************************/
+.screenBox2 .price-eject .grade-price li.focus a{
+    color: #e03b36;
+}
+.screenBox2 .price-eject .grade-price li a{
+    text-align: left;
+    padding-left: 0.3rem;
+}
+.screenBox2 .price-eject .grade-priceCon{
+    /*left: 33.333%;*/
+    width: 66.666%;
+    background: #f8f8f8;
+    left: 100%;
+}
+.screenBox2 .price-eject .grade-priceCon li{
+    height: auto;
+    display: none;
+}
+.screenBox2 .price-eject .grade-priceCon li a{
+    text-align: left;
+    padding-left: 0.3rem;
+
+    display: block;
+    line-height: 0.96rem;
+    height: 0.96rem;
+    font-size: 0.28rem;
+}
+.screenBox2 .price-eject .grade-priceCon li a.focus{
+    color: #e03b36;
+}
+
+/************************* 底部导航 *************************/
+.areaSleWrap{
+    margin-top: 0.33rem;
+    margin-bottom: 0.2rem;
+}
+.areaSleWrap .crumbArea{
+    font-size: 0.24rem;
+    color: #666;
+    letter-spacing: 0;
+    /*line-height: 0.4rem;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.areaSleWrap .crumbArea a{
+    color: #3F3F3F;
+}
+.navAreaSel{
+    border-bottom: 0.02rem solid #F0F0F0;
+    padding-bottom: 0.1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.22rem;
+}
+.navAreaSel span{
+    float: left;
+    font-size: 0.24rem;
+    color: #303030;
+    margin-right: 0.3rem;
+    position: relative;
+}
+.navAreaSel span.focus::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.02rem;
+    background: #D3D3D3;
+    position: absolute;
+    left: 0;
+    bottom: -0.12rem;
+}
+.listAreaSel{
+    padding-left: 0.3rem;
+}
+.listAreaSel li{
+    float: left;
+    margin-right: 0.3rem;
+    margin-bottom: 0.2rem;
+}
+.listAreaSel li a{
+    font-size: 0.22rem;
+    color: #999;
+    line-height: 0.26rem;
+}
+
+.dheadFixBox h2{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 1.4rem;
+}
+.listCon li >a{
+    padding-top: 0.4rem;
+}
+
+.centerEject ul li a.focus{
+    color: #e03b36;
+    /* background: url(../images/icon_city_sel.png) no-repeat center right; */
+    /* background-size: 0.7rem 0.4rem; */
+}
+
+
+
+/*区域推荐*/
+.listAreaBox{
+    position: relative;
+    height: 2.1rem;
+    overflow: hidden;
+}
+.listAreaBox .unfold{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.92rem;
+    line-height: 0.92rem;
+    /*background-color: #fff;*/
+    text-align: center;
+
+    background: -webkit-linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,1)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(rgba(255,255,255,0.6), rgba(255,255,2555,1)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,1)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,1)); /* 标准的语法 */
+}
+.listAreaBox .unfold span{
+    position: relative;
+    display: inline-block;
+    width: 0.34rem;
+    height: 0.35rem;
+    background: url(../images/detailed_unfold.png) no-repeat center;
+    background-size: 100%;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    top: 0.12rem;
+}
+.listAreaBox.fullText{
+    height: auto;
+}
+.listAreaBox.fullText .unfold{
+    position: initial;
+}
+.listAreaBox.fullText .unfold span{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}

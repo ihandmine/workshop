@@ -5,10 +5,14 @@ from parsel import Selector
 from dbhandler import init_connection, execute_insert, execute_query
 
 
+AREA = "hz"
+
+
 def data_format_save(data):
-    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    # init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
     cols, values = zip(*data.items())
-    table = "sz_changfang_detail"
+    table = "%s_changfang_detail" % AREA
     # table = "hz_changfang_index"
     # table = "dg_changfang_index"
     sql = "INSERT INTO `{}` ({}) VALUES ({})".format(
@@ -23,7 +27,7 @@ def get_html(item) -> str:
     """
     http://www.sfcfw68.com/sz/cfcz/35277.html
     """
-    base_url: str = f"http://www.sfcfw68.com/sz/cfcz/{item['item_id']}.html"
+    base_url: str = f"http://www.sfcfw68.com/{AREA}/cfcz/{item['item_id']}.html"
     headers: dict = Header(browser='chrome', connection=True).base.to_unicode_dict()
     response = requests.get(base_url, headers=headers)
     # print(response.content.decode('utf-8'))
@@ -91,8 +95,9 @@ def unit_test():
 
 
 def run():
-    _sql = "select * from sz_changfang_index"
-    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    _sql = "select * from %s_changfang_index" % AREA
+    # init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
     data = execute_query(_sql)
     for item in data:
         parse_html(get_html(item=item), item)

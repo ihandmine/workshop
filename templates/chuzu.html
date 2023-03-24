@@ -65,11 +65,11 @@
                 <div class="qhcity_hot" style="line-height:20px; padding-top:5px; padding-bottom:5px;">
                     <span>当前城市：</span> <a href="">{{ other.area }}</a></div>
                 <div class="qhcity_area" style="line-height:20px; padding-top:5px; padding-bottom:5px;"> 广东：
-                    <a href="/chuzu?price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}&area=东莞"
+                    <a href="/chuzu?area={{ other.area }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}&area=东莞"
                        title="东莞">东莞</a>
-                    <a href="/chuzu?price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}&area=深圳"
+                    <a href="/chuzu?area={{ other.area }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}&area=深圳"
                        title="深圳">深圳</a>
-                    <a href="/chuzu?price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}&area=惠州"
+                    <a href="/chuzu?area={{ other.area }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}&area=惠州"
                        title="惠州">惠州</a>
                 </div>
             </div>
@@ -207,16 +207,16 @@
         <dt>区域：</dt>
         <dd>
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?price={{ other.price }}&space={{ other.space }}&strc={{ strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&price={{ other.price }}&space={{ other.space }}&strc={{ strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="c_d42">不限</a>
             {% for area in other.areas %}
             {% if area == other.area_id %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ area }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ area }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="c_d42">{{ area }}</a>
             {% else %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ area }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ area }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="">{{ area }}</a>
             {% endif %}
             {% endfor %}
@@ -226,18 +226,18 @@
         <dt>租金：</dt>
         <dd>
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ other.area_id }}&space={{ other.space }}&strc={{ strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ other.area_id }}&space={{ other.space }}&strc={{ strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="c_d42">不限</a>
             {% for p, p_context in [("0,10", "10元/平米/月以下"), ("10,15", "10-15元/平米/月"), ("15,20", "15-20元/平米/月"),
             ("20,25",
             "20-25元/平米/月"), ("25,99", "25元/平米/月以上")] %}
             {% if p == other.price %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ other.area_id }}&price={{ p }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ other.area_id }}&price={{ p }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="c_d42">{{ p_context }}</a>
             {% else %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ other.area_id }}&price={{ p }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ other.area_id }}&price={{ p }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="">{{ p_context }}</a>
             {% endif %}
             {% endfor %}
@@ -247,7 +247,7 @@
         <dt>面积：</dt>
         <dd>
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ other.area_id }}&price={{ other.price }}&strc={{ strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ other.area_id }}&price={{ other.price }}&strc={{ strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="c_d42">不限</a>
             {% for s, s_context in [("0,500", "500平米以下"), ("500,1000", "500-1000平米"), ("1000,1500", "1000-1500平米"),
             ("1500,2500",
@@ -255,11 +255,11 @@
             ("10000,99999", "10000平米以上") ] %}
             {% if s == other.space %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ other.area_id }}&price={{ other.price }}&space={{ s }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ s }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="c_d42">{{ s_context }}</a>
             {% else %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ other.area_id }}&price={{ other.price }}&space={{ s }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ s }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="">{{ s_context }}</a>
             {% endif %}
             {% endfor %}
@@ -269,16 +269,16 @@
         <dt>结构：</dt>
         <dd>
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="c_d42">不限</a>
             {% for strc in ["标准厂房", "简易厂房", "钢结构厂房"] %}
             {% if strc == other.strc %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="c_d42">{{ strc }}</a>
             {% else %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}'
                class="">{{ strc }}</a>
             {% endif %}
             {% endfor %}
@@ -288,16 +288,16 @@
         <dt>楼层：</dt>
         <dd>
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&keyword={{ other.keyword }}'
                class="c_d42">不限</a>
             {% for floor in ["一楼厂房", "二楼以上", "独院厂房", "独栋厂房"] %}
             {% if floor == other.floor %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ floor }}&keyword={{ other.keyword }}'
                class="c_d42">{{ floor }}</a>
             {% else %}
             <a onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-               data-url='/chuzu?area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ floor }}&keyword={{ other.keyword }}'
+               data-url='/chuzu?area={{ other.area }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ floor }}&keyword={{ other.keyword }}'
                class="">{{ floor }}</a>
             {% endif %}
             {% endfor %}
@@ -628,13 +628,13 @@
                     <ul class="pager">
                         {% if (other.current_page - 1) >= 1 %}
                         <li>
-                            <a href="/chuzu?page={{ other.current_page - 1 }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}">上一页</a>
+                            <a href="/chuzu?area={{ other.area }}&page={{ other.current_page - 1 }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}">上一页</a>
                         </li>
                         {% endif %}
                         <li><a>{{ other.current_page }}</a></li>
                         {% if other.current_page + 1 <= other.page %}
                         <li>
-                            <a href="/chuzu?page={{ other.current_page + 1 }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}">下一页</a>
+                            <a href="/chuzu?area={{ other.area }}&page={{ other.current_page + 1 }}&area_id={{ other.area_id }}&price={{ other.price }}&space={{ other.space }}&strc={{ other.strc }}&floor={{ other.floor }}&keyword={{ other.keyword }}">下一页</a>
                         </li>
                         {% endif %}
                     </ul>
@@ -675,30 +675,30 @@
     <div class="sq_bd1">
         <div class="pl13_6 fl">
             <span style="margin-top:10px"><a class="f_wryh"
-                                             href="/chuzu?area=东莞">东莞</a>
+                                             href="/chuzu?area={{ other.area }}&area=东莞">东莞</a>
       <div class="cl"></div>
       </span>
             <ul class="fl" style="padding-top: 3px;">
             </ul>
             <span style="margin-top:10px"><a class="f_wryh"
-                                             href="/chuzu?area=深圳">深圳</a>
+                                             href="/chuzu?area={{ other.area }}&area=深圳">深圳</a>
       <div class="cl"></div>
       </span>
             <ul class="fl" style="padding-top: 3px;">
                 <li><a href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-                       data-url='/chuzu?area_id=南山'>南山</a>
+                       data-url='/chuzu?area={{ other.area }}&area_id=南山'>南山</a>
                     <a href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-                       data-url='/chuzu?area_id=宝安'>宝安</a>
+                       data-url='/chuzu?area={{ other.area }}&area_id=宝安'>宝安</a>
                 </li>
                 <li><a href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-                       data-url='/chuzu?area_id=龙岗'>龙岗</a>
+                       data-url='/chuzu?area={{ other.area }}&area_id=龙岗'>龙岗</a>
                     <a href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-                       data-url='/chuzu?area_id=盐田'>盐田</a>
+                       data-url='/chuzu?area={{ other.area }}&area_id=盐田'>盐田</a>
                 </li>
                 <li><a href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-                       data-url='/chuzu?area_id=龙华'>龙华</a>
+                       data-url='/chuzu?area={{ other.area }}&area_id=龙华'>龙华</a>
                     <a href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-                       data-url='/chuzu?area_id=坪山'>坪山</a>
+                       data-url='/chuzu?area={{ other.area }}&area_id=坪山'>坪山</a>
                 </li>
             </ul>
         </div>
@@ -853,15 +853,15 @@
     </div>
     <p class="infoList1" id="qlist0">
         <a href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-           data-url='/chuzu?area_id=龙华'>龙华区厂房出租</a> <a
+           data-url='/chuzu?area={{ other.area }}&area_id=龙华'>龙华区厂房出租</a> <a
             href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-            data-url='/chuzu?area_id=南山'>南山区厂房出租</a> <a
+            data-url='/chuzu?area={{ other.area }}&area_id=南山'>南山区厂房出租</a> <a
             href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-            data-url='/chuzu?area_id=龙岗'>龙岗区厂房出租</a> <a
+            data-url='/chuzu?area={{ other.area }}&area_id=龙岗'>龙岗区厂房出租</a> <a
             href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-            data-url='/chuzu?area_id=坪山'>坪山区厂房出租</a> <a
+            data-url='/chuzu?area={{ other.area }}&area_id=坪山'>坪山区厂房出租</a> <a
             href="javascript:;" onClick='ey_97c0670026ad69b846ea069ffdb217a9(this,"");'
-            data-url='/chuzu?area_id=宝安'>宝安厂房出租</a></p>
+            data-url='/chuzu?area={{ other.area }}&area_id=宝安'>宝安厂房出租</a></p>
     <div class="cl"></div>
     <script>
         $(".cc").mouseover(function () {

@@ -89,11 +89,11 @@ function getCookie(name){
             document.getElementById(id).style.display = _disply;
         }
 		function xiala1(){
-            document.getElementById("ywhz").style.background="url(/template/default/pc/skin/images/zs_topnavlibg2.jpg) no-repeat center";
+            document.getElementById("ywhz").style.background="url(/static/default/pc/skin/images/zs_topnavlibg2.jpg) no-repeat center";
             document.getElementById("jtxl").style.display="block";
         }
         function xiala2(){
-            document.getElementById("ywhz").style.background="url(/template/default/pc/skin/images/zs_topnavlibg1.jpg) no-repeat center";
+            document.getElementById("ywhz").style.background="url(/static/default/pc/skin/images/zs_topnavlibg1.jpg) no-repeat center";
             document.getElementById("jtxl").style.display="none";
         }
 		function nav_show(obj){

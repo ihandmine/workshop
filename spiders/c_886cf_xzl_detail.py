@@ -6,7 +6,8 @@ from dbhandler import init_connection, execute_insert, execute_query
 
 
 def data_format_save(data):
-    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    # init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
     cols, values = zip(*data.items())
     table = "sz_xiezilou_detail"
     sql = "INSERT INTO `{}` ({}) VALUES ({})".format(
@@ -89,7 +90,8 @@ def unit_test():
 
 def run():
     _sql = "select * from sz_xiezilou_index"
-    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    # init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
     data = execute_query(_sql)
     for item in data:
         parse_html(get_html(item=item), item)
