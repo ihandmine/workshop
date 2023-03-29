@@ -138,7 +138,7 @@ body.modal-open,.modal-open{
 #loading1 p{
     text-align: center;
     font-size: 0.28rem;
-    color: #e03b36;
+    color: royalblue;
     /*margin-top: -0.24rem;*/
     margin-top: 0.24rem;
 }
@@ -357,7 +357,7 @@ form i.icon_arrow{
 
 /************************************** 头部 **************************************/
 .headBox{
-    background-color: #e03b36;
+    background-color: royalblue;
     height: 0.9rem;
     line-height: 0.9rem;
     padding: 0 0.3rem;
@@ -629,7 +629,7 @@ form i.icon_arrow{
     background: #F8F8F8;
 }
 .listTit .focus{
-    color: #e03b36;
+    color: royalblue;
     /*background: rgba(221,37,52,0.10);*/
 }
 .listTit .sell, .listTitNew .sell{
@@ -677,7 +677,7 @@ form i.icon_arrow{
     float: left;
 }
 .listCon a .pic>p{
-    background-image: linear-gradient(0deg, #E95A33 0%, #e03b36 100%);
+    background-image: linear-gradient(0deg, #E95A33 0%, royalblue 100%);
     color: #fff;
     position: absolute;
     left: 0;
@@ -693,9 +693,9 @@ form i.icon_arrow{
 
 .plr30 a .pic i{
         display: block;
-    /*background: #F79632;*/
-    background-image: linear-gradient(270deg, #FCC761 0%, #F79632 100%);
-    background-image: -webkit-linear-gradient(-180deg, #FCC761 0%, #F79632 100%);
+    /*background: royalblue;*/
+    background-image: linear-gradient(270deg, #FCC761 0%, royalblue 100%);
+    background-image: -webkit-linear-gradient(-180deg, #FCC761 0%, royalblue 100%);
     -webkit-border-radius: 0.04rem 0 0.18rem 0;
     -moz-border-radius: 0.04rem 0 0.18rem 0;
     border-radius: 0.04rem 0 0.18rem 0;
@@ -717,9 +717,9 @@ form i.icon_arrow{
 }
 .listCon a .pic i{
     display: block;
-    /*background: #F79632;*/
-    background-image: linear-gradient(270deg, #FCC761 0%, #F79632 100%);
-    background-image: -webkit-linear-gradient(-180deg, #FCC761 0%, #F79632 100%);
+    /*background: royalblue;*/
+    background-image: linear-gradient(270deg, #FCC761 0%, royalblue 100%);
+    background-image: -webkit-linear-gradient(-180deg, #FCC761 0%, royalblue 100%);
     -webkit-border-radius: 0.04rem 0 0.18rem 0;
     -moz-border-radius: 0.04rem 0 0.18rem 0;
     border-radius: 0.04rem 0 0.18rem 0;
@@ -813,7 +813,7 @@ form i.icon_arrow{
 .listCon a .txt p.price{
     /*font-size: 0.24rem;*/
     font-size: 0.32rem;
-    color: #e03b36;
+    color: royalblue;
     line-height: 0.45rem;
 }
 .listCon a .txt p.price span{
@@ -834,8 +834,8 @@ form i.icon_arrow{
 }
 .listCon li.appDowList p a{
     display: block;
-    color: #e03b36;
-    border: 1px solid #e03b36;
+    color: royalblue;
+    border: 1px solid royalblue;
     border-radius: 0.04rem;
     line-height: 0.5rem;
     height: 0.5rem;
@@ -1067,8 +1067,8 @@ form i.icon_arrow{
     width: 3.74rem;
     height: 0.9rem;
     position: absolute;
-    background: linear-gradient(-135deg, #F79632 0%,#e03b36 100%);
-    background: -webkit-linear-gradient(-135deg, #F79632 0%, #e03b36 100%); /* Safari 5.1-6.0 */
+    background: linear-gradient(-135deg, royalblue 0%,royalblue 100%);
+    background: -webkit-linear-gradient(-135deg, royalblue 0%, royalblue 100%); /* Safari 5.1-6.0 */
     border-radius: 0.1rem;
     display: inline-flex;
     align-items: center;
@@ -1084,8 +1084,8 @@ form i.icon_arrow{
     transform: translateY(-50%);
 }
 .botFixNavBox a.tel>div{
-    /*background: linear-gradient(-135deg, #F79632 0%,#e03b36 100%);*/
-    /*background: -webkit-linear-gradient(-135deg, #F79632 0%, #e03b36 100%); !* Safari 5.1-6.0 *!*/
+    /*background: linear-gradient(-135deg, royalblue 0%,royalblue 100%);*/
+    /*background: -webkit-linear-gradient(-135deg, royalblue 0%, royalblue 100%); !* Safari 5.1-6.0 *!*/
     /*border-radius: 0.1rem;*/
     /*display: inline-block;*/
     /*height: 100%;*/
@@ -1146,8 +1146,8 @@ form i.icon_arrow{
     padding: 0 0.5rem;
 }
 .botFixNavBox .botFixNavBuil a.tel{
-    background: linear-gradient(-135deg, #F79632 0%,#e03b36 100%);
-    background: -webkit-linear-gradient(-135deg, #F79632 0%, #e03b36 100%); /* Safari 5.1-6.0 */
+    background: linear-gradient(-135deg, royalblue 0%,royalblue 100%);
+    background: -webkit-linear-gradient(-135deg, royalblue 0%, royalblue 100%); /* Safari 5.1-6.0 */
     border-radius: 0.1rem;
     display: inline-block;
     height: 0.9rem;
@@ -1433,13 +1433,13 @@ footer .copy img{
 .searchWrapBox .tab li a::after{
     content: '';
     display: block;
-    border-bottom: 0.04rem solid#e03b36;
-    color: #e03b36;
+    border-bottom: 0.04rem solidroyalblue;
+    color: royalblue;
     margin-top: 0.06rem;
     opacity: 0;
 }
 .searchWrapBox .tab li.foucs a{
-    color: #e03b36;
+    color: royalblue;
 }
 .searchWrapBox .tab li.foucs a::after{
     opacity: 1;
@@ -1515,7 +1515,7 @@ footer .copy img{
     margin-bottom: 0.1rem;
 }
 .searchList li p:first-of-type span{
-    color: #e03b36;
+    color: royalblue;
 }
 .searchList li p:last-of-type{
     font-size: 0.28rem;
@@ -2017,7 +2017,7 @@ footer .copy img{
 #orderedForm .sub button{
     border-radius: 0.1rem;
     -webkit-border-radius: 0.1rem;
-    background-color: #e03b36;
+    background-color: royalblue;
     width: 100%;
     color: #fff;
     font-size: 0.36rem;
@@ -2109,9 +2109,9 @@ footer .copy img{
 }
 
 .listCon a .pic i,.listCon3 a .pic i{
-    /* background: #F79632; */
-    /*background-image: -webkit-linear-gradient(0deg, #FC6761 0%, #F79632 100%);*/
-    /*background-image: linear-gradient(90deg, #FC6761 0%, #F79632 100%);*/
+    /* background: royalblue; */
+    /*background-image: -webkit-linear-gradient(0deg, #FC6761 0%, royalblue 100%);*/
+    /*background-image: linear-gradient(90deg, #FC6761 0%, royalblue 100%);*/
     /*-webkit-border-radius: 0.4rem;*/
     /*-moz-border-radius: 0.4rem;*/
     /*border-radius: 0.4rem;*/
@@ -2199,7 +2199,7 @@ footer .copy img{
     height: 1.066rem;
     margin-top: 0.3rem;
     border: none;
-    background: #e03b36;
+    background: royalblue;
     border-radius: 0.1rem;
     color: #ffffff;
     font-size: 0.36rem;
@@ -2282,7 +2282,7 @@ footer .copy img{
     background-size: 0.26rem 0.26rem;
     background-position: left center;
     background-repeat: no-repeat;
-    color: #e03b36;
+    color: royalblue;
     font-size: 0.24rem;
     line-height: 1.42;
 }

@@ -28,7 +28,7 @@
     border-right: 1px solid #EFEFEF;;
 }
 .selectWrapBox .selectWrap ul li.focus{
-    color: #e03b36
+    color: royalblue
 }
 .selectWrapBox .selectWrap ul li:last-child{
     border-right: 0;
@@ -39,7 +39,7 @@
     color: #979797;
 }
 .selectWrapBox .selectWrap ul li  .focus{
-    color: #e03b36;
+    color: royalblue;
 }
 .selectWrapBox .selectWrap ul li span i{
     width: 0.12rem;
@@ -94,7 +94,7 @@
     color: #979797;
 }
 .grade-eject > ul.grade-w > li a.focus,.grade-eject > ul.grade-t li a.focus,.grade-eject > ul.grade-a li a.focus{
-    color: #e03b36;
+    color: royalblue;
     background: url(../images/icon_city_sel.png) no-repeat center right;
     background-size: 0.7rem 0.4rem;
 
@@ -180,7 +180,7 @@
     margin-left: 0.1rem;margin-right: 0.2rem
 }
 .brand-eject .brand_select_form input.brand_select_sub{
-    background: #e03b36;
+    background: royalblue;
     border:0;
     color: #fff;
     width:1.6rem;
@@ -198,13 +198,13 @@
 }
 /*获取焦点*/
 .select_wrapper_box .focus{
-    color: #e03b36;
+    color: royalblue;
     /*background: url(../images/icon_city_sel.png) no-repeat center right;*/
     /*background-size: 0.7rem 0.4rem;*/
 }
 
 .sort-eject ul li a.focus,.one-eject ul li a.focus,.two-eject ul li a.focus,.one-eject ul li a.focus{
-    color: #e03b36;
+    color: royalblue;
     /*background: url(../images/icon_city_sel.png) no-repeat center right;*/
     /*background-size: 0.7rem 0.4rem;*/
 }
@@ -326,7 +326,7 @@
     margin-right: 0.2rem;
 }
 .more-eject .more_sub_con .more_sub{
-    background: #e03b36;
+    background: royalblue;
     color: #fff;
     width: 4.7rem;
     margin-right: 0.3rem;
@@ -401,7 +401,7 @@
 
 }
 .screenTabBox .selectWrap ul li span.focus{
-    color: #e03b36;
+    color: royalblue;
 }
 .screenTabBox .selectWrap ul li span i{
     width: 0.12rem;
@@ -451,7 +451,7 @@
 }
 .screenTag span:last-of-type{margin-right: 0;}
 .screenTag span.focus a{
-    color: #e03b36;
+    color: royalblue;
     background-color: rgba(221,37,52,0.1);
 }
 .screenBoxFix,.AselectWrapBox.screenBoxFix{
@@ -506,7 +506,7 @@
     content: '';
     width: 0.6rem;
     height: 0.04rem;
-    background-color: #e03b36;
+    background-color: royalblue;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -572,8 +572,8 @@
     transform: translateY(-50%);
 }
 .listFixBot .tel{
-    background-image: -webkit-linear-gradient(138deg, #e03b36 0%, #F79632 100%);
-    background-image: linear-gradient(138deg, #e03b36 0%, #F79632 100%);
+    background-image: -webkit-linear-gradient(138deg, royalblue 0%, #F79632 100%);
+    background-image: linear-gradient(138deg, royalblue 0%, #F79632 100%);
     width: 68%;
 }
 .listFixBot .tel a{
@@ -614,7 +614,7 @@
     display: block;
     width: 0.6rem;
     height: 0.04rem;
-    background: #e03b36;
+    background: royalblue;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -674,7 +674,7 @@
     background: #F0F0F0;
 }
 .tabSwiperBox .swiper-pagination .swiper-pagination-bullet-active{
-    background: #e03b36;
+    background: royalblue;
 }
 
 .tabSwiperBox{

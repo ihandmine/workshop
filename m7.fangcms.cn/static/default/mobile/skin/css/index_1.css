@@ -97,7 +97,7 @@
     transition-duration: 0ms;
     display: block;
     width: 0.7rem;
-    background: #e03b36;
+    background: royalblue;
     border-radius: 0.08rem;
     transform: translate(0px, 0px) translateZ(0px);
     transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
@@ -160,7 +160,7 @@
     color: #303030;
 }
 .demanEntryBox .demanEntry .tab p.focus:before{
-    background-color: #e03b36;
+    background-color: royalblue;
 }
 .demanEntryBox .demanEntry .con li{
 
@@ -184,8 +184,8 @@
     display: block;
     width: 5rem;
     height: 0.8rem;
-    background-image: -webkit-linear-gradient(-130deg, #e03b36 0%, #F79632 100%);
-    background-image: linear-gradient(130deg, #e03b36 0%, #F79632 100%);
+    background-image: -webkit-linear-gradient(-130deg, royalblue 0%, #F79632 100%);
+    background-image: linear-gradient(130deg, royalblue 0%, #F79632 100%);
     -webkit-border-radius: 0.4rem;
     -moz-border-radius: 0.4rem;
     border-radius: 0.4rem;
@@ -238,7 +238,7 @@
 .choiceBox .choiceCon2 li .txt p:first-of-type{
     float: left;
     font-size: 0.3rem;
-    color: #e03b36;
+    color: royalblue;
 }
 .choiceBox .choiceCon2 li .txt p:first-of-type > span {
     font-size: 0.22rem;
@@ -270,14 +270,14 @@
     position: relative;
 }
 .listBox2 .listTit p.rt a.focus{
-    color: #e03b36;
+    color: royalblue;
 }
 .listBox2 .listTit p.rt a.focus:before{
     content: '';
     display: block;
     width: 100%;
     height: 0.04rem;
-    background-color: #e03b36;
+    background-color: royalblue;
     position: absolute;
     left: 0;
     bottom: 0;
