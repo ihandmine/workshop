@@ -15,6 +15,7 @@ input,button,textarea,select{border:none;outline: none;vertical-align: middle; p
 .clearFix::after,.clearFix::before{content: "";height: 0;line-height: 0;display: block;visibility: hidden;clear: both;}
 .lf{float: left;}
 .rt{float: right;}
+.rt1{float: left;}
 .mt20{margin-top: 20px;}
 .mb20{margin-bottom: 20px;}
 .pt20{padding-top: 20px;}
@@ -288,9 +289,9 @@ i.triaArrow{width:0;height: 0;border-bottom: 6px solid #fff;border-left: 6px sol
 }
 /************ 搜索 ************/
 .zgSearch{
-    margin-left: 18px;
     box-sizing: border-box;
     margin-top: 27px;
+    margin-left: 70px;
 }
 .zgSearchForm{
     width:480px;
