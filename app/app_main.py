@@ -11,11 +11,11 @@ from fastapi.staticfiles import StaticFiles
 from starlette.requests import Request
 from starlette.templating import Jinja2Templates
 
-from spiders.dbhandler import execute_query, init_connection
+from dbhandler import execute_query, init_connection
 
 app = FastAPI()
 
-app.mount('/static', StaticFiles(directory='static'), name='static')
+app.mount('./static', StaticFiles(directory='static'), name='static')
 
 app.add_middleware(
     CORSMiddleware,
@@ -64,7 +64,7 @@ async def index(request: Request):
     _sql_sz_xiezi_title = """
         select DISTINCT title from sz_xiezilou_index limit 12
     """
-    init_connection(user='root', password='123456', database='crawler', host=db_host)
+    init_connection(user='root', password='Q#az132..', database='crawler', host=db_host)
     data_sz = execute_query(_sql_sz)
     data_hz = execute_query(_sql_hz)
     data_dg = execute_query(_sql_dg)
@@ -98,7 +98,7 @@ async def index(request: Request):
     _sql_sz_xiezi_title = """
         select DISTINCT title from sz_xiezilou_index limit 12
     """
-    init_connection(user='root', password='123456', database='crawler', host=db_host)
+    init_connection(user='root', password='Q#az132..', database='crawler', host=db_host)
     data_sz = execute_query(_sql_sz)
     data_hz = execute_query(_sql_hz)
     data_dg = execute_query(_sql_dg)
@@ -163,7 +163,7 @@ async def index(request: Request, page=Query(1), area=Query("深圳"), area_id=Q
                 AND area <= %s
         """ % (
             table_prefix, area_id, keyword, strc, floor, price_start, price_end, space_start, space_end)
-    init_connection(user='root', password='123456', database='crawler', host=db_host)
+    init_connection(user='root', password='Q#az132..', database='crawler', host=db_host)
     data = execute_query(_sql)
     print(_sql)
     total_count = execute_query(count_sql)[0]["count(*)"]
@@ -227,7 +227,7 @@ async def index(request: Request, page=Query(1), area=Query("深圳"), area_id=Q
                 AND area <= %s
         """ % (
             area_id, keyword, price_start, price_end, space_start, space_end)
-    init_connection(user='root', password='123456', database='crawler', host=db_host)
+    init_connection(user='root', password='Q#az132..', database='crawler', host=db_host)
     data = execute_query(_sql)
     print(_sql)
     total_count = execute_query(count_sql)[0]["count(*)"]
@@ -267,7 +267,7 @@ async def index(request: Request, keyword=Query(""), page_type=Query("changfang"
             WHERE
                 locate( '%s', detail ) > 0 
     """ % (page_type, keyword)
-    init_connection(user='root', password='123456', database='crawler', host=db_host)
+    init_connection(user='root', password='Q#az132..', database='crawler', host=db_host)
     data = execute_query(_sql)
     print(_sql)
     total_count = execute_query(count_sql)[0]["count(*)"]
@@ -295,7 +295,7 @@ async def index(request: Request, item_id=Query(""), area=Query("深圳")):
     _sql = """
         select * from %s_changfang_detail where item_id='%s'
     """ % (table_prefix, item_id)
-    init_connection(user='root', password='123456', database='crawler', host=db_host)
+    init_connection(user='root', password='Q#az132..', database='crawler', host=db_host)
     data = execute_query(_sql)[0]
     data['images'] = data['img_url'].split(',')
 
@@ -321,7 +321,7 @@ async def index(request: Request, item_id=Query("")):
     _sql = """
         select * from sz_xiezilou_detail where item_id='%s'
     """ % item_id
-    init_connection(user='root', password='123456', database='crawler', host=db_host)
+    init_connection(user='root', password='Q#az132..', database='crawler', host=db_host)
     data = execute_query(_sql)[0]
     data['images'] = re.findall(r"http://img.*?\.jpg", data['img_url'])
 
