@@ -85,7 +85,7 @@
 <header class="header">
     <div class="w1190 clearFix">
         <div class="logo lf"><a href="/" target="_blank"><img
-                src="/static/img/logo.jpg" alt="房产租售网"></a></div>
+                src="/static/img/alogo.png" alt="房产租售网" style="width: 166%;margin-left: -102px;margin-top: -75px;height: 421%;"></a></div>
         <div class="myCity lf"><a href="#"><i class="icon_myCityLoca"></i><span>全国</span></a>
             <div class="myCityCon shadow8px ">
                 <div class="cityListBox" style="margin: 0">
@@ -395,19 +395,19 @@
             <p>
                 {% for zone in data.map.深圳 %}
                 <a
-                   href="/chuzu?area_id={{ zone }}" target="_blank">{{ zone }}</a>
+                        href="/chuzu?area_id={{ zone }}" target="_blank">{{ zone }}</a>
                 {% endfor %}
             </p>
             <p>
                 {% for zone in data.map.东莞 %}
                 <a
-                   href="/chuzu?area_id={{ zone }}" target="_blank">{{ zone }}</a>
+                        href="/chuzu?area_id={{ zone }}" target="_blank">{{ zone }}</a>
                 {% endfor %}
             </p>
             <p>
                 {% for zone in data.map.惠州 %}
                 <a
-                   href="/chuzu?area_id={{ zone }}" target="_blank">{{ zone }}</a>
+                        href="/chuzu?area_id={{ zone }}" target="_blank">{{ zone }}</a>
                 {% endfor %}
             </p>
 
@@ -434,7 +434,7 @@
                     <a target="_blank" title="{{ item.detail }}"
                        href="/item?item_id={{ item.item_id }}">
                         <div class="xzlcss-img-wrapper"><img
-                                onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
+                                onerror="javascript:this.src='/static/img/no_pic.jpg'"
                                 src="{{ item.img_url }}">
                             <div class="xzlcss-img-tag">{{ item.address }}</div>
                         </div>
@@ -456,7 +456,7 @@
                     <a target="_blank" title="{{ item.detail }}"
                        href="/item?item_id={{ item.item_id }}&area=东莞">
                         <div class="xzlcss-img-wrapper"><img
-                                onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
+                                onerror="javascript:this.src='/static/img/no_pic.jpg'"
                                 src="{{ item.img_url }}">
                             <div class="xzlcss-img-tag">{{ item.address }}</div>
                         </div>
@@ -478,7 +478,7 @@
                     <a target="_blank" title="{{ item.detail }}"
                        href="/item?item_id={{ item.item_id }}&area=惠州">
                         <div class="xzlcss-img-wrapper"><img
-                                onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
+                                onerror="javascript:this.src='/static/img/no_pic.jpg'"
                                 src="{{ item.img_url }}">
                             <div class="xzlcss-img-tag">{{ item.address }}</div>
                         </div>
@@ -502,12 +502,20 @@
         </div>
         <a style="float:left;"></a>
         <div class="clear"></div>
-        <ul class="zxli zxli_1">
+        <ul class="rnew">
             {% for zone in data.data_sz[:10] %}
-            <li><a target="_blank" href="/item?item_id={{ zone.item_id }}"
+            <li>
+                <ins class="">{{ loop.index }}</ins>
+                <a target="_blank" href="/item?item_id={{ zone.item_id }}"
                    title="{{ zone.title }}">{{ zone.title }}</a></li>
             {% endfor %}
         </ul>
+<!--        <ul class="zxli zxli_1">-->
+<!--            {% for zone in data.data_sz[:10] %}-->
+<!--            <li><a target="_blank" href="/item?item_id={{ zone.item_id }}"-->
+<!--                   title="{{ zone.title }}">{{ zone.title }}</a></li>-->
+<!--            {% endfor %}-->
+<!--        </ul>-->
     </div>
     <div class="clear"></div>
 </div>
@@ -529,7 +537,7 @@
             <p>
                 {% for zone in data.map.深圳 %}
                 <a
-                   href="/xiezilou?area_id={{ zone }}" target="_blank">{{ zone }}</a>
+                        href="/xiezilou?area_id={{ zone }}" target="_blank">{{ zone }}</a>
                 {% endfor %}
             </p>
         </div>
@@ -554,7 +562,7 @@
                     <a target="_blank" title="{{ item.detail }}"
                        href="/xzl_item?item_id={{ item.item_id }}">
                         <div class="xzlcss-img-wrapper"><img
-                                onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"
+                                onerror="javascript:this.src='/static/img/no_pic.jpg'"
                                 src="{{ item.img_url }}">
                             <div class="xzlcss-img-tag">{{ item.address }}</div>
                         </div>

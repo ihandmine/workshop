@@ -152,6 +152,7 @@ i.triaArrow{width:0;height: 0;border-bottom: 6px solid #fff;border-left: 6px sol
 /*********** 切换城市 ***********/
 .myCity{
     position: relative;
+    margin-left: -46px;
 }
 .myCity > a{
     display: block;
@@ -283,9 +284,9 @@ i.triaArrow{width:0;height: 0;border-bottom: 6px solid #fff;border-left: 6px sol
 }
 /************ 主题活动板块 ************/
 .activityTheme{
-    width:140px;
-    height:80px;
-    margin-left: 18px;
+    width: 87px;
+    height: 77px;
+    margin-left: 13px;
 }
 /************ 搜索 ************/
 .zgSearch{
