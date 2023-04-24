@@ -8,7 +8,7 @@ def init_connection(host, user, password, database):
     global __connection
     if __connection is None:
         __connection = pymysql.connect(host=host,
-                                       port=2295,
+                                       port=3306,
                         user=user,
                         password=password,
                         database=database,

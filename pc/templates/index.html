@@ -157,14 +157,14 @@
                     </div>
                     <button type="submit" data-mode="cangfcz" class="icon_serchSub"></button>
                     <input type="hidden" name="type" value="changfang">
-<!--                    <input type="hidden" name="c" value="Lists">-->
-<!--                    <input type="hidden" name="a" value="index">-->
-<!--                    <input type="hidden" name="tid" id="tid" value="35">-->
-<!--                    <input type="hidden" name="_screen" value="1">-->
-<!--                    <input type="hidden" name="regionid" value="0">-->
-<!--                    <input type="hidden" name="fid" value="0">-->
-<!--                    <input type="hidden" name="achieve" value="0">-->
-<!--                    <input type="hidden" name="subdomain" value="shenzhen7">-->
+                    <!--                    <input type="hidden" name="c" value="Lists">-->
+                    <!--                    <input type="hidden" name="a" value="index">-->
+                    <!--                    <input type="hidden" name="tid" id="tid" value="35">-->
+                    <!--                    <input type="hidden" name="_screen" value="1">-->
+                    <!--                    <input type="hidden" name="regionid" value="0">-->
+                    <!--                    <input type="hidden" name="fid" value="0">-->
+                    <!--                    <input type="hidden" name="achieve" value="0">-->
+                    <!--                    <input type="hidden" name="subdomain" value="shenzhen7">-->
                 </form>
             </div>
             <div style="display: none" class="mode_div" id="officecz">
@@ -184,14 +184,14 @@
                     <button type="submit" data-mode="officecz" onclick="submitForm(this);"
                             class="icon_serchSub"></button>
                     <input type="hidden" name="page_type" value="xiezilou">
-<!--                    <input type="hidden" name="c" value="Lists">-->
-<!--                    <input type="hidden" name="a" value="index">-->
-<!--                    <input type="hidden" name="tid" id="tid" value="28">-->
-<!--                    <input type="hidden" name="_screen" value="1">-->
-<!--                    <input type="hidden" name="regionid" value="0">-->
-<!--                    <input type="hidden" name="fid" value="0">-->
-<!--                    <input type="hidden" name="achieve" value="0">-->
-<!--                    <input type="hidden" name="subdomain" value="shenzhen7">-->
+                    <!--                    <input type="hidden" name="c" value="Lists">-->
+                    <!--                    <input type="hidden" name="a" value="index">-->
+                    <!--                    <input type="hidden" name="tid" id="tid" value="28">-->
+                    <!--                    <input type="hidden" name="_screen" value="1">-->
+                    <!--                    <input type="hidden" name="regionid" value="0">-->
+                    <!--                    <input type="hidden" name="fid" value="0">-->
+                    <!--                    <input type="hidden" name="achieve" value="0">-->
+                    <!--                    <input type="hidden" name="subdomain" value="shenzhen7">-->
                 </form>
             </div>
         </div>
@@ -236,7 +236,10 @@
 
         <li><a class="" href="/xiezilou" target="_self">写字楼出租</a></li>
 
-        <!--        <li><a class="" href="/xzchushou" target="_self">写字楼出售</a></li>-->
+        <li><a class="" href="" target="_self">空地出租</a></li>
+        <li><a class="" href="" target="_self">仓库出租</a></li>
+        <li><a class="" href="/chuzu?area=东莞" target="_self">东莞厂房出租</a></li>
+        <li><a class="" href="/chuzu?area=惠州" target="_self">惠州厂房出租</a></li>
 
         <li><a class="" href="" target="_self">资讯</a></li>
 
@@ -374,9 +377,43 @@
     </div>
     <div class="bigBannerList"></div>
 </div>
-<div class="w1190 mt20"><a href="" target="_self"><img width="1190" height="72"
-                                                       src="http://eju7.fangcms.cn/uploads/allimg/20200518/1-20051QG951425.jpg"
-                                                       alt="横栏广告一"></a></div>
+<!--<div class="w1190 mt20"><a href="" target="_self"><img width="1190" height="72"-->
+<!--                                                       src="http://eju7.fangcms.cn/uploads/allimg/20200518/1-20051QG951425.jpg"-->
+<!--                                                       alt="横栏广告一"></a></div>-->
+<div class="w1190 mt20 link slideTxtBox1" id="demoContent">
+    <div class="top hd">
+        <div class="FL">
+            <a href="/chuzu?area=深圳" id="hov" class="cs1">深圳厂房链接</a>
+            |<a href="/chuzu?area=东莞" class="cs2">东莞厂房链接</a>
+            |<a href="/chuzu?area=惠州" class="cs3">惠州厂房链接</a>
+            <!--            |<a href="javascript:;" class="cs2">友情链接</a>-->
+        </div>
+
+    </div>
+    <div id="con" style="width:1190px;">
+        <div>
+            <p>
+                {% for zone in data.map.深圳 %}
+                <a
+                   href="/chuzu?area_id={{ zone }}" target="_blank">{{ zone }}</a>
+                {% endfor %}
+            </p>
+            <p>
+                {% for zone in data.map.东莞 %}
+                <a
+                   href="/chuzu?area_id={{ zone }}" target="_blank">{{ zone }}</a>
+                {% endfor %}
+            </p>
+            <p>
+                {% for zone in data.map.惠州 %}
+                <a
+                   href="/chuzu?area_id={{ zone }}" target="_blank">{{ zone }}</a>
+                {% endfor %}
+            </p>
+
+        </div>
+    </div>
+</div>
 <div class="w1190 mt20">
     <div class="FL lcon  slideTxtBox1">
         <div class="tit  hd">
@@ -461,29 +498,42 @@
     </div>
     <div class="FR rcon  topLoop1">
         <div class="tit">
-            <h4><a style="float:left;">经纪人</a></h4><a style="float:left;">
-        </a></div>
-        <a style="float:left;">
-        </a>
-        <div class="jjr bd" id="con2_qhd_3" style="overflow:hidden"><a style="float:left;">
-        </a>
-            <ul><a style="float:left;">
-            </a>
-                <li><a style="float:left;"></a><a href="" title=""
-                                                  target="_blank"><img
-                        src="http://eju7.fangcms.cn/uploads/allimg/20200717/1-200GG53111P2.jpg" alt="李生"
-                        onerror="javascript:this.src='/template/default/pc/skin/images/no_pic.jpg'"><br>
-                    李生</a></li>
-            </ul>
-            <div class="clear"></div>
+            <h4><a style="float:left;">今日热房</a></h4><a style="float:left;"></a>
         </div>
+        <a style="float:left;"></a>
+        <div class="clear"></div>
+        <ul class="zxli zxli_1">
+            {% for zone in data.data_sz[:10] %}
+            <li><a target="_blank" href="/item?item_id={{ zone.item_id }}"
+                   title="{{ zone.title }}">{{ zone.title }}</a></li>
+            {% endfor %}
+        </ul>
     </div>
     <div class="clear"></div>
 </div>
 <div class="clear"></div>
 <div class="clear"></div>
-<div class="w1190 mt20"><a href="" target="_self"><img width="1190" height="72"
-                                                       src="http://eju7.fangcms.cn/uploads/allimg/20200518/1-20051QU133533.jpg"></a>
+<!--<div class="w1190 mt20">-->
+<!--    <a href="" target="_self">-->
+<!--        <img width="1190" height="72"-->
+<!--             src="http://eju7.fangcms.cn/uploads/allimg/20200518/1-20051QU133533.jpg">-->
+<!--    </a>-->
+<!--</div>-->
+<div class="w1190 mt20 link slideTxtBox1" id="demoContent">
+    <div class="top hd">
+        <div class="FL"><a href="javascript:;" id="hov1" class="cs13">写字楼站内链接</a>
+        </div>
+    </div>
+    <div id="con1" style="width:1190px;">
+        <div>
+            <p>
+                {% for zone in data.map.深圳 %}
+                <a
+                   href="/xiezilou?area_id={{ zone }}" target="_blank">{{ zone }}</a>
+                {% endfor %}
+            </p>
+        </div>
+    </div>
 </div>
 <div class="w1190 mt20">
     <div class="FL lcon">
@@ -578,11 +628,11 @@
         <div class="ne">
             <a target="_blank" title="雅居乐金沙湾主推四期6#产品 智能家电呵护安全"
                href=""><img title="雅居乐金沙湾主推四期6#产品 智能家电呵护安全"
-                                                                                 src="http://eju7.fangcms.cn/uploads/allimg/20191011/1-191011162243214.jpg"><strong>雅居乐金沙湾主推四期6#产品
+                            src="http://eju7.fangcms.cn/uploads/allimg/20191011/1-191011162243214.jpg"><strong>雅居乐金沙湾主推四期6#产品
                 智能家电呵护安全</strong><span>雅居乐金沙湾主推四期6#产品 智能家电呵...</span></a>
             <a target="_blank" title="融创观澜湖公园壹号PK观澜湖九里 果岭养生楼盘大解析"
                href=""><img title="融创观澜湖公园壹号PK观澜湖九里 果岭养生楼盘大解析"
-                                                                                  src="http://eju7.fangcms.cn/uploads/allimg/20191011/1-19101116051Tb.jpg"><strong>融创观澜湖公园壹号PK观澜湖九里
+                            src="http://eju7.fangcms.cn/uploads/allimg/20191011/1-19101116051Tb.jpg"><strong>融创观澜湖公园壹号PK观澜湖九里
                 果岭养生楼盘大解析</strong><span>融创观澜湖公园壹号PK观澜湖九里 果岭养...</span></a>
 
             <div class="clear"></div>
@@ -737,12 +787,20 @@
         $(".cs1").mouseover(function () {
             $(".cs1").attr('id', 'hov');
             $(".cs2").attr('id', '');
+            $(".cs3").attr('id', '');
             $('#con div').stop().animate({marginLeft: "0px"}, {duration: 0});
         });
         $(".cs2").mouseover(function () {
             $(".cs2").attr('id', 'hov');
             $(".cs1").attr('id', '');
+            $(".cs3").attr('id', '');
             $('#con div').stop().animate({marginLeft: "-1190px"}, {duration: 0});
+        });
+        $(".cs3").mouseover(function () {
+            $(".cs3").attr('id', 'hov');
+            $(".cs1").attr('id', '');
+            $(".cs2").attr('id', '');
+            $('#con div').stop().animate({marginLeft: "-2380px"}, {duration: 0});
         });
         $(".thov").mouseover(function () {
             $(".thov").attr('id', '');

@@ -7,12 +7,12 @@ from parsel import Selector
 from dbhandler import init_connection, execute_insert
 
 
-def data_format_save(data):
-    # init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
-    init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
+def data_format_save(data, area):
+    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    # init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
     cols, values = zip(*data.items())
     # table = "sz_changfang_index"
-    table = "hz_changfang_index"
+    table = "%s_changfang_index" % area
     # table = "dg_changfang_index"
     sql = "INSERT INTO `{}` ({}) VALUES ({})".format(
         table,
@@ -22,8 +22,8 @@ def data_format_save(data):
     execute_insert(sql, values)
 
 
-def get_html() -> str:
-    base_url: str = "http://www.sfcfw68.com/hz/index_2.html"
+def get_html(area) -> str:
+    base_url: str = f"http://www.sfcfw68.com/{area}/index_2.html"
     headers: dict = Header(browser='chrome', connection=True).base.to_unicode_dict()
     response = requests.get(base_url, headers=headers)
     # print(response.content.decode('utf-8'))
@@ -31,7 +31,7 @@ def get_html() -> str:
     return response.content.decode('utf-8')
 
 
-def parse_html(html: str) -> list:
+def parse_html(html: str, area: str) -> list:
     parser: Selector = Selector(html)
     """
     parse response content to dict type
@@ -56,7 +56,7 @@ def parse_html(html: str) -> list:
         _item['price_month'] = price_month
         collects.append(_item)
         print(_item)
-        data_format_save(_item)
+        data_format_save(_item, area)
     return collects
 
 
@@ -90,4 +90,5 @@ def unit_test():
 if __name__ == '__main__':
     # unit_test()
     # get_html()
-    parse_html(get_html())
+    for base_area in ["sz", "hz", "dg"]:
+        parse_html(get_html(base_area), area=base_area)

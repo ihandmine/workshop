@@ -8,8 +8,8 @@ from dbhandler import init_connection, execute_insert
 
 
 def data_format_save(data):
-    # init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
-    init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
+    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
+    # init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
     cols, values = zip(*data.items())
     table = "sz_xiezilou_index"
     sql = "INSERT INTO `{}` ({}) VALUES ({})".format(
