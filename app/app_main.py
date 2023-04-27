@@ -1,6 +1,7 @@
 import math
 import re
 import platform
+import redis
 
 import uvicorn
 from fastapi import FastAPI
