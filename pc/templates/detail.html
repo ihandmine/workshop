@@ -75,7 +75,9 @@
 <div class="clear"></div>
 <div class="W1000 head marginT20">
     <div class="FL marginT17"><a href=""><img src="/static/img/alogo.png"
-                                                                    alt="房产租售网" style="width: 253px;margin-left: -54px;margin-top: -47px;height: 162px;margin-bottom: -53px;"></a></div>
+                                              alt="房产租售网"
+                                              style="width: 253px;margin-left: -54px;margin-top: -47px;height: 162px;margin-bottom: -53px;"></a>
+    </div>
     <div class="FL LH24 marginL20" style="margin-top:37px;margin-left: -46px;">
         <div class="m_city fl" style="position:relative;">
             <div id="change_city"><font color="blue" style="font-size:18px;"><strong class="F19 cred">深圳</strong></font>
@@ -599,10 +601,9 @@
                     <ul>
                         {% for item in other.recommand %}
                         <li>
-                            <a href="/item?item_id={{ item.item_id }}" target="_blank"
-                               title="{{ item.title }}"><img alt="{{ item.title }}"
-                                                                      src="{{ item.img_url }}"
-                                                                      onerror="javascript:this.src='/static/img/pc_list_placeholder.jpg'"/>
+                            <a href="/item?item_id={{ item.item_id }}" target="_blank" title="{{ item.title }}">
+                                <img alt="{{ item.title }}" src="{{ item.img_url }}"
+                                     onerror="javascript:this.src='/static/img/pc_list_placeholder.jpg'"/>
                             </a>
                             <a style="padding-top: 4px; height:44px;"
                                href="/item?item_id={{ item.item_id }}"
