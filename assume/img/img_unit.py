@@ -3,7 +3,7 @@ from PIL import Image
 path = "test.jpg"
 img = Image.open(path)
 
-logo_path = "logo.jpg"
+logo_path = "111.png"
 mark_img = Image.open(logo_path)
 
 result_path = "result.jpg"
