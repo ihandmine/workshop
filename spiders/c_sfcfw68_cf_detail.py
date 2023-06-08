@@ -58,6 +58,13 @@ def parse_html(html: str, item: dict, area: str) -> list:
     }
     collects.append(_item)
     print(_item)
+    if _item['img_url']:
+        for index, _url in enumerate(_item['img_url'].split(',http')):
+            headers: dict = Header(browser='chrome', connection=True).base.to_unicode_dict()
+            uml = f"http{_url}" if not _url.startswith('http') else _url
+            response = requests.get(uml, headers=headers)
+            with open(f'../downloads/{_item["item_id"]}_{index}.jpg', 'wb') as f:
+                f.write(response.content)
     data_format_save(_item, area)
     return collects
 

@@ -55,6 +55,10 @@ def parse_html(html: str) -> list:
         _item['price_month'] = price_month
         collects.append(_item)
         print(_item)
+        headers: dict = Header(browser='chrome', connection=True).base.to_unicode_dict()
+        response = requests.get(_item['img_url'], headers=headers)
+        with open(f'../downloads/{_item["item_id"]}.jpg', 'wb') as f:
+            f.write(response.content)
         data_format_save(_item)
     return collects
 
