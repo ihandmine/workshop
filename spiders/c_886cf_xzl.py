@@ -8,10 +8,9 @@ from dbhandler import init_connection, execute_insert
 
 
 def data_format_save(data):
-    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
-    # init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
+    init_connection(user='root', database='crawler', host='39.108.239.68')
     cols, values = zip(*data.items())
-    table = "sz_xiezilou_index"
+    table = "xiezilou_index"
     sql = "INSERT INTO `{}` ({}) VALUES ({})".format(
         table,
         ','.join(cols),
@@ -21,7 +20,7 @@ def data_format_save(data):
 
 
 def get_html() -> str:
-    base_url: str = "http://xzl.886cf.com/xzllist-sz/?page=2"
+    base_url: str = "http://xzl.886cf.com/xzllist-sz-lh/?page=2"
     headers: dict = Header(browser='chrome', connection=True, platform='windows').base.to_unicode_dict()
     response = requests.get(base_url, headers=headers)
     # print(response.content.decode('utf-8'))
@@ -46,6 +45,7 @@ def parse_html(html: str) -> list:
             'item_url': left_fen.xpath('.//@href').get(),
             'structure': "",
             'floor': "",
+            'cityp': "sz",
             # 'price_day': "",
             'area': ''.join(re.findall(r"\d+", left_fen.xpath('.//dd[@class="mianji"]/span/text()').get())) or 0
         }
@@ -64,6 +64,4 @@ def parse_html(html: str) -> list:
 
 
 if __name__ == '__main__':
-    # unit_test()
-    # get_html()
     parse_html(get_html())

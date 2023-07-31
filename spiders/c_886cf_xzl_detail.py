@@ -6,10 +6,9 @@ from dbhandler import init_connection, execute_insert, execute_query
 
 
 def data_format_save(data):
-    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
-    # init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
+    init_connection(user='root', database='crawler', host='39.108.239.68')
     cols, values = zip(*data.items())
-    table = "sz_xiezilou_detail"
+    table = "xiezilou_detail"
     sql = "INSERT INTO `{}` ({}) VALUES ({})".format(
         table,
         ','.join(cols),
@@ -44,33 +43,35 @@ def parse_html(html: str, item: dict) -> list:
         "price_day": item['price_day'],
         "price_month": item['price_month'],
         "area": item['area'],
-        "other_info": parser.xpath('//td/text()').get(),
+        'cityp': item['cityp'],
+        "other_info": parser.xpath('//td/text()').get() or "",
         "detail": '\n'.join([li.xpath('./span[1]/text()').get() + li.xpath('./span[2]/text()').get() for li in parser.xpath('//ul[@class="miaoshu-ul"]/li')]),
-        "img_url": ','.join(parser.xpath('//div[@id="bz_photo"]/img/@src').extract()),
-        "zhuangxiu": parser.xpath('//div[@class="info-box clearfix"][2]/dl[1]/dt/text()').get(),
-        "mianzu": parser.xpath('//div[@class="info-box clearfix"][2]/dl[2]/dt/text()').get(),
-        "loupan": parser.xpath('//a[@class="a1"]/text()').get(),
-        "zhuce": parser.xpath('//span[@class="colorGreen note"]/text()').get(),
-        "fenge": parser.xpath('//span[@class="colorRed note"][1]/text()').get(),
-        "shangwuqu": parser.xpath('//span[@class="colorBlue note"]/text()').get(),
-        "chewei": parser.xpath('//span[@class="colorRed note"][2]/text()').get(),
+        "img_url": ','.join(parser.xpath('//div[@id="bz_photo"]/img/@src').extract()) or "",
+        'img_url_local': '',
+        "zhuangxiu": parser.xpath('//div[@class="info-box clearfix"][2]/dl[1]/dt/text()').get() or "",
+        "mianzu": parser.xpath('//div[@class="info-box clearfix"][2]/dl[2]/dt/text()').get() or "",
+        "loupan": parser.xpath('//a[@class="a1"]/text()').get() or "",
+        "zhuce": parser.xpath('//span[@class="colorGreen note"]/text()').get() or "",
+        "fenge": parser.xpath('//span[@class="colorRed note"][1]/text()').get() or "",
+        "shangwuqu": parser.xpath('//span[@class="colorBlue note"]/text()').get() or "",
+        "chewei": parser.xpath('//span[@class="colorRed note"][2]/text()').get() or "",
     }
     collects.append(_item)
     print(_item)
     for index, _url in enumerate(_item['img_url'].split(',http')):
         headers: dict = Header(browser='chrome', connection=True).base.to_unicode_dict()
-        uml = f"http{_url}" if not _url.startswith('http') else _url
-        response = requests.get(uml, headers=headers)
-        with open(f'../downloads/{_item["item_id"]}_{index}.jpg', 'wb') as f:
-            f.write(response.content)
+        if _url:
+            uml = f"http{_url}" if not _url.startswith('http') else _url
+            response = requests.get(uml, headers=headers)
+            with open(f'../downloads/{_item["item_id"]}_{index}.jpg', 'wb') as f:
+                f.write(response.content)
     data_format_save(_item)
     return collects
 
 
 def run():
-    _sql = "select * from sz_xiezilou_index"
-    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
-    # init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
+    _sql = "select * from xiezilou_index"
+    init_connection(user='root', database='crawler', host='39.108.239.68')
     data = execute_query(_sql)
     for item in data:
         parse_html(get_html(item=item), item)
