@@ -7,13 +7,10 @@ from parsel import Selector
 from dbhandler import init_connection, execute_insert
 
 
-def data_format_save(data, area):
-    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
-    # init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
+def data_format_save(data):
+    init_connection(user='root', database='crawler', host='39.108.239.68')
     cols, values = zip(*data.items())
-    # table = "sz_changfang_index"
-    table = "%s_changfang_index" % area
-    # table = "dg_changfang_index"
+    table = "changfang_index"
     sql = "INSERT INTO `{}` ({}) VALUES ({})".format(
         table,
         ','.join(cols),
@@ -47,6 +44,7 @@ def parse_html(html: str, area: str) -> list:
             'img_url': left_fen.xpath('.//div[@class="listLeft_fen_pic"]//img/@src').get(),
             'structure': string_node_sf[0],
             'floor': string_node_sf[1],
+            'cityp': area,
             # 'price_day': "",
             'area': left_fen.xpath('.//div[@class="listLeft_fen_zi"]//label[2]/text()').get()
         }
@@ -60,7 +58,7 @@ def parse_html(html: str, area: str) -> list:
         response = requests.get(_item['img_url'], headers=headers)
         with open(f'../downloads/{_item["item_id"]}.jpg', 'wb') as f:
             f.write(response.content)
-        data_format_save(_item, area)
+        data_format_save(_item)
     return collects
 
 

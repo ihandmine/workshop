@@ -4,13 +4,13 @@ import pymysql.cursors
 __connection = None
 
 
-def init_connection(host, user, password, database):
+def init_connection(host, user, database):
     global __connection
     if __connection is None:
         __connection = pymysql.connect(host=host,
-                                       port=3306,
+                                       port=2295,
                         user=user,
-                        password=password,
+                        password="Q#az132..",
                         database=database,
                         cursorclass=pymysql.cursors.DictCursor)
 
