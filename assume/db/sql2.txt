@@ -1,0 +1,104 @@
+CREATE TABLE `changfang_index` (
+  `auto_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `item_id` bigint(20) NOT NULL COMMENT 'item id',
+	`cityp` varchar(20) NOT NULL COMMENT '区域',
+  `title` varchar(100) NOT NULL DEFAULT '' COMMENT '标题',
+  `detail` varchar(300) NOT NULL DEFAULT '' COMMENT '描述',
+  `address` varchar(20) NOT NULL DEFAULT '' COMMENT '地址',
+  `structure` varchar(20) NOT NULL DEFAULT '' COMMENT '结构',
+  `img_url` varchar(200) NOT NULL DEFAULT '' COMMENT '图片链接',
+	`img_url_local` varchar(200) NOT NULL DEFAULT '' COMMENT '图片链接本地',
+  `floor` varchar(20) NOT NULL DEFAULT '' COMMENT '楼层',
+  `price_day` int(11) NOT NULL DEFAULT '0' COMMENT '日价格',
+  `price_month` int(11) NOT NULL DEFAULT '0' COMMENT '月价格',
+  `area` int(11) NOT NULL DEFAULT '0' COMMENT '面积',
+  `other_info` varchar(20) NOT NULL DEFAULT '' COMMENT '其他',
+  `created_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`auto_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='厂房数据';
+
+
+CREATE TABLE `xiezilou_index` (
+  `auto_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+	`item_id` bigint(20) NOT NULL COMMENT 'item id',
+	`cityp` varchar(20) NOT NULL COMMENT '区域',
+  `title` varchar(100) NOT NULL DEFAULT '' COMMENT '标题',
+  `item_url` varchar(100) NOT NULL DEFAULT '' COMMENT '链接',
+  `detail` varchar(300) NOT NULL DEFAULT '' COMMENT '描述',
+  `address` varchar(20) NOT NULL DEFAULT '' COMMENT '地址',
+  `structure` varchar(20) NOT NULL DEFAULT '' COMMENT '结构',
+  `img_url` varchar(200) NOT NULL DEFAULT '' COMMENT '图片链接',
+	`img_url_local` varchar(200) NOT NULL DEFAULT '' COMMENT '图片链接本地',
+  `floor` varchar(20) NOT NULL DEFAULT '' COMMENT '楼层',
+  `price_day` int(11) NOT NULL DEFAULT '0' COMMENT '日价格',
+  `price_month` int(11) NOT NULL DEFAULT '0' COMMENT '月价格',
+  `area` int(11) NOT NULL DEFAULT '0' COMMENT '面积',
+  `other_info` varchar(20) NOT NULL DEFAULT '' COMMENT '其他',
+  `created_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`auto_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='写字楼数据';
+
+
+
+
+CREATE TABLE `changfang_detail` (
+  `auto_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `item_id` bigint(20) NOT NULL COMMENT 'item id',
+  `index_id` bigint(20) NOT NULL COMMENT 'index id',
+	`cityp` varchar(20) NOT NULL COMMENT '区域',
+  `title` varchar(100) NOT NULL DEFAULT '' COMMENT '标题',
+  `detail` text NOT NULL COMMENT '描述',
+  `address` varchar(20) NOT NULL DEFAULT '' COMMENT '地址',
+  `structure` varchar(20) NOT NULL DEFAULT '' COMMENT '结构',
+  `img_url` text NOT NULL COMMENT '图片链接',
+	`img_url_local` text NOT NULL COMMENT '图片链接本地',
+  `floor` varchar(20) NOT NULL DEFAULT '' COMMENT '楼层',
+  `price_day` int(11) NOT NULL DEFAULT '0' COMMENT '日价格',
+  `price_month` int(11) NOT NULL DEFAULT '0' COMMENT '月价格',
+  `area` int(11) NOT NULL DEFAULT '0' COMMENT '面积',
+  `other_info` varchar(20) NOT NULL DEFAULT '' COMMENT '其他',
+  `gongdian` varchar(20) NOT NULL DEFAULT '' COMMENT '供电',
+  `xinjiu` varchar(20) NOT NULL DEFAULT '' COMMENT '新旧',
+  `bangonshi` varchar(20) NOT NULL DEFAULT '' COMMENT '办公室',
+  `dianfei` varchar(20) NOT NULL DEFAULT '' COMMENT '电费',
+  `shitang` varchar(20) NOT NULL DEFAULT '' COMMENT '食堂',
+  `sushe` varchar(20) NOT NULL DEFAULT '' COMMENT '宿舍',
+  `dianti` varchar(20) NOT NULL DEFAULT '' COMMENT '电梯',
+  `created_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`auto_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COMMENT='厂房详情数据';
+
+
+
+CREATE TABLE `xiezilou_detail` (
+  `auto_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `item_id` bigint(20) NOT NULL COMMENT 'item id',
+  `index_id` bigint(20) NOT NULL COMMENT 'index id',
+	`cityp` varchar(20) NOT NULL COMMENT '区域',
+  `title` varchar(100) NOT NULL DEFAULT '' COMMENT '标题',
+  `detail` text NOT NULL COMMENT '描述',
+  `address` varchar(20) NOT NULL DEFAULT '' COMMENT '地址',
+  `structure` varchar(20) NOT NULL DEFAULT '' COMMENT '结构',
+  `img_url` text NOT NULL COMMENT '图片链接',
+	`img_url_local` text NOT NULL COMMENT '图片链接本地',
+  `floor` varchar(20) NOT NULL DEFAULT '' COMMENT '楼层',
+  `price_day` int(11) NOT NULL DEFAULT '0' COMMENT '日价格',
+  `price_month` int(11) NOT NULL DEFAULT '0' COMMENT '月价格',
+  `area` int(11) NOT NULL DEFAULT '0' COMMENT '面积',
+  `other_info` text NOT NULL COMMENT '其他',
+  `zhuangxiu` varchar(20) NOT NULL DEFAULT '' COMMENT '装修',
+  `mianzu` varchar(20) NOT NULL DEFAULT '' COMMENT '免租期',
+  `loupan` varchar(20) NOT NULL DEFAULT '' COMMENT '楼盘',
+  `zhuce` varchar(20) NOT NULL DEFAULT '' COMMENT '注册',
+  `fenge` varchar(20) NOT NULL DEFAULT '' COMMENT '分割',
+  `shangwuqu` varchar(20) NOT NULL DEFAULT '' COMMENT '商务区',
+  `chewei` varchar(20) NOT NULL DEFAULT '' COMMENT '车位',
+  `created_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`auto_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='写字楼详情数据';
+
+
