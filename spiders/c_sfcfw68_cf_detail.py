@@ -5,11 +5,10 @@ from parsel import Selector
 from dbhandler import init_connection, execute_insert, execute_query
 
 
-def data_format_save(data, area):
-    init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
-    # init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
+def data_format_save(data):
+    init_connection(user='root', database='crawler', host='39.108.239.68')
     cols, values = zip(*data.items())
-    table = "%s_changfang_detail" % area
+    table = "changfang_detail"
     sql = "INSERT INTO `{}` ({}) VALUES ({})".format(
         table,
         ','.join(cols),
@@ -45,16 +44,18 @@ def parse_html(html: str, item: dict, area: str) -> list:
                 "floor": item['floor'],
                 "price_day": item['price_day'],
                 "price_month": item['price_month'],
+                'cityp': area,
                 "img_url": ",".join(parser.xpath('//div[@class="box_list2"]/div/img/@src').extract()),
-                "detail": parser.xpath('//div[@class="box_list2"]/span//text()').get(),
+                "img_url_local": "",
+                "detail": parser.xpath('//div[@class="box_list2"]/span//text()').get() or " ",
                 "area": item['area'],
-                "gongdian":  parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[1]/p[3]/label/text()').get(),
-                "xinjiu": parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[2]/p[1]/label/text()').get(),
-                "bangonshi": parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[2]/p[2]/label/text()').get(),
-                "dianfei": parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[2]/p[3]/label/text()').get(),
-                "shitang": parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[3]/p[1]/label/text()').get(),
-                "sushe": parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[3]/p[2]/label/text()').get(),
-                "dianti": parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[3]/p[3]/label/text()').get(),
+                "gongdian":  parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[1]/p[3]/label/text()').get() or " ",
+                "xinjiu": parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[2]/p[1]/label/text()').get() or " ",
+                "bangonshi": parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[2]/p[2]/label/text()').get() or " ",
+                "dianfei": parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[2]/p[3]/label/text()').get() or " ",
+                "shitang": parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[3]/p[1]/label/text()').get() or " ",
+                "sushe": parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[3]/p[2]/label/text()').get() or " ",
+                "dianti": parser.xpath('//ul[@class="listconn_3_Rr_c"]/li[3]/p[3]/label/text()').get() or " ",
     }
     collects.append(_item)
     print(_item)
@@ -65,45 +66,16 @@ def parse_html(html: str, item: dict, area: str) -> list:
             response = requests.get(uml, headers=headers)
             with open(f'../downloads/{_item["item_id"]}_{index}.jpg', 'wb') as f:
                 f.write(response.content)
-    data_format_save(_item, area)
+    data_format_save(_item)
     return collects
 
 
-def unit_test():
-    cookies = {
-        'Hm_lvt_69214bfe022204d284415be8d2b7d049': '1676269321',
-        'Hm_lpvt_69214bfe022204d284415be8d2b7d049': '1676859492',
-    }
-
-    headers = {
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
-        'Cache-Control': 'no-cache',
-        'Connection': 'keep-alive',
-        'Host': 'www.sfcfw68.com',
-        # 'Cookie': 'Hm_lvt_69214bfe022204d284415be8d2b7d049=1676269321; Hm_lpvt_69214bfe022204d284415be8d2b7d049=1676859492',
-        'Pragma': 'no-cache',
-        'Referer': 'http://www.sfcfw68.com/sz/index.html',
-        'Upgrade-Insecure-Requests': '1',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
-    }
-
-    response = requests.get('http://www.sfcfw68.com/sz/index_2.html', cookies=cookies, headers=headers, verify=False)
-    print(response.text)
-    print(response.status_code)
-    response = requests.get('http://www.sfcfw68.com/sz/index_2.html', cookies=cookies, headers=headers, verify=False)
-    print(response.content.decode('utf-8'))
-    print(response.status_code)
-
-
 def run():
-    for area in ['sz', 'hz', 'dg']:
-        _sql = "select * from %s_changfang_index" % area
-        init_connection(user='root', password='123456', database='crawler', host='172.16.9.133')
-        # init_connection(user='root', password='123456', database='crawler', host='39.108.239.68')
-        data = execute_query(_sql)
-        for item in data:
-            parse_html(get_html(item=item, area=area), item, area)
+    _sql = "select * from changfang_index"
+    init_connection(user='root', database='crawler', host='39.108.239.68')
+    data = execute_query(_sql)
+    for item in data:
+        parse_html(get_html(item=item, area=item['cityp']), item, item['cityp'])
 
 
 if __name__ == '__main__':
