@@ -42,7 +42,7 @@ address_mapping = {
 }
 
 
-if platform.system() == "Linux":
+if platform.system() != "Linux":
     db_host = "39.108.239.68"
     db_password = 'Q#az132..'
 else:
